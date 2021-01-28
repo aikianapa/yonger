@@ -8,6 +8,9 @@
     background: #F7F9FB; /* цвет фона */
     color: #fc0; /* цвет текста */
    }
+   table {
+     height: 90vh;
+   }
   </style>
 </head>
 <body bgcolor="#000" style="background:url(/tpl/assets/img/abstractgradient.png)">
