@@ -3,14 +3,12 @@
             <i data-feather="menu"></i>
         </a>
         <div class="navbar-brand">
-            <a href="/" class="df-logo">Yonger
-            </a>
+            <a href="/" class="df-logo"><img data-src="/tpl/assets/img/logo.svg" width="110"></a>
         </div>
         <!-- navbar-brand -->
         <div id="navbarMenu" class="navbar-menu-wrapper">
             <div class="navbar-menu-header">
-                <a href="/" class="df-logo">Yonger
-                </a>
+                <a href="/" class="df-logo"><img data-src="/tpl/assets/img/logo.svg" width="110"></a>
                 <a id="mainMenuClose" href="">
                     <i data-feather="x"></i>
                 </a>
