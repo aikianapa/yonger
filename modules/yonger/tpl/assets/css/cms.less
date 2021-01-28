@@ -1,0 +1,164 @@
+@import url("/engine/lib/fonts/roboto/roboto.css");
+@import url("/engine/css/modals.less");
+@icon_size: 21px;
+@round: 0.25rem;
+body {
+    overflow: hidden;
+    font-family: 'Roboto';
+
+    .wblogo {
+        font-weight: 100;
+        line-height: normal;
+    }
+
+    
+    .rounded {
+        border-radius: @round;
+    }
+    
+    .content {
+        overflow: hidden;
+    }
+    .content-body {
+            overflow-x: hidden;
+            overflow-y: auto;
+    }
+    .chat-wrapper {
+        overflow: auto;
+    }
+
+    .input-group-append {
+        min-width: 40px;
+        text-align: center;
+        .input-group-text {
+          width:100%;
+        }
+    }
+
+    .modal {
+        &.contain {
+            .modal-dialog {
+                margin-top:0;
+            }
+            .modal-body {
+                overflow-y: auto;
+                scrollbar-width: thin;
+                max-height: calc(~"100vh - 130px");
+            }
+        }
+    }
+
+    code {
+        background: #eee;
+        display: block;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    aside {
+        transition-duration: .4s;
+        .aside-logo {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .aside-body {
+            height: 100vh;
+        }
+        .aside-menu-link
+        {
+            font-size:20px;
+            line-height: 20px;
+        }
+        .nav-link {
+            text-transform: none;
+            font-weight: normal;
+        }
+
+        #userProfileMenu {
+            .avatar {
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+        }
+
+        @media (max-width: 991px) {
+            &:not(.aside-show) {
+                .aside-logo {
+                    margin-right: 21px;
+                }
+            }
+        }
+        @media (min-width: 992px) {
+            .aside-logo {
+                margin-right: 10px;
+            }
+        }
+        .aside-menu-link {
+            display: flex;
+        }
+        .burger-menu {
+            display: none;
+        }
+        .nav-aside {
+            [class^="ri-"],
+            [class*=" ri-"] {
+                font-size: 16px;
+            }
+            ul {
+                padding-left: 15px;
+                font-size: 12px;
+                li {
+                    list-style: none;
+                }
+            }
+        }
+        &.minimize {
+            ul {
+                padding-left: 0;
+            }
+
+            #userProfileMenu {
+                .avatar {
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+
+        }
+    }
+    &.chat-content-show {
+        aside {
+            @media (max-width: 992px) {
+                .burger-menu {
+                    display: flex!important;
+                }
+                .aside-menu-link {
+                    display: none!important;
+                }
+            }
+        }
+    }
+
+    .input-group .input-group-append > .form-control {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.scrollable {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.nobr {
+    white-space: nowrap;
+}

@@ -1,5 +1,5 @@
 <html>
-<wb-include wb="{'src':'/engine/modules/cms/tpl/wrapper.inc.php'}"/>
+<wb-include wb="{'src':'/modules/yonger/tpl/wrapper.inc.php'}"/>
 <meta http-equiv="refresh" content="5; url=/signin/" wb-disallow="user">
 
 <wb-jq wb-append="body">
@@ -23,7 +23,7 @@
         </div>
         <a href="" class="aside-menu-link">
           <i class="ri-menu-line"></i>
-          <i class="ri-close-line"></i>
+          <!--i class="ri-close-line"></i-->
         </a>
         <a href="javascript:$('body').removeClass('chat-content-show');"  class="burger-menu"><i class="ri-arrow-left-line"></i></a>
       </div>
@@ -88,10 +88,12 @@
 
     <div class="content ht-100v pd-0">
       <div class="content-header">
-        <div class="content-search">
-          <i data-feather="search"></i>
-          <input type="search" class="form-control" placeholder="Поиск..." disabled>
+        <div>
+            <a href class="btn btn-sm"><i wb-module="myicons" class="mi-select-cursor-item mr-2"></i><span>Сайты</span></a>
+            <a href class="btn btn-sm"><i wb-module="myicons" class="mi-interface-essential-113 mr-2"></i><span>Проекты</span></a>
+            <a href class="btn btn-sm"><i wb-module="myicons" class="mi-content-03 mr-2"></i><span>Документы</span></a>
         </div>
+
         <nav class="nav" wb-tree="{'table':'_settings','item':'settings','field':'cmsmenu','branch':'top','parent':'false'}">
           <a href="#" data-ajax="{{data.ajax}}" data-toggle="tooltip" title="{{data.label}}" class="nav-link tx-18">
           <i class="{{data.icon}}"></i>

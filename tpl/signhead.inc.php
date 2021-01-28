@@ -18,12 +18,13 @@
         </div>
         <!-- navbar-menu-wrapper -->
         <div class="navbar-right">
-            <a href="https://github.com/themepixels" class="btn btn-social">
-                <i class="lab la-vk"></i>
+            <a href="/signin/" class="btn btn-sm btn-light px-5 mr-2">
+                Вход
             </a>
-            <a href="https://twitter.com/themepixels" class="btn btn-social">
-                <i class="lab la-facebook"></i>
+            <a href="/signup/" class="btn btn-sm px-5 btn-primary">
+                Регистрация
             </a>
+
         </div>
         <!-- navbar-right -->
     </header>

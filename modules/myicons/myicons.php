@@ -5,29 +5,44 @@ class modMyicons
     {
         $this->app = &$dom->app;
         $this->dom = &$dom;
-        echo $this->icon();
+        $dom->after($this->icon());
+        $dom->remove();
     }
 
     public function icon() {
         $app = &$this->app;
         $params = $this->dom->params;
-        $icon = $params->icon;
+        $icon = $this->name();
         $path = __DIR__ . '/icons/';
-        $sprite = __DIR__.'/sprite.svg';
         $path = str_replace($app->route->path_app, '', $path);
-        //$svg = file_get_contents($path.$icon.'.svg');
-        $sprite = str_replace($app->route->path_app, '', $sprite);
-
-        $file = $path.$icon.'.svg';
+        $file = $path.$icon;
+        $sprite = $app->fromFile($app->route->path_app.$file);
+        $id = $sprite->attr('id');
+        if ($id == '') {
+            $id = 'Layer';
+            $sprite->attr('id', $id);
+            file_put_contents($app->route->path_app.$file,$sprite->outer());
+        }
         $svg = $app->fromFile(__DIR__.'/myicon_ui.php');
-        $svg->find('use')->attr('xlink:href', $sprite.'#'.$icon);
+        $svg->find('use')->attr('xlink:href', $file.'#'.$id);
         $svg->attr('class', $this->dom->attr('class'));
-        echo $svg;
-        echo "<br>";
-        echo htmlentities($this->dom->outer());
-        echo "<br>converted to:<br>";
-        echo htmlentities($svg);
+        return $svg->outer();
+    }
 
+    public function name() {
+        isset($params->name) ? $name = $params->icon : $name = null;
+        if (!$name) {
+            $class = $this->dom->attr('class');
+            $class = $this->app->arrayAttr($class);
+            foreach($class as $mi) {
+                if (substr($mi,0,3) == 'mi-') {
+                    $name = substr($mi, 3);
+                    break;
+                }
+            }
+        }
+        $name .= '.svg';
+        return $name;
     }
 
 }
