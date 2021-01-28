@@ -1,4 +1,3 @@
-/vendor/
 /engine/
-/database/_cache/
+/database/_cache/*
 engine
