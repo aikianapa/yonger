@@ -1,0 +1,17 @@
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+
+RewriteBase /
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^(.*)\.less$ index.php 
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$
+RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
+RewriteRule ^database(.*)$ index.php [R=404,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php [L,QSA]
