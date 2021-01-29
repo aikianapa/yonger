@@ -24,7 +24,9 @@ class modMyicons
             file_put_contents($app->route->path_app.$file,$sprite->outer());
         }
         $svg = $app->fromFile(__DIR__.'/myicon_ui.php');
-        $svg->find('use')->attr('xlink:href', $file.'#'.$id);
+        $svg->find('use')->attr('href', $file.'#'.$id);
+        //$svg->find('use')->after($sprite->inner());
+        //$svg->find('use')->remove();
         $svg->attr('class', $this->dom->attr('class'));
         return $svg->outer();
     }

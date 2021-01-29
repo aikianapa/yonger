@@ -92,6 +92,8 @@
             <a href class="btn btn-sm"><i wb-module="myicons" class="mi-select-cursor-item mr-2"></i><span>Сайты</span></a>
             <a href class="btn btn-sm"><i wb-module="myicons" class="mi-interface-essential-113 mr-2"></i><span>Проекты</span></a>
             <a href class="btn btn-sm"><i wb-module="myicons" class="mi-content-03 mr-2"></i><span>Документы</span></a>
+            <a href class="btn btn-sm"><i wb-module="myicons" class="mi-user-square mr-2"></i><span>Контакты</span></a>
+            <a href class="btn btn-sm"><i wb-module="myicons" class="mi-grid-layout-add mr-2"></i><span>Все сервисы</span></a>
         </div>
 
         <nav class="nav" wb-tree="{'table':'_settings','item':'settings','field':'cmsmenu','branch':'top','parent':'false'}">
