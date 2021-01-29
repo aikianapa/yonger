@@ -30,56 +30,8 @@
                         class="ri-arrow-left-line"></i></a>
             </div>
             <div class="aside-body">
-                <div class="aside-loggedin">
-                    <div id="userProfileMenu">
-                        <template>
-                            <div class="d-flex align-items-center justify-content-start">
-                                <a href="#loggedinMenu" data-toggle="collapse" class="avatar">
-                                    {{#if avatar.0.img}}
-                                    <img data-src="/thumbc/48x48/src/{{avatar.0.img}}" class="rounded-circle" alt="">
-                                    {{else}}
-                                    <img data-src="/engine/modules/cms/tpl/assets/img/user.svg" class="rounded-circle"
-                                        alt="">
-                                    {{/if}}
-                                </a>
-                                <div class="aside-alert-link">
-                                    <a href="#"
-                                        data-ajax="{'url':'/cms/ajax/form/users/profile','html':'.content-body'}"><i
-                                            class="ri-user-settings-line"></i></a>
-                                    <a href="#" data-ajax="{'url':'/cms/logout'}" data-toggle="tooltip"
-                                        title="{{_lang.signout}}"><i class="ri-logout-box-r-line"></i></a>
-                                </div>
-                            </div>
-                            <div class="aside-loggedin-user">
-                                <a href="#loggedinMenu" class="d-flex align-items-center justify-content-between mg-b-2"
-                                    data-toggle="collapse">
-                                    <h6 class="tx-semibold mg-b-0">{{first_name}} {{last_name}}</h6>
-                                    <i data-feather="chevron-down"></i>
-                                </a>
-                                <p class="tx-color-03 tx-12 mg-b-0">{{role}}</p>
-                            </div>
-                        </template>
-                    </div>
-                    <div class="collapse" id="loggedinMenu">
-                        <ul class="nav nav-aside mg-b-0">
-                            <li class="nav-item">
-                                <a href="#" data-ajax="{'url':'/cms/ajax/form/users/profile','html':'.content-body'}"
-                                    class="nav-link"><i class="ri-user-settings-line"></i>
-                                    <span>&nbsp;{{_lang.profile}}</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" data-ajax="{'url':'/cms/logout'}" class="nav-link"><i
-                                        class="ri-logout-box-r-line"></i>
-                                    <span>&nbsp;{{_lang.signout}}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-                <ul class="nav nav-aside"
-                    wb-tree="{'table':'_settings','item':'settings','field':'cmsmenu','branch':'aside','parent':'false'}">
+                <ul class="nav nav-aside" wb-tree="{'table':'_settings','item':'settings','field':'cmsmenu','branch':'aside','parent':'false'}">
                     <li class="mg-t-25" wb-if=' "{{_lvl}}" == "1" AND "{{active}}" == "on"'>
                         <span class="nav-label">{{data.label}}</span>
                     </li>
@@ -181,21 +133,34 @@
                         </div><!-- dropdown-menu -->
                     </div>
 
-                    <div class="dropdown dropdown-profile">
+                    <div class="dropdown dropdown-profile ml-2" id="userProfileMenu">
+                        <template>
                         <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static"
                             aria-expanded="false">
-                            <div class="avatar avatar-xs"><img src="https://via.placeholder.com/500"
-                                    class="rounded-circle" alt=""></div>
+                            <div class="avatar avatar-xs">
+                                    {{#if avatar.0.img}}
+                                    <img data-src="/thumbc/64x64/src/{{avatar.0.img}}" class="rounded-circle" alt="">
+                                    {{else}}
+                                    <img data-src="/engine/modules/cms/tpl/assets/img/user.svg" class="rounded-circle"
+                                        alt="">
+                                    {{/if}}
+                            </div>
                                     <div class="ml-2">
-                                        {{_sess.user.first_name}} {{_sess.user.last_name}}
-                                        <sup class="mt-2 d-block tx-dark">{{_sess.user.role}}</sup>
+                                        {{first_name}} {{last_name}}
+                                        <sup class="mt-2 d-block tx-dark">{{role}}</sup>
                             </div>
                         </a><!-- dropdown-link -->
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="avatar avatar-lg mg-b-15"><img src="https://via.placeholder.com/500"
-                                    class="rounded-circle" alt=""></div>
-                            <h6 class="tx-semibold mg-b-5">Katherine Pechon</h6>
-                            <p class="mg-b-25 tx-12 tx-color-03">Administrator</p>
+                            <div class="avatar avatar-lg mg-b-15">
+                                    {{#if avatar.0.img}}
+                                    <img data-src="/thumbc/64x64/src/{{avatar.0.img}}" class="rounded-circle" alt="">
+                                    {{else}}
+                                    <img data-src="/engine/modules/cms/tpl/assets/img/user.svg" class="rounded-circle"
+                                        alt="">
+                                    {{/if}}
+                            </div>
+                            <h6 class="tx-semibold mg-b-5">{{first_name}} {{last_name}}</h6>
+                            <p class="mg-b-25 tx-12 tx-color-03">{{role}}</p>
 
                             <a href="" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -253,8 +218,9 @@
                                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                                     <polyline points="16 17 21 12 16 7"></polyline>
                                     <line x1="21" y1="12" x2="9" y2="12"></line>
-                                </svg>Sign Out</a>
+                                </svg>Выход</a>
                         </div><!-- dropdown-menu -->
+                        </template>
                     </div>
 
                 </nav>

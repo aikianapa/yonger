@@ -17,7 +17,7 @@
 
         </div>
         <!-- navbar-menu-wrapper -->
-        <div class="navbar-right">
+        <nav class="navbar-right w-50">
             <a href="/signin/" class="btn btn-sm btn-light px-5 mr-2">
                 Вход
             </a>
