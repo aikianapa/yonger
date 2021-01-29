@@ -1,4 +1,3 @@
-@import url("/engine/lib/fonts/roboto/roboto.css");
 @import url("/engine/css/modals.less");
 @icon_size: 21px;
 @round: 0.25rem;
@@ -6,6 +5,7 @@
 body {
     overflow: hidden;
     font-family: 'Roboto';
+    font-weight: 400;
 
     .wblogo {
         font-weight: 100;
@@ -73,6 +73,7 @@ body {
     }
 
     aside {
+        width: 250px;
         transition-duration: .4s;
 
         .aside-logo {
@@ -91,7 +92,8 @@ body {
 
         .nav-link {
             text-transform: none;
-            font-weight: normal;
+            font-weight: 500;
+            font-size: .8rem;
         }
 
         #userProfileMenu {
@@ -133,11 +135,16 @@ body {
             }
 
             ul {
-                padding-left: 15px;
+                padding-left: 0px;
                 font-size: 12px;
 
                 li {
                     list-style: none;
+text-align: left;
+letter-spacing: 0.1px;
+color: #171725;
+opacity: 1;
+font-size: 14px;
                 }
             }
         }

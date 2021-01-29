@@ -12,11 +12,6 @@
     padding: 20px;
 }
 
-.icon {
-    transition: all .3s;
-    stroke: red;
-}
-
 .logo-menu {
     display: flex;
     align-items: center;
@@ -102,4 +97,10 @@ button {
     color: #0062FF;
     font-size: 12px;
     font-weight: 600;
+}
+
+.nav-aside > li > div {
+    text-transform: uppercase;
+    color: #92929D;
+    font-size: 14px;
 }

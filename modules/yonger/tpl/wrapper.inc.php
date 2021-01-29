@@ -30,7 +30,8 @@
     <meta name="author" content="Oleg Frolov">
     <link rel="shortcut icon" type="image/svg+xml" href="/tpl/assets/img/favicon.svg">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 		<wb-snippet name="wbapp" />
 
     <title>Web Basic - Pandemic version</title>
@@ -45,7 +46,8 @@
 				,"{{_var.base}}/assets/css/skin.cool.css"
         ,"{{_var.base}}/assets/css/yonger.less"
         ,"{{_var.base}}/assets/css/custom.css"
-				,"/engine/lib/fonts/remixicons/remixicon.css"
+        ,"/engine/lib/fonts/remixicons/remixicon.css"
+        ,"/engine/lib/fonts/font-awesome/css/font-awesome.min.css"
 			]);
 
 			wbapp.loadScripts([
