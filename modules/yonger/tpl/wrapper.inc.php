@@ -43,9 +43,8 @@
         "{{_var.base}}/assets/css/dashforge.css"
 				,"{{_var.base}}/assets/css/dashforge.chat.css"
 				,"{{_var.base}}/assets/css/skin.cool.css"
-				,"{{_var.base}}/assets/css/cms.less"
+				,"{{_var.base}}/assets/css/yonger.less"
 				,"/engine/lib/fonts/remixicons/remixicon.css"
-				,"/engine/lib/fonts/font-awesome/css/font-awesome.min.css"
 			]);
 
 			wbapp.loadScripts([

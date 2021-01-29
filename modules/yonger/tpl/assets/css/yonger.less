@@ -2,6 +2,7 @@
 @import url("/engine/css/modals.less");
 @icon_size: 21px;
 @round: 0.25rem;
+
 body {
     overflow: hidden;
     font-family: 'Roboto';
@@ -11,18 +12,32 @@ body {
         line-height: normal;
     }
 
-    
+
     .rounded {
         border-radius: @round;
     }
-    
+
     .content {
         overflow: hidden;
     }
-    .content-body {
-            overflow-x: hidden;
-            overflow-y: auto;
+
+    .content-header {
+        .mi {
+            width: 24px;
+            height: 24px;
+        }
+        div {
+            color: initial;
+        }
+        font: normal normal medium 14px/23px Poppins;
+        letter-spacing: 0.2px;
     }
+
+    .content-body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
     .chat-wrapper {
         overflow: auto;
     }
@@ -30,16 +45,18 @@ body {
     .input-group-append {
         min-width: 40px;
         text-align: center;
+
         .input-group-text {
-          width:100%;
+            width: 100%;
         }
     }
 
     .modal {
         &.contain {
             .modal-dialog {
-                margin-top:0;
+                margin-top: 0;
             }
+
             .modal-body {
                 overflow-y: auto;
                 scrollbar-width: thin;
@@ -57,18 +74,21 @@ body {
 
     aside {
         transition-duration: .4s;
+
         .aside-logo {
             white-space: nowrap;
             overflow: hidden;
         }
+
         .aside-body {
             height: 100vh;
         }
-        .aside-menu-link
-        {
-            font-size:20px;
+
+        .aside-menu-link {
+            font-size: 20px;
             line-height: 20px;
         }
+
         .nav-link {
             text-transform: none;
             font-weight: normal;
@@ -90,30 +110,38 @@ body {
                 }
             }
         }
+
         @media (min-width: 992px) {
             .aside-logo {
                 margin-right: 10px;
             }
         }
+
         .aside-menu-link {
             display: flex;
         }
+
         .burger-menu {
             display: none;
         }
+
         .nav-aside {
+
             [class^="ri-"],
             [class*=" ri-"] {
                 font-size: 16px;
             }
+
             ul {
                 padding-left: 15px;
                 font-size: 12px;
+
                 li {
                     list-style: none;
                 }
             }
         }
+
         &.minimize {
             ul {
                 padding-left: 0;
@@ -130,25 +158,28 @@ body {
 
         }
     }
+
     &.chat-content-show {
         aside {
             @media (max-width: 992px) {
                 .burger-menu {
-                    display: flex!important;
+                    display: flex !important;
                 }
+
                 .aside-menu-link {
-                    display: none!important;
+                    display: none !important;
                 }
             }
         }
     }
 
-    .input-group .input-group-append > .form-control {
+    .input-group .input-group-append>.form-control {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
 
 }
+
 .cursor-pointer {
     cursor: pointer;
 }
