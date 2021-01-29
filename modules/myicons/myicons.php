@@ -17,6 +17,7 @@ class modMyicons
         $path = str_replace($app->route->path_app, '', $path);
         $file = $path.$icon;
         $sprite = $app->fromFile($app->route->path_app.$file);
+        if (!$sprite) return;
         $id = $sprite->attr('id');
         if ($id == '') {
             $id = 'Layer';

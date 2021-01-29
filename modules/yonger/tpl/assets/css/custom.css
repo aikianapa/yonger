@@ -14,6 +14,7 @@
 
 .icon {
     transition: all .3s;
+    stroke: red;
 }
 
 .logo-menu {

@@ -387,7 +387,7 @@
     }
     </style>
     <script type="wbapp">
-        wbapp.loadScripts(["{{_var.base}}./assets/js/cms.js"]);
+        wbapp.loadScripts(["{{_var.base}}./assets/js/yonger.js"]);
   </script>
 
     <wb-lang>
