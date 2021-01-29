@@ -51,40 +51,35 @@
                 <nav class="nav__list d-flex align-items-center">
                     <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
-                            <svg class="mi">
-                                <use xlink:href="/tpl/assets/img/svg/sprite.svg#cursor"></use>
+                            <svg class="mi mi-cursor.1" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Сайты</span>
                     </a>
                     <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
-                            <svg class="mi">
-                                <use xlink:href="/tpl/assets/img/svg/sprite.svg#done"></use>
+                            <svg class="mi mi-checkmark-sqaure.1" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Проекты</span>
                     </a>
                     <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
-                            <svg class="mi">
-                                <use xlink:href="/tpl/assets/img/svg/sprite.svg#select"></use>
+                            <svg class="mi mi-document-content" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Документы</span>
                     </a>
                     <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
-                            <svg class="mi">
-                                <use xlink:href="/tpl/assets/img/svg/sprite.svg#square"></use>
+                            <svg class="mi mi-user-square" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Контакты</span>
                     </a>
-                    <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
-                        <div class="nav__icon d-flex align-items-center justify-content-center">
-                            <svg class="mi">
-                                <use xlink:href="/tpl/assets/img/svg/sprite.svg#add"></use>
+                    <a href="#" class="btn btn-sm btn-dashed nobr d-flex align-items-center mg-r-20-f">
+                        <div class="d-flex align-items-center justify-content-center mg-r-10">
+                            <svg class="mi mi-grid-layout-add" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Все сервисы</span>

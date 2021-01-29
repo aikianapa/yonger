@@ -5,8 +5,11 @@ class modMyicons
     {
         $this->app = &$dom->app;
         $this->dom = &$dom;
-        $dom->after($this->icon());
-        $dom->remove();
+        $icon = $this->icon();
+        if ($icon) {
+            $dom->after($icon);
+            $dom->remove();
+        }
     }
 
     public function icon() {
@@ -17,7 +20,7 @@ class modMyicons
         $path = str_replace($app->route->path_app, '', $path);
         $file = $path.$icon;
         $sprite = $app->fromFile($app->route->path_app.$file);
-        if (!$sprite) return;
+        if (!$sprite) return false;
         $id = $sprite->attr('id');
         if ($id == '') {
             $id = 'Layer';
@@ -26,8 +29,8 @@ class modMyicons
         }
         $svg = $app->fromFile(__DIR__.'/myicon_ui.php');
         $svg->find('use')->attr('href', $file.'#'.$id);
-        //$svg->find('use')->after($sprite->inner());
-        //$svg->find('use')->remove();
+        $svg->find('use')->after($sprite->inner());
+        $svg->find('use')->remove();
         $svg->attr('class', $this->dom->attr('class'));
         return $svg->outer();
     }

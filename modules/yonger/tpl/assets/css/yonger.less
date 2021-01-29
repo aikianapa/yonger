@@ -12,6 +12,9 @@ body {
         line-height: normal;
     }
 
+    svg.mi [stroke] {
+        stroke: #92929D;
+    }
 
     .rounded {
         border-radius: @round;
@@ -26,9 +29,13 @@ body {
             width: 24px;
             height: 24px;
         }
-        div {
-            color: initial;
+
+        .btn-dashed {
+            border: 1px dashed #F1F1F5;
+            border-radius: 10px;
         }
+
+        color: #171725;
         font: normal normal medium 14px/23px Poppins;
         letter-spacing: 0.2px;
     }
@@ -128,7 +135,6 @@ body {
         }
 
         .nav-aside {
-
             [class^="ri-"],
             [class*=" ri-"] {
                 font-size: 16px;
@@ -140,11 +146,11 @@ body {
 
                 li {
                     list-style: none;
-text-align: left;
-letter-spacing: 0.1px;
-color: #171725;
-opacity: 1;
-font-size: 14px;
+                    text-align: left;
+                    letter-spacing: 0.1px;
+                    color: #171725;
+                    opacity: 1;
+                    font-size: 14px;
                 }
             }
         }

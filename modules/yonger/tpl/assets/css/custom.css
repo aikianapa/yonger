@@ -47,8 +47,8 @@ a.nav__item {
     background-color: #F6FAFF;
 }
 
-.nav__item span {
-    font-weight: bold;
+.nav__list span {
+    font-weight: 500;
 }
 
 .nav__icon {
