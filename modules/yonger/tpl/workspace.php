@@ -99,35 +99,35 @@
         <div class="content ht-100v pd-0">
             <div class="content-header">
                 <nav class="nav nav__list d-flex align-items-center">
-                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-10">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
                             <svg class="mi mi-cursor.1" wb-module="myicons">
                             </svg>
                         </div>
-                        <span>Сайты</span>
+                        <span class='d-none d-lg-inline'>Сайты</span>
                     </a>
-                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-10">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
                             <svg class="mi mi-checkmark-sqaure.1" wb-module="myicons">
                             </svg>
                         </div>
-                        <span>Проекты</span>
+                        <span class='d-none d-lg-inline'>Проекты</span>
                     </a>
-                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-10">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
                             <svg class="mi mi-document-content" wb-module="myicons">
                             </svg>
                         </div>
-                        <span>Документы</span>
+                        <span class='d-none d-lg-inline'>Документы</span>
                     </a>
-                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-10">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
                             <svg class="mi mi-user-square" wb-module="myicons">
                             </svg>
                         </div>
-                        <span>Контакты</span>
+                        <span class='d-none d-lg-inline'>Контакты</span>
                     </a>
-                    <a href="#" class="nav-link btn btn-sm btn-dashed nobr d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link btn btn-sm btn-dashed nobr d-flex align-items-center mg-r-10">
                         <div class="d-flex align-items-center justify-content-center mg-r-10">
                             <svg class="mi mi-grid-layout-add" wb-module="myicons">
                             </svg>
