@@ -1,8 +1,7 @@
-<html>
-<wb-include wb="{'src':'/modules/yonger/tpl/wrapper.inc.php'}" />
+<html lang="en">
 <meta http-equiv="refresh" content="2; url=/signin/" wb-disallow="user">
-
-<wb-jq wb-append="body">
+<wb-include wb="{'src':'/modules/yonger/tpl/head.inc.php'}" />
+<body class="app-chat">
     <div class="app-chat" wb-allow="admin">
         <div class="container">
             <div class="alert alert-outline alert-danger d-flex align-items-center t-100" role="alert">
@@ -11,12 +10,11 @@
         </div>
     </div>
     <div wb-allow="user">
-
         <aside class="aside aside-fixed">
             <div class="aside-header">
                 <a href="#" class="aside-logo"
                     data-ajax="{'url':'/cms/ajax/form/_settings/start','html':'.content-body'}" auto>
-                    <img src="/tpl/assets/img/svg/logo.svg" alt="Логотип">
+                    <wb-include wb-src="/tpl/assets/img/svg/logo.svg" alt="Логотип" />
                 </a>
 
                 <svg class="icon logo-menu aside-menu-link">
@@ -29,67 +27,96 @@
                     <span>сайты</span>
                     <button class="mg-l-auto">+ создать сайт</button>
                 </div>
+                <div class="dropdown dropdown-profile" id="sitesMenu">
+                    <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
+                        <div class="avatar avatar-xs">
+                            <img data-src="/thumbc/64x64/src/{{avatar.0.img}}" class="rounded-circle" alt="">
+                        </div>
+                        <div class="d-none d-xl-flex flex-column mg-r-5">
+                            <h6 class="tx-semibold mg-b-0">Мой сайт</h6>
+                            <p class="mg-b-0 tx-12 tx-color-03">описание</p>
+
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-down">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a><!-- dropdown-link -->
+                    <div class="dropdown-menu dropdown-menu-right tx-13 mg-t-10">
+                        <a href="" class="dropdown-item">Сайт 1</a>
+                        <a href="" class="dropdown-item">Сайт 2</a>
+                    </div><!-- dropdown-menu -->
+                </div>
                 <ul class="nav nav-aside">
                     <li>
                         <div class="mg-y-20">Навигация</div>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-ajax="{'url':'/cms/ajax/form/_settings/start','html':'.content-body'}" class="nav-link">
-                        <svg class="mi mi-grid-layout.1" wb-module="myicons"></svg>
-                        <span>Рабочий стол</span>
+                        <a href="#" data-ajax="{'url':'/cms/ajax/form/_settings/start','html':'.content-body'}"
+                            class="nav-link">
+                            <svg class="mi mi-grid-layout.1" wb-module="myicons"></svg>
+                            <span>Рабочий стол</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
-                        <svg class="mi mi-content-edit-pen" wb-module="myicons"></svg>
-                        <span>Заявки</span>
+                        <a href="#" data-ajax="{'url':'/cms/ajax/form/orders/list/','html':'.content-body'}"
+                            class="nav-link">
+                            <svg class="mi mi-content-edit-pen" wb-module="myicons"></svg>
+                            <span>Заявки</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
-                        <svg class="mi mi-messages-chat-07" wb-module="myicons"></svg>
-                        <span>Сообщения</span>
+                        <a href="#" data-ajax="{'url':'/cms/ajax/form/messages/list/','html':'.content-body'}"
+                            class="nav-link">
+                            <svg class="mi mi-messages-chat-07" wb-module="myicons"></svg>
+                            <span>Сообщения</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
-                        <svg class="mi mi-messages-chat.1" wb-module="myicons"></svg>
-                        <span>Коментарии</span>
+                        <a href="#" data-ajax="{'url':'/cms/ajax/form/comments/list/','html':'.content-body'}"
+                            class="nav-link">
+                            <svg class="mi mi-messages-chat.1" wb-module="myicons"></svg>
+                            <span>Коментарии</span>
                         </a>
                     </li>
                     <li class="nav-item with-sub">
-                        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/list/','html':'.content-body'}" class="nav-link">
-                        <svg class="mi mi-content-08" wb-module="myicons"></svg>
-                        <span>Страницы</span>
+                        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/list/','html':'.content-body'}"
+                            class="nav-link">
+                            <svg class="mi mi-content-08" wb-module="myicons"></svg>
+                            <span>Страницы</span>
                         </a>
                         <ul>
                             <li class="nav-item">
-                                <a href="#" class="nav-link" data-ajax="{'url':'/cms/ajax/form/pages/list','html':'.content-body','filter':{'active':'on'}}">Активные</a>
+                                <a href="#" class="nav-link"
+                                    data-ajax="{'url':'/cms/ajax/form/pages/list','html':'.content-body','filter':{'active':'on'}}">Активные</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link" data-ajax="{'url':'/cms/ajax/form/pages/list','html':'.content-body','filter':{'active':''}}">Скрытые</a>
+                                <a href="#" class="nav-link"
+                                    data-ajax="{'url':'/cms/ajax/form/pages/list','html':'.content-body','filter':{'active':''}}">Скрытые</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
-                        <svg class="mi mi-programing-data.9" wb-module="myicons"></svg>
-                        <span>Разделы</span>
+                            <svg class="mi mi-programing-data.9" wb-module="myicons"></svg>
+                            <span>Разделы</span>
                         </a>
                     </li>
                     <li>
                         <div class="mg-y-20">Система</div>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" class="nav-link">
-                        <svg class="mi mi-settings.2" wb-module="myicons"></svg>
-                        <span>Настройки</span>
+                        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}"
+                            class="nav-link">
+                            <svg class="mi mi-settings.2" wb-module="myicons"></svg>
+                            <span>Настройки</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
-                        <svg class="mi mi-protection-06" wb-module="myicons"></svg>
-                        <span>Поддержка</span>
+                            <svg class="mi mi-protection-06" wb-module="myicons"></svg>
+                            <span>Поддержка</span>
                         </a>
                     </li>
                 </ul>
@@ -137,12 +164,12 @@
                 </nav>
 
                 <div class="navbar__right d-flex align-items-center">
-                    <a id="navbarSearch" href="#" class="nav-link search-link navbar-right-icon mg-r-20-f">
-                        <svg  class="mi">
+                    <a id="navbarSearch" href="#" class="nav-link search-link navbar-right-icon mg-r-10">
+                        <svg class="mi">
                             <use xlink:href="/tpl/assets/img/svg/sprite.svg#search"></use>
                         </svg>
                     </a>
-                    <div class="dropdown dropdown-message mg-r-20-f">
+                    <div class="dropdown dropdown-message mg-r-10">
                         <a href="" class="dropdown-link new-indicator" data-toggle="dropdown">
                             <svg class="mi">
                                 <use xlink:href="/tpl/assets/img/svg/sprite.svg#users"></use>
@@ -198,7 +225,7 @@
                             <div class="dropdown-footer"><a href="">View all Messages</a></div>
                         </div><!-- dropdown-menu -->
                     </div>
-                    <div class="dropdown dropdown-message mg-r-20-f">
+                    <div class="dropdown dropdown-message mg-r-10">
                         <a href="" class="dropdown-link new-indicator" data-toggle="dropdown">
                             <svg class="mi">
                                 <use xlink:href="/tpl/assets/img/svg/sprite.svg#chat"></use>
@@ -254,8 +281,8 @@
                             <div class="dropdown-footer"><a href="">View all Messages</a></div>
                         </div><!-- dropdown-menu -->
                     </div>
-                    <!-- dropdown -->
-                    <div class="dropdown dropdown-notification mg-r-30-f">
+
+                    <div class="dropdown dropdown-notification mg-r-10">
                         <a href="" class="dropdown-link new-indicator" data-toggle="dropdown">
                             <svg class="mi">
                                 <use xlink:href="/tpl/assets/img/svg/sprite.svg#bell"></use>
@@ -306,7 +333,7 @@
                             </a>
                             <div class="dropdown-footer"><a href="">View all Notifications</a></div>
                         </div><!-- dropdown-menu -->
-                    </div><!-- dropdown -->
+                    </div>
 
                     <div class="dropdown dropdown-profile" id="userProfileMenu">
                         <template>
@@ -319,7 +346,7 @@
                                         alt="">
                                     {{/if}}
                                 </div>
-                                <div class="d-flex flex-column mg-r-10">
+                                <div class="d-none d-xl-flex flex-column mg-r-5">
 
                                     <h6 class="tx-semibold mg-b-0">{{first_name}} {{last_name}}</h6>
                                     <p class="mg-b-0 tx-12 tx-color-03">{{role}}</p>
@@ -411,7 +438,7 @@
                                     </svg>Выход</a>
                             </div><!-- dropdown-menu -->
                         </template>
-                    </div><!-- dropdown -->
+                    </div>
                 </div>
             </div>
             <!-- content-header -->
@@ -420,31 +447,10 @@
             </div>
         </div>
     </div>
-    <style wb-if='"{{_sett.logofontsize}}" > ""'>
-    .aside-logo {
-        font-size: {
-                {
-                _sett.logofontsize
-            }
-        }
-
-        px;
-    }
-    </style>
     <script type="wbapp">
         wbapp.loadScripts(["{{_var.base}}./assets/js/yonger.js"]);
-  </script>
-
-    <wb-lang>
-        [en]
-        forms = Forms
-        profile = Profile
-        signout = Sign Out
-        [ru]
-        forms = Формы
-        profile = Профиль
-        signout = Выход
-    </wb-lang>
-</wb-jq>
+    </script>
+    <wb-include wb="{'src':'/modules/yonger/tpl/foot.inc.php'}" />
+</body>
 
 </html>

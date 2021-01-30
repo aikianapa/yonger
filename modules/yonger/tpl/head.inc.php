@@ -1,5 +1,5 @@
-<html lang="en">
-	<wb-var base="/modules/yonger/tpl/" />
+<html>
+<wb-var base="/modules/yonger/tpl/" />
   <head>
 
     <!-- Required meta tags -->
@@ -37,28 +37,4 @@
     <title>Web Basic - Pandemic version</title>
 
   </head>
-  <body class="app-chat">
-
-		<script type="wbapp">
-			wbapp.loadStyles([
-        "{{_var.base}}/assets/css/dashforge.css"
-				,"{{_var.base}}/assets/css/dashforge.chat.css"
-				,"{{_var.base}}/assets/css/skin.cool.css"
-        ,"{{_var.base}}/assets/css/yonger.less"
-        ,"{{_var.base}}/assets/css/custom.css"
-        ,"/engine/lib/fonts/remixicons/remixicon.css"
-        ,"/engine/lib/fonts/font-awesome/css/font-awesome.min.css"
-			]);
-
-			wbapp.loadScripts([
-				 "/engine/lib/bootstrap/js/bootstrap.bundle.min.js"
-				,"{{_var.base}}/assets/lib/perfect-scrollbar/perfect-scrollbar.min.js"
-				,"{{_var.base}}/assets/js/dashforge.js"
-				,"{{_var.base}}/assets/js/dashforge.aside.js"
-				,"{{_var.base}}/assets/lib/js-cookie/js.cookie.js"
-			]);
-
-		</script>
-
-  </body>
-</html>
+  </html>

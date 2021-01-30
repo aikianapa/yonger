@@ -3,17 +3,12 @@
 @round: 0.25rem;
 @color-menu: #171725;
 @color-hover: #0062FF;
-
+@color-logo: #273244;
 
 body {
     overflow: hidden;
     font-family: 'Roboto';
     font-weight: 400;
-
-    .wblogo {
-        font-weight: 100;
-        line-height: normal;
-    }
 
     svg.mi [stroke] {
         stroke: #92929D;
@@ -91,17 +86,27 @@ body {
         border-radius: 5px;
     }
 
-    aside {
+    .aside {
         width: 250px;
         transition-duration: .4s;
 
         .aside-logo {
             white-space: nowrap;
             overflow: hidden;
+            color: @color-logo;
+            svg path:not(.d,.c) {
+                fill: @color-logo;
+                stroke: @color-logo;
+            }
+            svg path:not(.c) {
+                fill: @color-logo;
+            }
         }
+
 
         .aside-body {
             height: 100vh;
+            padding: 20px;
         }
 
         .aside-menu-link {

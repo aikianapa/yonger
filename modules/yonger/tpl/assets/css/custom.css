@@ -1,17 +1,5 @@
 
 
-.aside {
-    width: 250px;
-}
-
-.aside-logo {
-    color: #273244;
-}
-
-.aside-body {
-    padding: 20px;
-}
-
 .logo-menu {
     display: flex;
     align-items: center;
@@ -20,11 +8,6 @@
     cursor: pointer;
     width: 32px;
     height: 32px;
-}
-
-
-.logo-menu:hover {
-    stroke: #000000;
 }
 
 .aside-header {
