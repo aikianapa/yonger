@@ -29,55 +29,105 @@
                     <span>сайты</span>
                     <button class="mg-l-auto">+ создать сайт</button>
                 </div>
-                <ul class="nav nav-aside"
-                    wb-tree="{'table':'_settings','item':'settings','field':'cmsmenu','branch':'aside','parent':'false'}">
-                    <li wb-if=' "{{_lvl}}" == "1" AND "{{active}}" == "on"'>
-                        <div class="mg-y-20">{{data.label}}</div>
+                <ul class="nav nav-aside">
+                    <li>
+                        <div class="mg-y-20">Навигация</div>
                     </li>
-                    <li class="nav-item" wb-if=' "{{_lvl}}" == "2" AND "{{active}}" == "on" '>
-                        <wb-var icon="{{data.icon}}" wb-if='"{{data.icon}}">""' />
-                        <wb-var icon="ri-sticky-note-line" wb-if='"{{data.icon}}"==""' />
-                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link"><i class="{{_var.icon}}"></i>&nbsp;&nbsp;
-                            <span>{{data.label}}</span>
+                    <li class="nav-item">
+                        <a href="#" data-ajax="{'url':'/cms/ajax/form/_settings/start','html':'.content-body'}" class="nav-link">
+                        <svg class="mi mi-grid-layout.1" wb-module="myicons"></svg>
+                        Рабочий стол
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
+                        <svg class="mi mi-content-edit-pen" wb-module="myicons"></svg>
+                        Заявки
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
+                        <svg class="mi mi-messages-chat-07" wb-module="myicons"></svg>
+                        Сообщения
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
+                        <svg class="mi mi-messages-chat.1" wb-module="myicons"></svg>
+                        Коментарии
+                        </a>
+                    </li>
+                    <li class="nav-item with-sub">
+                        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/list/','html':'.content-body'}" class="nav-link">
+                        <svg class="mi mi-content-08" wb-module="myicons"></svg>
+                        <span>Страницы</span>
+                        </a>
+                        <ul>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-ajax="{'url':'/cms/ajax/form/pages/list','html':'.content-body','filter':{'active':'on'}}">Активные</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-ajax="{'url':'/cms/ajax/form/pages/list','html':'.content-body','filter':{'active':''}}">Скрытые</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
+                        <svg class="mi mi-programing-data.9" wb-module="myicons"></svg>
+                        Разделы
+                        </a>
+                    </li>
+                    <li>
+                        <div class="mg-y-20">Система</div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" class="nav-link">
+                        <svg class="mi mi-settings.2" wb-module="myicons"></svg>
+                        Настройки
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
+                        <svg class="mi mi-protection-06" wb-module="myicons"></svg>
+                        Поддержка
                         </a>
                     </li>
                 </ul>
-
             </div>
         </aside>
 
         <div class="content ht-100v pd-0">
             <div class="content-header">
-                <nav class="nav__list d-flex align-items-center">
-                    <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
+                <nav class="nav nav__list d-flex align-items-center">
+                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-20-f">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
                             <svg class="mi mi-cursor.1" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Сайты</span>
                     </a>
-                    <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-20-f">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
                             <svg class="mi mi-checkmark-sqaure.1" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Проекты</span>
                     </a>
-                    <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-20-f">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
                             <svg class="mi mi-document-content" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Документы</span>
                     </a>
-                    <a href="#" class="nav__item d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link nav__item d-flex align-items-center mg-r-20-f">
                         <div class="nav__icon d-flex align-items-center justify-content-center">
                             <svg class="mi mi-user-square" wb-module="myicons">
                             </svg>
                         </div>
                         <span>Контакты</span>
                     </a>
-                    <a href="#" class="btn btn-sm btn-dashed nobr d-flex align-items-center mg-r-20-f">
+                    <a href="#" class="nav-link btn btn-sm btn-dashed nobr d-flex align-items-center mg-r-20-f">
                         <div class="d-flex align-items-center justify-content-center mg-r-10">
                             <svg class="mi mi-grid-layout-add" wb-module="myicons">
                             </svg>
@@ -87,7 +137,7 @@
                 </nav>
 
                 <div class="navbar__right d-flex align-items-center">
-                    <a id="navbarSearch" href="#" class="search-link navbar-right-icon mg-r-20-f">
+                    <a id="navbarSearch" href="#" class="nav-link search-link navbar-right-icon mg-r-20-f">
                         <svg  class="mi">
                             <use xlink:href="/tpl/assets/img/svg/sprite.svg#search"></use>
                         </svg>

@@ -1,6 +1,9 @@
 @import url("/engine/css/modals.less");
 @icon_size: 21px;
 @round: 0.25rem;
+@color-menu: #171725;
+@color-hover: #0062FF;
+
 
 body {
     overflow: hidden;
@@ -33,11 +36,20 @@ body {
         .btn-dashed {
             border: 1px dashed #F1F1F5;
             border-radius: 10px;
+            padding: 5px 10px;
         }
-
-        color: #171725;
+        color:@color-menu;
         font: normal normal medium 14px/23px Poppins;
         letter-spacing: 0.2px;
+        .nav-link:hover {
+            color: @color-hover;
+            svg [stroke] {
+                stroke: @color-hover;
+            }
+            &.btn-dashed {
+                border-color: @color-hover;
+            }
+        }
     }
 
     .content-body {
@@ -97,10 +109,63 @@ body {
             line-height: 20px;
         }
 
-        .nav-link {
-            text-transform: none;
-            font-weight: 500;
-            font-size: .8rem;
+        .nav-aside {
+
+            [class^="ri-"],
+            [class*=" ri-"] {
+                font-size: 16px;
+            }
+
+            ul {
+                padding-left: 0px;
+                font-size: 12px;
+
+                li {
+                    list-style: none;
+                    text-align: left;
+                    letter-spacing: 0.1px;
+                    color: @color-menu;
+                    opacity: 1;
+                    font-size: 14px;
+                }
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .nav-item {
+                 &.with-sub {
+                    > .nav-link::after {
+                        content: url('/modules/myicons/icons/interface-essential-30.svg');
+                        width: 20px;
+                        height: 20px;
+                    }
+                    ul .nav-link {
+                        padding: 14px 5px;
+                        font-weight: 400;
+                        &:before {
+                            border: none;
+                        }
+                    }
+                 }
+            }
+
+            .nav-link {
+                text-transform: none;
+                font-weight: 500;
+                font-size: .8rem;
+                height: 50px;
+
+                &:hover {
+                    color: @color-hover!important;
+
+                    svg [stroke] {
+                        stroke: @color-hover;
+                    }
+                }
+            }
         }
 
         #userProfileMenu {
@@ -132,27 +197,6 @@ body {
 
         .burger-menu {
             display: none;
-        }
-
-        .nav-aside {
-            [class^="ri-"],
-            [class*=" ri-"] {
-                font-size: 16px;
-            }
-
-            ul {
-                padding-left: 0px;
-                font-size: 12px;
-
-                li {
-                    list-style: none;
-                    text-align: left;
-                    letter-spacing: 0.1px;
-                    color: #171725;
-                    opacity: 1;
-                    font-size: 14px;
-                }
-            }
         }
 
         &.minimize {
