@@ -36,25 +36,25 @@
                     <li class="nav-item">
                         <a href="#" data-ajax="{'url':'/cms/ajax/form/_settings/start','html':'.content-body'}" class="nav-link">
                         <svg class="mi mi-grid-layout.1" wb-module="myicons"></svg>
-                        Рабочий стол
+                        <span>Рабочий стол</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
                         <svg class="mi mi-content-edit-pen" wb-module="myicons"></svg>
-                        Заявки
+                        <span>Заявки</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
                         <svg class="mi mi-messages-chat-07" wb-module="myicons"></svg>
-                        Сообщения
+                        <span>Сообщения</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
                         <svg class="mi mi-messages-chat.1" wb-module="myicons"></svg>
-                        Коментарии
+                        <span>Коментарии</span>
                         </a>
                     </li>
                     <li class="nav-item with-sub">
@@ -74,7 +74,7 @@
                     <li class="nav-item">
                         <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
                         <svg class="mi mi-programing-data.9" wb-module="myicons"></svg>
-                        Разделы
+                        <span>Разделы</span>
                         </a>
                     </li>
                     <li>
@@ -83,13 +83,13 @@
                     <li class="nav-item">
                         <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" class="nav-link">
                         <svg class="mi mi-settings.2" wb-module="myicons"></svg>
-                        Настройки
+                        <span>Настройки</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
                         <svg class="mi mi-protection-06" wb-module="myicons"></svg>
-                        Поддержка
+                        <span>Поддержка</span>
                         </a>
                     </li>
                 </ul>
