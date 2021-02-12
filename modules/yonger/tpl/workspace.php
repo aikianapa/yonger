@@ -25,7 +25,9 @@
             <div class="aside-body ps">
                 <div class="aside-loggedin d-flex align-items-center justify-content-between">
                     <span>сайты</span>
-                    <button class="mg-l-auto">+ создать сайт</button>
+                    <button class="mg-l-auto" data-ajax="{'url':'/ajax/renderTpl/modules/yonger/tpl/create_site.php','html':'.content-body'}">
+                    + создать сайт
+                    </button>
                 </div>
                 <div class="dropdown dropdown-profile" id="sitesMenu">
                     <a href="" class="dropdown-link" data-toggle="dropdown" data-display="static">
