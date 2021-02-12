@@ -46,8 +46,9 @@
                         </svg>
                     </a><!-- dropdown-link -->
                     <div class="dropdown-menu dropdown-menu-right tx-13 mg-t-10">
-                        <a href="" class="dropdown-item">Сайт 1</a>
-                        <a href="" class="dropdown-item">Сайт 2</a>
+                        <wb-foreach wb="table=sites&bind=aside.sites&render=server" wb-filter="login={{_user.login}}">
+                            <a href="" class="dropdown-item" data-id="{{id}}">{{site}}</a>
+                        </wb-foreach>
                     </div><!-- dropdown-menu -->
                 </div>
                 <ul class="nav nav-aside">

@@ -3,6 +3,7 @@ class modYonger
 {
     public function __construct($app)
     {
+        
         $mode = $app->route->mode;
         $mode == 'workspace' ? null : $app->apikey('module');
         $this->app = $app;
@@ -41,7 +42,7 @@ class modYonger
         return $ws;
     }
 
-    public function settings()
+    private function settings()
     {
         $app = $this->app;
         $out = $app->getForm('_settings', $app->vars("_route.form"));
@@ -54,9 +55,32 @@ class modYonger
         die;
     }
 
-    public function create_site() {
-        
-
-        echo 23451345;
+    private function create_site() {
+        $app = $this->app;
+        $login = $this->main_login();
+        if ($login) {
+            $site = $app->vars('_post.formdata');
+            $site['login'] = $login;
+            $site = $app->itemSave('sites',$site);
+            if ($site) {
+                return json_encode(['error'=>false,'data'=>$site]);
+            } else {
+                return json_encode(['error'=>true,'msg'=>'Неизвестная ошибка']);
+            }
+        } else {
+            return json_encode(['error'=>true,'msg'=>'Запрещено для данного пользователя']);
+        }
     }
+
+    private function main_login() {
+        $user = $this->app->vars('_user');
+        $login = false;
+        if (isset($user['login']) && $user['login'] > '' && $user['active'] == 'on') {
+            $login = $user['login'];
+        } else {
+
+        }
+        return $login;
+    }
+
 }
