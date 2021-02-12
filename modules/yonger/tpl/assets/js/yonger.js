@@ -72,8 +72,9 @@ $(document).on("wb-ajax-done",function(e,params) {
     if ($(document).find(".chat-sidebar").length == 0) $("body").removeClass("chat-content-show");
 });
 
-$(document).on("wb-getsess", function () {
+var yongerWorkspace = function() {
     wbapp.storage('cms.profile.user',wbapp._session.user);
+    console.log(2542345);
     var profileMenu = Ractive({
       target: "#userProfileMenu",
       template: wbapp.template["#userProfileMenu"].html,
@@ -81,4 +82,5 @@ $(document).on("wb-getsess", function () {
     });
     $("#userProfileMenu").data("ractive",profileMenu);
     wbapp.lazyload();
-});
+};
+yongerWorkspace();
