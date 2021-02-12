@@ -4,6 +4,7 @@ class modYonger
     public function __construct($app)
     {
         $mode = $app->route->mode;
+        $mode == 'workspace' ? null : $app->apikey('module');
         $this->app = $app;
         if (method_exists($this, $mode)) {
             echo $this->$mode();
@@ -51,5 +52,11 @@ class modYonger
         }
         echo $out;
         die;
+    }
+
+    public function create_site() {
+        
+
+        echo 23451345;
     }
 }

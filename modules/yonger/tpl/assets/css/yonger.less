@@ -4,6 +4,7 @@
 @color-menu: #171725;
 @color-hover: #0062FF;
 @color-logo: #273244;
+@color-gray: #E2E2EA;
 
 body {
     overflow: hidden;
@@ -247,6 +248,18 @@ body {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
+
+    input[type=radio]+label.card {
+        border: 1px @color-gray solid;
+        box-shadow: none;
+    }
+
+
+    input[type=radio]:checked + label.card {
+            box-shadow: 0 0 0px 2px @color-hover;
+            border-color:transparent;
+    }
+
 
 }
 
