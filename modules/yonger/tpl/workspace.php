@@ -45,8 +45,8 @@
                             <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
                     </a><!-- dropdown-link -->
-                    <div class="dropdown-menu dropdown-menu-right tx-13 mg-t-10">
-                        <wb-foreach wb="table=sites&bind=aside.sites&render=server" wb-filter="login={{_user.login}}">
+                    <div class="dropdown-menu dropdown-menu-right tx-13 mg-t-10" id="asideSites">
+                        <wb-foreach wb="bind=aside.sites&render=client" wb-ajax='/api/query/sites/' wb-filter="login={{_user.login}}">
                             <a href="" class="dropdown-item" data-id="{{id}}">{{site}}</a>
                         </wb-foreach>
                     </div><!-- dropdown-menu -->

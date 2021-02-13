@@ -83,4 +83,16 @@ var yongerWorkspace = function() {
     $("#userProfileMenu").data("ractive",profileMenu);
     wbapp.lazyload();
 };
+
+var createSite = function () {
+    let form = '#createSite';
+    $(form).verify();
+    wbapp.ajax({ 'form': form, 'url': '/module/yonger/create_site/' }, function (params, data) {
+        if (data.error == false) {
+            wbapp.storage('aside.sites.'+data.data.id,data.data);
+        }
+    });
+}
+
+
 yongerWorkspace();

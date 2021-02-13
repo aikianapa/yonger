@@ -67,14 +67,4 @@
         </div>
     </form>
 </div>
-<script>
-    var createSite = function(){
-        let form = '#createSite';
-        $(form).verify();
-        wbapp.ajax({'form':form,'url':'/module/yonger/create_site/'},function(params,data){
-            console.log(params,data);
-        });
-    }
-</script>
-
 </html>

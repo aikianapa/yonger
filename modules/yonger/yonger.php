@@ -56,6 +56,7 @@ class modYonger
     }
 
     private function create_site() {
+        header("Content-type: application/json; charset=utf-8");
         $app = $this->app;
         $login = $this->main_login();
         if ($login) {
