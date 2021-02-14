@@ -117,7 +117,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-ajax="{{data.ajax}}" class="nav-link">
+                        <a href="#" data-ajax="{'url':'/module/filemanager','html':'.content-body'}" class="nav-link">
                             <svg class="mi mi-protection-06" wb-module="myicons"></svg>
                             <span>Поддержка</span>
                         </a>
