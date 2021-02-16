@@ -1948,3 +1948,6 @@ Stack trace:
 2021-02-16 19:09:10 pid:16184 Workerman[chatserver.php] stopping ...
 2021-02-16 19:09:10 pid:16184 Workerman[chatserver.php] has been stopped
 2021-02-16 19:13:03 pid:6599 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 22:08:21 pid:6599 Workerman[chatserver.php] stopping ...
+2021-02-16 22:08:21 pid:6599 Workerman[chatserver.php] has been stopped
+2021-02-16 22:13:34 pid:24366 Workerman[./chatserver.php] start in DEBUG mode

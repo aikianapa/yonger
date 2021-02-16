@@ -5,7 +5,7 @@ var modChat = function (project = 'test', room = null) {
 
     var chat_connect = function () {
         if (conn && conn.OPEN) return conn;
-        conn = new WebSocket('ws://localhost:8000')
+        conn = new WebSocket('ws://'+json.server+':8000')
         if (conn.OPEN) {
             conn.onopen = function (e) {
                 console.log("Connection established!")
