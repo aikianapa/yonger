@@ -1,0 +1,1950 @@
+2021-02-15 12:55:08 pid:57184 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 12:55:44 pid:57184 Workerman[chatserver.php] stopping ...
+2021-02-15 12:55:44 pid:57184 Workerman[chatserver.php] has been stopped
+2021-02-15 12:59:41 pid:58990 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 13:00:25 pid:58990 Workerman[chatserver.php] stopping ...
+2021-02-15 13:00:25 pid:58990 Workerman[chatserver.php] has been stopped
+2021-02-15 13:00:26 pid:59194 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 13:03:06 pid:59194 Workerman[chatserver.php] stopping ...
+2021-02-15 13:03:06 pid:59194 Workerman[chatserver.php] has been stopped
+2021-02-15 13:03:06 pid:59869 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 13:03:47 pid:59869 Workerman[chatserver.php] stopping ...
+2021-02-15 13:03:47 pid:59869 Workerman[chatserver.php] has been stopped
+2021-02-15 13:03:48 pid:60205 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 13:04:30 pid:60205 Workerman[chatserver.php] stopping ...
+2021-02-15 13:04:30 pid:60205 Workerman[chatserver.php] has been stopped
+2021-02-15 13:04:31 pid:60641 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 15:39:01 pid:60641 Workerman[chatserver.php] stopping ...
+2021-02-15 15:39:01 pid:60641 Workerman[chatserver.php] has been stopped
+2021-02-15 15:39:02 pid:87617 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 15:41:02 pid:87617 Workerman[chatserver.php] stopping ...
+2021-02-15 15:41:02 pid:87617 Workerman[chatserver.php] has been stopped
+2021-02-15 15:41:05 pid:88231 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 15:44:28 pid:88231 Workerman[chatserver.php] stopping ...
+2021-02-15 15:44:28 pid:88231 Workerman[chatserver.php] has been stopped
+2021-02-15 15:44:34 pid:89115 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 15:48:17 pid:89115 Workerman[chatserver.php] stopping ...
+2021-02-15 15:48:17 pid:89115 Workerman[chatserver.php] has been stopped
+2021-02-15 15:48:18 pid:89697 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 15:48:25 pid:89698 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php on line 2497 and exactly 2 expected in /var/www/yonger.loc/modules/chat/chatserver.php:26
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(44): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 15:48:25 pid:89698 Worker[89698] process terminated
+2021-02-15 15:48:25 pid:89697 worker[none:89698] exit with status 64000
+2021-02-15 15:53:15 pid:89772 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php on line 2497 and exactly 2 expected in /var/www/yonger.loc/modules/chat/chatserver.php:26
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(44): Workerman\Worker::runAll()
+#13 {main}
+2021-02-15 15:53:15 pid:89772 Worker[89772] process terminated
+2021-02-15 15:53:15 pid:89697 worker[none:89772] exit with status 64000
+2021-02-15 15:53:44 pid:91207 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php on line 2497 and exactly 2 expected in /var/www/yonger.loc/modules/chat/chatserver.php:26
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(44): Workerman\Worker::runAll()
+#13 {main}
+2021-02-15 15:53:44 pid:91207 Worker[91207] process terminated
+2021-02-15 15:53:44 pid:89697 worker[none:91207] exit with status 64000
+2021-02-15 15:54:15 pid:91319 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php on line 2497 and exactly 2 expected in /var/www/yonger.loc/modules/chat/chatserver.php:26
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(44): Workerman\Worker::runAll()
+#13 {main}
+2021-02-15 15:54:15 pid:91319 Worker[91319] process terminated
+2021-02-15 15:54:15 pid:89697 worker[none:91319] exit with status 64000
+2021-02-15 15:55:00 pid:89697 Workerman[chatserver.php] stopping ...
+2021-02-15 15:55:00 pid:89697 Workerman[chatserver.php] has been stopped
+2021-02-15 15:55:03 pid:91654 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:03:05 pid:91654 Workerman[chatserver.php] stopping ...
+2021-02-15 16:03:05 pid:91654 Workerman[chatserver.php] has been stopped
+2021-02-15 16:11:14 pid:98657 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:11:22 pid:98659 Error: Object of class stdClass could not be converted to string in /var/www/yonger.loc/modules/chat/chatserver.php:42
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(51): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:11:22 pid:98659 Worker[98659] process terminated
+2021-02-15 16:11:22 pid:98657 worker[none:98659] exit with status 64000
+2021-02-15 16:11:53 pid:98657 Workerman[chatserver.php] stopping ...
+2021-02-15 16:11:53 pid:98657 Workerman[chatserver.php] has been stopped
+2021-02-15 16:11:54 pid:98893 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:11:57 pid:98894 Error: Object of class stdClass could not be converted to string in /var/www/yonger.loc/modules/chat/chatserver.php:42
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(51): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:11:57 pid:98894 Worker[98894] process terminated
+2021-02-15 16:11:57 pid:98893 worker[none:98894] exit with status 64000
+2021-02-15 16:16:11 pid:98893 Workerman[chatserver.php] stopping ...
+2021-02-15 16:16:11 pid:98893 Workerman[chatserver.php] has been stopped
+2021-02-15 16:16:13 pid:100169 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:16:17 pid:100170 Error: Call to a member function attach() on null in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(56): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:16:17 pid:100170 Worker[100170] process terminated
+2021-02-15 16:16:17 pid:100169 worker[none:100170] exit with status 64000
+2021-02-15 16:16:59 pid:100173 Error: Call to a member function attach() on null in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(56): Workerman\Worker::runAll()
+#13 {main}
+2021-02-15 16:16:59 pid:100173 Worker[100173] process terminated
+2021-02-15 16:16:59 pid:100169 worker[none:100173] exit with status 64000
+2021-02-15 16:17:04 pid:100169 Workerman[chatserver.php] stopping ...
+2021-02-15 16:17:04 pid:100169 Workerman[chatserver.php] has been stopped
+2021-02-15 16:17:05 pid:100506 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:17:08 pid:100507 Error: Call to a member function attach() on null in /var/www/yonger.loc/modules/chat/chatserver.php:30
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(55): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:17:08 pid:100507 Worker[100507] process terminated
+2021-02-15 16:17:08 pid:100506 worker[none:100507] exit with status 64000
+2021-02-15 16:18:51 pid:100506 Workerman[chatserver.php] stopping ...
+2021-02-15 16:18:51 pid:100506 Workerman[chatserver.php] has been stopped
+2021-02-15 16:18:51 pid:101039 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:18:51 pid:101040 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#6 {main}
+2021-02-15 16:18:52 pid:101040 Worker[101040] process terminated
+2021-02-15 16:18:52 pid:101039 worker[none:101040] exit with status 64000
+2021-02-15 16:18:52 pid:101042 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:18:53 pid:101042 Worker[101042] process terminated
+2021-02-15 16:18:53 pid:101039 worker[none:101042] exit with status 64000
+2021-02-15 16:18:53 pid:101043 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:18:54 pid:101043 Worker[101043] process terminated
+2021-02-15 16:18:54 pid:101039 worker[none:101043] exit with status 64000
+2021-02-15 16:18:54 pid:101063 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:18:55 pid:101063 Worker[101063] process terminated
+2021-02-15 16:18:55 pid:101039 worker[none:101063] exit with status 64000
+2021-02-15 16:18:55 pid:101064 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:18:56 pid:101064 Worker[101064] process terminated
+2021-02-15 16:18:56 pid:101039 worker[none:101064] exit with status 64000
+2021-02-15 16:18:56 pid:101074 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:18:57 pid:101074 Worker[101074] process terminated
+2021-02-15 16:18:57 pid:101039 worker[none:101074] exit with status 64000
+2021-02-15 16:18:57 pid:101075 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:18:58 pid:101075 Worker[101075] process terminated
+2021-02-15 16:18:58 pid:101039 worker[none:101075] exit with status 64000
+2021-02-15 16:18:58 pid:101076 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:18:59 pid:101076 Worker[101076] process terminated
+2021-02-15 16:18:59 pid:101039 worker[none:101076] exit with status 64000
+2021-02-15 16:18:59 pid:101098 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:00 pid:101098 Worker[101098] process terminated
+2021-02-15 16:19:00 pid:101039 worker[none:101098] exit with status 64000
+2021-02-15 16:19:00 pid:101101 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:01 pid:101101 Worker[101101] process terminated
+2021-02-15 16:19:01 pid:101039 worker[none:101101] exit with status 64000
+2021-02-15 16:19:01 pid:101102 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:02 pid:101102 Worker[101102] process terminated
+2021-02-15 16:19:02 pid:101039 worker[none:101102] exit with status 64000
+2021-02-15 16:19:02 pid:101107 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:03 pid:101107 Worker[101107] process terminated
+2021-02-15 16:19:03 pid:101039 worker[none:101107] exit with status 64000
+2021-02-15 16:19:03 pid:101108 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:04 pid:101108 Worker[101108] process terminated
+2021-02-15 16:19:04 pid:101039 worker[none:101108] exit with status 64000
+2021-02-15 16:19:04 pid:101128 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:05 pid:101128 Worker[101128] process terminated
+2021-02-15 16:19:06 pid:101039 worker[none:101128] exit with status 64000
+2021-02-15 16:19:06 pid:101129 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:07 pid:101129 Worker[101129] process terminated
+2021-02-15 16:19:07 pid:101039 worker[none:101129] exit with status 64000
+2021-02-15 16:19:07 pid:101130 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:08 pid:101130 Worker[101130] process terminated
+2021-02-15 16:19:08 pid:101039 worker[none:101130] exit with status 64000
+2021-02-15 16:19:08 pid:101131 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:09 pid:101131 Worker[101131] process terminated
+2021-02-15 16:19:09 pid:101039 worker[none:101131] exit with status 64000
+2021-02-15 16:19:09 pid:101132 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:10 pid:101132 Worker[101132] process terminated
+2021-02-15 16:19:10 pid:101039 worker[none:101132] exit with status 64000
+2021-02-15 16:19:10 pid:101154 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:11 pid:101154 Worker[101154] process terminated
+2021-02-15 16:19:11 pid:101039 worker[none:101154] exit with status 64000
+2021-02-15 16:19:11 pid:101155 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:12 pid:101155 Worker[101155] process terminated
+2021-02-15 16:19:12 pid:101039 worker[none:101155] exit with status 64000
+2021-02-15 16:19:12 pid:101156 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:13 pid:101156 Worker[101156] process terminated
+2021-02-15 16:19:13 pid:101039 worker[none:101156] exit with status 64000
+2021-02-15 16:19:13 pid:101158 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:14 pid:101158 Worker[101158] process terminated
+2021-02-15 16:19:14 pid:101039 worker[none:101158] exit with status 64000
+2021-02-15 16:19:14 pid:101159 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:15 pid:101159 Worker[101159] process terminated
+2021-02-15 16:19:15 pid:101039 worker[none:101159] exit with status 64000
+2021-02-15 16:19:15 pid:101179 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:16 pid:101179 Worker[101179] process terminated
+2021-02-15 16:19:16 pid:101039 worker[none:101179] exit with status 64000
+2021-02-15 16:19:16 pid:101180 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:17 pid:101180 Worker[101180] process terminated
+2021-02-15 16:19:17 pid:101039 worker[none:101180] exit with status 64000
+2021-02-15 16:19:17 pid:101182 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:18 pid:101182 Worker[101182] process terminated
+2021-02-15 16:19:18 pid:101039 worker[none:101182] exit with status 64000
+2021-02-15 16:19:18 pid:101183 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:19 pid:101183 Worker[101183] process terminated
+2021-02-15 16:19:19 pid:101039 worker[none:101183] exit with status 64000
+2021-02-15 16:19:19 pid:101187 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:20 pid:101187 Worker[101187] process terminated
+2021-02-15 16:19:20 pid:101039 worker[none:101187] exit with status 64000
+2021-02-15 16:19:20 pid:101210 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:21 pid:101210 Worker[101210] process terminated
+2021-02-15 16:19:21 pid:101039 worker[none:101210] exit with status 64000
+2021-02-15 16:19:21 pid:101212 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:22 pid:101212 Worker[101212] process terminated
+2021-02-15 16:19:22 pid:101039 worker[none:101212] exit with status 64000
+2021-02-15 16:19:22 pid:101215 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:23 pid:101215 Worker[101215] process terminated
+2021-02-15 16:19:23 pid:101039 worker[none:101215] exit with status 64000
+2021-02-15 16:19:23 pid:101216 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:24 pid:101216 Worker[101216] process terminated
+2021-02-15 16:19:24 pid:101039 worker[none:101216] exit with status 64000
+2021-02-15 16:19:24 pid:101217 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:25 pid:101217 Worker[101217] process terminated
+2021-02-15 16:19:25 pid:101039 worker[none:101217] exit with status 64000
+2021-02-15 16:19:25 pid:101243 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:26 pid:101243 Worker[101243] process terminated
+2021-02-15 16:19:26 pid:101039 worker[none:101243] exit with status 64000
+2021-02-15 16:19:26 pid:101244 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:27 pid:101244 Worker[101244] process terminated
+2021-02-15 16:19:27 pid:101039 worker[none:101244] exit with status 64000
+2021-02-15 16:19:27 pid:101254 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:28 pid:101254 Worker[101254] process terminated
+2021-02-15 16:19:28 pid:101039 worker[none:101254] exit with status 64000
+2021-02-15 16:19:28 pid:101257 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:29 pid:101257 Worker[101257] process terminated
+2021-02-15 16:19:29 pid:101039 worker[none:101257] exit with status 64000
+2021-02-15 16:19:29 pid:101258 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:30 pid:101258 Worker[101258] process terminated
+2021-02-15 16:19:30 pid:101039 worker[none:101258] exit with status 64000
+2021-02-15 16:19:30 pid:101282 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:31 pid:101282 Worker[101282] process terminated
+2021-02-15 16:19:31 pid:101039 worker[none:101282] exit with status 64000
+2021-02-15 16:19:31 pid:101287 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:32 pid:101287 Worker[101287] process terminated
+2021-02-15 16:19:32 pid:101039 worker[none:101287] exit with status 64000
+2021-02-15 16:19:32 pid:101290 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:33 pid:101290 Worker[101290] process terminated
+2021-02-15 16:19:33 pid:101039 worker[none:101290] exit with status 64000
+2021-02-15 16:19:33 pid:101293 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:34 pid:101293 Worker[101293] process terminated
+2021-02-15 16:19:34 pid:101039 worker[none:101293] exit with status 64000
+2021-02-15 16:19:34 pid:101294 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:35 pid:101294 Worker[101294] process terminated
+2021-02-15 16:19:35 pid:101039 worker[none:101294] exit with status 64000
+2021-02-15 16:19:35 pid:101317 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:36 pid:101317 Worker[101317] process terminated
+2021-02-15 16:19:36 pid:101039 worker[none:101317] exit with status 64000
+2021-02-15 16:19:36 pid:101391 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:37 pid:101391 Worker[101391] process terminated
+2021-02-15 16:19:37 pid:101039 worker[none:101391] exit with status 64000
+2021-02-15 16:19:37 pid:101392 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:38 pid:101392 Worker[101392] process terminated
+2021-02-15 16:19:38 pid:101039 worker[none:101392] exit with status 64000
+2021-02-15 16:19:38 pid:101393 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:39 pid:101393 Worker[101393] process terminated
+2021-02-15 16:19:39 pid:101039 worker[none:101393] exit with status 64000
+2021-02-15 16:19:39 pid:101396 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:28
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2415): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#7 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#8 {main}
+2021-02-15 16:19:39 pid:101039 Workerman[chatserver.php] stopping ...
+2021-02-15 16:19:39 pid:101039 Workerman[chatserver.php] has been stopped
+2021-02-15 16:19:40 pid:101417 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:19:46 pid:101418 Error: Call to a member function attach() on null in /var/www/yonger.loc/modules/chat/chatserver.php:35
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:19:46 pid:101418 Worker[101418] process terminated
+2021-02-15 16:19:46 pid:101417 worker[none:101418] exit with status 64000
+2021-02-15 16:20:11 pid:101417 Workerman[chatserver.php] stopping ...
+2021-02-15 16:20:11 pid:101417 Workerman[chatserver.php] has been stopped
+2021-02-15 16:20:12 pid:101732 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:20:15 pid:101735 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:35
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:20:15 pid:101735 Worker[101735] process terminated
+2021-02-15 16:20:15 pid:101732 worker[none:101735] exit with status 64000
+2021-02-15 16:20:22 pid:101739 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:35
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#13 {main}
+2021-02-15 16:20:22 pid:101739 Worker[101739] process terminated
+2021-02-15 16:20:22 pid:101732 worker[none:101739] exit with status 64000
+2021-02-15 16:20:46 pid:101732 Workerman[chatserver.php] stopping ...
+2021-02-15 16:20:46 pid:101732 Workerman[chatserver.php] has been stopped
+2021-02-15 16:20:49 pid:101831 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:20:52 pid:101832 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:35
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:20:52 pid:101832 Worker[101832] process terminated
+2021-02-15 16:20:52 pid:101831 worker[none:101832] exit with status 64000
+2021-02-15 16:21:11 pid:101831 Workerman[chatserver.php] stopping ...
+2021-02-15 16:21:11 pid:101831 Workerman[chatserver.php] has been stopped
+2021-02-15 16:21:13 pid:101998 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:21:16 pid:101999 Error: Call to a member function attach() on null in /var/www/yonger.loc/modules/chat/chatserver.php:35
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(60): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:21:16 pid:101999 Worker[101999] process terminated
+2021-02-15 16:21:16 pid:101998 worker[none:101999] exit with status 64000
+2021-02-15 16:21:55 pid:101998 Workerman[chatserver.php] stopping ...
+2021-02-15 16:21:55 pid:101998 Workerman[chatserver.php] has been stopped
+2021-02-15 16:21:56 pid:102191 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:22:00 pid:102192 Error: Call to a member function attach() on null in /var/www/yonger.loc/modules/chat/chatserver.php:36
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(61): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:22:00 pid:102192 Worker[102192] process terminated
+2021-02-15 16:22:00 pid:102191 worker[none:102192] exit with status 64000
+2021-02-15 16:22:48 pid:102191 Workerman[chatserver.php] stopping ...
+2021-02-15 16:22:48 pid:102191 Workerman[chatserver.php] has been stopped
+2021-02-15 16:22:49 pid:102522 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:22:52 pid:102523 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:40
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2497): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Worker->acceptConnection()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(65): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:22:52 pid:102523 Worker[102523] process terminated
+2021-02-15 16:22:52 pid:102522 worker[none:102523] exit with status 64000
+2021-02-15 16:25:29 pid:102522 Workerman[chatserver.php] stopping ...
+2021-02-15 16:25:29 pid:102522 Workerman[chatserver.php] has been stopped
+2021-02-15 16:25:30 pid:103278 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:25:35 pid:103279 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:43
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(61): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:25:35 pid:103279 Worker[103279] process terminated
+2021-02-15 16:25:35 pid:103278 worker[none:103279] exit with status 64000
+2021-02-15 16:34:11 pid:103278 Workerman[chatserver.php] stopping ...
+2021-02-15 16:34:11 pid:103278 Workerman[chatserver.php] has been stopped
+2021-02-15 16:34:12 pid:105006 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:34:19 pid:105012 Error: Object of class stdClass could not be converted to string in /var/www/yonger.loc/modules/chat/chatserver.php:52
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(61): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:34:19 pid:105012 Worker[105012] process terminated
+2021-02-15 16:34:19 pid:105006 worker[none:105012] exit with status 64000
+2021-02-15 16:34:40 pid:105006 Workerman[chatserver.php] stopping ...
+2021-02-15 16:34:40 pid:105006 Workerman[chatserver.php] has been stopped
+2021-02-15 16:34:42 pid:105249 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:34:46 pid:105254 Error: Closure object cannot have properties in /var/www/yonger.loc/modules/chat/chatserver.php:44
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(61): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:34:46 pid:105254 Worker[105254] process terminated
+2021-02-15 16:34:46 pid:105249 worker[none:105254] exit with status 64000
+2021-02-15 16:36:12 pid:105249 Workerman[chatserver.php] stopping ...
+2021-02-15 16:36:12 pid:105249 Workerman[chatserver.php] has been stopped
+2021-02-15 16:36:13 pid:105871 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:36:17 pid:105876 Error: Object of class stdClass could not be converted to string in /var/www/yonger.loc/modules/chat/chatserver.php:50
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(59): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:36:17 pid:105876 Worker[105876] process terminated
+2021-02-15 16:36:17 pid:105871 worker[none:105876] exit with status 64000
+2021-02-15 16:37:56 pid:105875 Error: Object of class stdClass could not be converted to string in /var/www/yonger.loc/modules/chat/chatserver.php:50
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(59): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:37:56 pid:105875 Worker[105875] process terminated
+2021-02-15 16:37:56 pid:105871 worker[none:105875] exit with status 64000
+2021-02-15 16:38:04 pid:105871 Workerman[chatserver.php] stopping ...
+2021-02-15 16:38:04 pid:105871 Workerman[chatserver.php] has been stopped
+2021-02-15 16:38:05 pid:106235 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:38:09 pid:106237 Error: Object of class stdClass could not be converted to string in /var/www/yonger.loc/modules/chat/chatserver.php:49
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(58): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:38:09 pid:106237 Worker[106237] process terminated
+2021-02-15 16:38:09 pid:106235 worker[none:106237] exit with status 64000
+2021-02-15 16:38:34 pid:106241 Error: Object of class stdClass could not be converted to string in /var/www/yonger.loc/modules/chat/chatserver.php:49
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(58): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 16:38:34 pid:106241 Worker[106241] process terminated
+2021-02-15 16:38:34 pid:106235 worker[none:106241] exit with status 64000
+2021-02-15 16:38:38 pid:106235 Workerman[chatserver.php] stopping ...
+2021-02-15 16:38:38 pid:106235 Workerman[chatserver.php] has been stopped
+2021-02-15 16:38:46 pid:106582 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:40:48 pid:106582 Workerman[chatserver.php] stopping ...
+2021-02-15 16:40:48 pid:106582 Workerman[chatserver.php] has been stopped
+2021-02-15 16:40:49 pid:107220 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:43:17 pid:107220 Workerman[chatserver.php] stopping ...
+2021-02-15 16:43:17 pid:107220 Workerman[chatserver.php] has been stopped
+2021-02-15 16:43:18 pid:107745 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:43:55 pid:107745 Workerman[chatserver.php] stopping ...
+2021-02-15 16:43:55 pid:107745 Workerman[chatserver.php] has been stopped
+2021-02-15 16:43:56 pid:107942 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:45:01 pid:107942 Workerman[chatserver.php] stopping ...
+2021-02-15 16:45:01 pid:107942 Workerman[chatserver.php] has been stopped
+2021-02-15 16:46:34 pid:108625 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:46:40 pid:108625 Workerman[chatserver.php] stopping ...
+2021-02-15 16:46:40 pid:108625 Workerman[chatserver.php] has been stopped
+2021-02-15 16:59:57 pid:111172 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 16:59:59 pid:111172 Workerman[chatserver.php] stopping ...
+2021-02-15 16:59:59 pid:111172 Workerman[chatserver.php] has been stopped
+2021-02-15 17:00:12 pid:111233 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:06:56 pid:111233 Workerman[chatserver.php] stopping ...
+2021-02-15 17:06:56 pid:111233 Workerman[chatserver.php] has been stopped
+2021-02-15 17:06:56 pid:112195 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:08:17 pid:112195 Workerman[chatserver.php] stopping ...
+2021-02-15 17:08:17 pid:112195 Workerman[chatserver.php] has been stopped
+2021-02-15 17:08:17 pid:112607 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:08:20 pid:112608 Exception: You can't send(array) to client, you need to convert it to a string.  in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 /var/www/yonger.loc/modules/chat/chatserver.php(50): Workerman\Connection\TcpConnection->send()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(69): Workerman\Worker::runAll()
+#13 {main}
+2021-02-15 17:08:20 pid:112608 Worker[112608] process terminated
+2021-02-15 17:08:20 pid:112607 worker[none:112608] exit with status 64000
+2021-02-15 17:09:06 pid:112607 Workerman[chatserver.php] stopping ...
+2021-02-15 17:09:06 pid:112607 Workerman[chatserver.php] has been stopped
+2021-02-15 17:09:07 pid:112935 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:11:07 pid:112935 Workerman[chatserver.php] stopping ...
+2021-02-15 17:11:07 pid:112935 Workerman[chatserver.php] has been stopped
+2021-02-15 17:11:08 pid:113404 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:12:47 pid:113404 Workerman[chatserver.php] stopping ...
+2021-02-15 17:12:47 pid:113404 Workerman[chatserver.php] has been stopped
+2021-02-15 17:12:47 pid:113806 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:12:56 pid:113807 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php on line 931 and exactly 2 expected in /var/www/yonger.loc/modules/chat/chatserver.php:64
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(931): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(834): Workerman\Connection\TcpConnection->destroy()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php(105): Workerman\Connection\TcpConnection->close()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(600): Workerman\Protocols\Websocket::input()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#5 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(71): Workerman\Worker::runAll()
+#14 {main}
+2021-02-15 17:12:56 pid:113807 Worker[113807] process terminated
+2021-02-15 17:12:56 pid:113806 worker[none:113807] exit with status 64000
+2021-02-15 17:13:27 pid:113806 Workerman[chatserver.php] stopping ...
+2021-02-15 17:13:27 pid:113806 Workerman[chatserver.php] has been stopped
+2021-02-15 17:13:28 pid:114047 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:13:35 pid:114048 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:66
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(931): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(834): Workerman\Connection\TcpConnection->destroy()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php(105): Workerman\Connection\TcpConnection->close()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(600): Workerman\Protocols\Websocket::input()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#5 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(71): Workerman\Worker::runAll()
+#14 {main}
+2021-02-15 17:13:35 pid:114048 Worker[114048] process terminated
+2021-02-15 17:13:35 pid:114047 worker[none:114048] exit with status 64000
+2021-02-15 17:14:34 pid:114047 Workerman[chatserver.php] stopping ...
+2021-02-15 17:14:34 pid:114047 Workerman[chatserver.php] has been stopped
+2021-02-15 17:14:35 pid:114311 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:14:39 pid:114312 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:66
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(931): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(834): Workerman\Connection\TcpConnection->destroy()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php(105): Workerman\Connection\TcpConnection->close()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(600): Workerman\Protocols\Websocket::input()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#5 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#14 {main}
+2021-02-15 17:14:39 pid:114312 Worker[114312] process terminated
+2021-02-15 17:14:39 pid:114311 worker[none:114312] exit with status 64000
+2021-02-15 17:15:14 pid:114311 Workerman[chatserver.php] stopping ...
+2021-02-15 17:15:14 pid:114311 Workerman[chatserver.php] has been stopped
+2021-02-15 17:15:15 pid:114731 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:15:23 pid:114732 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php on line 931 and exactly 2 expected in /var/www/yonger.loc/modules/chat/chatserver.php:64
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(931): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(834): Workerman\Connection\TcpConnection->destroy()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php(105): Workerman\Connection\TcpConnection->close()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(600): Workerman\Protocols\Websocket::input()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#5 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#14 {main}
+2021-02-15 17:15:23 pid:114732 Worker[114732] process terminated
+2021-02-15 17:15:23 pid:114731 worker[none:114732] exit with status 64000
+2021-02-15 17:17:50 pid:114731 Workerman[chatserver.php] stopping ...
+2021-02-15 17:17:50 pid:114767 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php on line 931 and exactly 2 expected in /var/www/yonger.loc/modules/chat/chatserver.php:64
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(931): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(834): Workerman\Connection\TcpConnection->destroy()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2457): Workerman\Connection\TcpConnection->close()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1867): Workerman\Worker->stop()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1184): Workerman\Worker::stopAll()
+#5 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/SignalsHandler.php(46): Workerman\Worker::signalHandler()
+#6 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(290): React\EventLoop\SignalsHandler->call()
+#7 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(231): React\EventLoop\StreamSelectLoop->streamSelect()
+#8 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#13 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#14 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#15 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#16 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#17 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#18 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#19 {main}
+2021-02-15 17:17:50 pid:114731 worker[none:114767] exit with status 64000
+2021-02-15 17:17:50 pid:114731 Workerman[chatserver.php] has been stopped
+2021-02-15 17:17:51 pid:115645 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:17:57 pid:115646 Error: Using $this when not in object context in /var/www/yonger.loc/modules/chat/chatserver.php:67
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(931): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(834): Workerman\Connection\TcpConnection->destroy()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php(105): Workerman\Connection\TcpConnection->close()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(600): Workerman\Protocols\Websocket::input()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#5 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#14 {main}
+2021-02-15 17:17:57 pid:115646 Worker[115646] process terminated
+2021-02-15 17:17:57 pid:115645 worker[none:115646] exit with status 64000
+2021-02-15 17:19:47 pid:115645 Workerman[chatserver.php] stopping ...
+2021-02-15 17:19:47 pid:115645 Workerman[chatserver.php] has been stopped
+2021-02-15 17:19:48 pid:116216 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:20:55 pid:116216 Workerman[chatserver.php] stopping ...
+2021-02-15 17:20:55 pid:116216 Workerman[chatserver.php] has been stopped
+2021-02-15 17:20:55 pid:116729 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 17:30:05 pid:116729 Workerman[chatserver.php] stopping ...
+2021-02-15 17:30:05 pid:116729 Workerman[chatserver.php] has been stopped
+2021-02-15 17:30:05 pid:119339 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:02:44 pid:119339 Workerman[chatserver.php] stopping ...
+2021-02-15 18:02:44 pid:119339 Workerman[chatserver.php] has been stopped
+2021-02-15 18:02:44 pid:131180 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:10:47 pid:131180 Workerman[chatserver.php] stopping ...
+2021-02-15 18:10:47 pid:131180 Workerman[chatserver.php] has been stopped
+2021-02-15 18:12:54 pid:133983 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:13:09 pid:133985 Error: Call to a member function msgSelf() on null in /var/www/yonger.loc/modules/chat/chatserver.php:49
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(67): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 18:13:09 pid:133985 Worker[133985] process terminated
+2021-02-15 18:13:09 pid:133983 worker[none:133985] exit with status 64000
+2021-02-15 18:13:56 pid:134038 Error: Call to a member function msgSelf() on null in /var/www/yonger.loc/modules/chat/chatserver.php:49
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(67): Workerman\Worker::runAll()
+#13 {main}
+2021-02-15 18:13:56 pid:134038 Worker[134038] process terminated
+2021-02-15 18:13:56 pid:133983 worker[none:134038] exit with status 64000
+2021-02-15 18:14:05 pid:133983 Workerman[chatserver.php] stopping ...
+2021-02-15 18:14:05 pid:133983 Workerman[chatserver.php] has been stopped
+2021-02-15 18:14:06 pid:134334 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:14:15 pid:134335 Error: Call to a member function msgSelf() on null in /var/www/yonger.loc/modules/chat/chatserver.php:49
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(67): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 18:14:15 pid:134335 Worker[134335] process terminated
+2021-02-15 18:14:15 pid:134334 worker[none:134335] exit with status 64000
+2021-02-15 18:15:20 pid:134360 Error: Call to a member function msgSelf() on null in /var/www/yonger.loc/modules/chat/chatserver.php:49
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(67): Workerman\Worker::runAll()
+#13 {main}
+2021-02-15 18:15:20 pid:134360 Worker[134360] process terminated
+2021-02-15 18:15:20 pid:134334 worker[none:134360] exit with status 64000
+2021-02-15 18:15:23 pid:134334 Workerman[chatserver.php] stopping ...
+2021-02-15 18:15:23 pid:134334 Workerman[chatserver.php] has been stopped
+2021-02-15 18:15:23 pid:134694 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:16:04 pid:134694 Workerman[chatserver.php] stopping ...
+2021-02-15 18:16:04 pid:134694 Workerman[chatserver.php] has been stopped
+2021-02-15 18:16:04 pid:135023 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:16:09 pid:135024 Error: Call to a member function msgSelf() on null in /var/www/yonger.loc/modules/chat/chatserver.php:49
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(67): Workerman\Worker::runAll()
+#11 {main}
+2021-02-15 18:16:09 pid:135024 Worker[135024] process terminated
+2021-02-15 18:16:09 pid:135023 worker[none:135024] exit with status 64000
+2021-02-15 18:18:13 pid:135023 Workerman[chatserver.php] stopping ...
+2021-02-15 18:18:13 pid:135023 Workerman[chatserver.php] has been stopped
+2021-02-15 18:18:14 pid:135793 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:19:02 pid:135793 Workerman[chatserver.php] stopping ...
+2021-02-15 18:19:02 pid:135793 Workerman[chatserver.php] has been stopped
+2021-02-15 18:19:03 pid:136150 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:20:55 pid:136150 Workerman[chatserver.php] stopping ...
+2021-02-15 18:20:55 pid:136150 Workerman[chatserver.php] has been stopped
+2021-02-15 18:20:56 pid:136436 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:22:44 pid:136436 Workerman[chatserver.php] stopping ...
+2021-02-15 18:22:44 pid:136436 Workerman[chatserver.php] has been stopped
+2021-02-15 18:22:45 pid:136918 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:27:15 pid:136918 Workerman[chatserver.php] stopping ...
+2021-02-15 18:27:15 pid:136918 Workerman[chatserver.php] has been stopped
+2021-02-15 18:27:15 pid:138217 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:28:12 pid:138217 Workerman[chatserver.php] stopping ...
+2021-02-15 18:28:12 pid:138217 Workerman[chatserver.php] has been stopped
+2021-02-15 18:28:13 pid:138688 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:29:32 pid:138688 Workerman[chatserver.php] stopping ...
+2021-02-15 18:29:32 pid:138688 Workerman[chatserver.php] has been stopped
+2021-02-15 18:29:32 pid:139072 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 18:30:06 pid:139072 Workerman[chatserver.php] stopping ...
+2021-02-15 18:30:06 pid:139072 Workerman[chatserver.php] has been stopped
+2021-02-15 18:30:08 pid:139278 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 21:45:25 pid:139278 Workerman[chatserver.php] stopping ...
+2021-02-15 21:45:25 pid:139278 Workerman[chatserver.php] has been stopped
+2021-02-15 21:45:46 pid:156599 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 22:10:24 pid:156599 Workerman[chatserver.php] stopping ...
+2021-02-15 22:10:25 pid:156599 Workerman[chatserver.php] has been stopped
+2021-02-15 22:10:25 pid:164888 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 22:21:09 pid:164888 Workerman[chatserver.php] stopping ...
+2021-02-15 22:21:09 pid:164888 Workerman[chatserver.php] has been stopped
+2021-02-15 22:21:10 pid:167052 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 22:21:15 pid:167067 Error: Cannot use object of type stdClass as array in /var/www/yonger.loc/modules/chat/chatserver.php:83
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(52): chat->msgSelf()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/chatserver.php(70): Workerman\Worker::runAll()
+#12 {main}
+2021-02-15 22:21:15 pid:167067 Worker[167067] process terminated
+2021-02-15 22:21:15 pid:167052 worker[none:167067] exit with status 64000
+2021-02-15 22:22:01 pid:167095 Error: Cannot use object of type stdClass as array in /var/www/yonger.loc/modules/chat/chatserver.php:83
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(52): chat->msgSelf()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(70): Workerman\Worker::runAll()
+#14 {main}
+2021-02-15 22:22:01 pid:167095 Worker[167095] process terminated
+2021-02-15 22:22:01 pid:167052 worker[none:167095] exit with status 64000
+2021-02-15 22:22:08 pid:167052 Workerman[chatserver.php] stopping ...
+2021-02-15 22:22:08 pid:167052 Workerman[chatserver.php] has been stopped
+2021-02-15 22:22:09 pid:167436 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 22:23:53 pid:167436 Workerman[chatserver.php] stopping ...
+2021-02-15 22:23:53 pid:167436 Workerman[chatserver.php] has been stopped
+2021-02-15 22:23:54 pid:167733 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-15 22:30:11 pid:167733 Workerman[chatserver.php] stopping ...
+2021-02-15 22:30:11 pid:167733 Workerman[chatserver.php] has been stopped
+2021-02-15 22:30:11 pid:169656 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 09:52:46 pid:169656 Workerman[chatserver.php] stopping ...
+2021-02-16 09:52:46 pid:169656 Workerman[chatserver.php] has been stopped
+2021-02-16 09:52:47 pid:288069 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 11:01:11 pid:288069 Workerman[chatserver.php] stopping ...
+2021-02-16 11:04:13 pid:288071 worker[288071] remains 0 connection(s)
+2021-02-16 11:04:36 pid:514683 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 11:09:18 pid:514683 Workerman[chatserver.php] stopping ...
+2021-02-16 11:09:18 pid:514683 Workerman[chatserver.php] has been stopped
+2021-02-16 11:09:18 pid:515705 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 11:10:56 pid:515705 Workerman[chatserver.php] stopping ...
+2021-02-16 11:10:56 pid:515705 Workerman[chatserver.php] has been stopped
+2021-02-16 11:10:57 pid:516137 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 11:16:54 pid:516137 Workerman[chatserver.php] stopping ...
+2021-02-16 11:16:54 pid:516137 Workerman[chatserver.php] has been stopped
+2021-02-16 11:16:54 pid:517235 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 11:18:05 pid:517236 Error: Call to a member function itemInit() on null in /var/www/yonger.loc/modules/chat/chatserver.php:92
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(48): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/chatserver.php(75): Workerman\Worker::runAll()
+#12 {main}
+2021-02-16 11:18:05 pid:517236 Worker[517236] process terminated
+2021-02-16 11:18:05 pid:517235 worker[none:517236] exit with status 64000
+2021-02-16 11:25:46 pid:517235 Workerman[chatserver.php] stopping ...
+2021-02-16 11:25:46 pid:517235 Workerman[chatserver.php] has been stopped
+2021-02-16 11:25:46 pid:519700 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 11:25:50 pid:519701 Error: Call to undefined function ajax() in /var/www/yonger.loc/modules/chat/chatserver.php:83
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(47): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/chatserver.php(73): Workerman\Worker::runAll()
+#12 {main}
+2021-02-16 11:25:50 pid:519701 Worker[519701] process terminated
+2021-02-16 11:25:50 pid:519700 worker[none:519701] exit with status 64000
+2021-02-16 11:27:20 pid:519700 Workerman[chatserver.php] stopping ...
+2021-02-16 11:27:20 pid:519700 Workerman[chatserver.php] has been stopped
+2021-02-16 11:27:22 pid:520267 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 11:27:28 pid:520268 Exception: You can't send(object) to client, you need to convert it to a string.  in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 /var/www/yonger.loc/modules/chat/chatserver.php(48): Workerman\Connection\TcpConnection->send()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(73): Workerman\Worker::runAll()
+#13 {main}
+2021-02-16 11:27:28 pid:520268 Worker[520268] process terminated
+2021-02-16 11:27:28 pid:520267 worker[none:520268] exit with status 64000
+2021-02-16 11:28:13 pid:520267 Workerman[chatserver.php] stopping ...
+2021-02-16 11:28:13 pid:520267 Workerman[chatserver.php] has been stopped
+2021-02-16 11:28:14 pid:520513 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 12:02:09 pid:520513 Workerman[chatserver.php] stopping ...
+2021-02-16 12:02:09 pid:520513 Workerman[chatserver.php] has been stopped
+2021-02-16 12:02:10 pid:660916 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 14:08:15 pid:660916 Workerman[chatserver.php] stopping ...
+2021-02-16 14:08:15 pid:660916 Workerman[chatserver.php] has been stopped
+2021-02-16 14:08:16 pid:684839 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 14:45:08 pid:684839 Workerman[chatserver.php] stopping ...
+2021-02-16 14:45:08 pid:684839 Workerman[chatserver.php] has been stopped
+2021-02-16 14:45:09 pid:826767 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 14:45:16 pid:826769 Error: Call to a member function msgRouter() on null in /var/www/yonger.loc/modules/chat/chatserver.php:45
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(71): Workerman\Worker::runAll()
+#11 {main}
+2021-02-16 14:45:16 pid:826769 Worker[826769] process terminated
+2021-02-16 14:45:16 pid:826767 worker[none:826769] exit with status 64000
+2021-02-16 14:45:43 pid:826767 Workerman[chatserver.php] stopping ...
+2021-02-16 14:45:43 pid:826767 Workerman[chatserver.php] has been stopped
+2021-02-16 14:45:43 pid:827002 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 14:45:48 pid:827003 Error: Call to a member function msgRouter() on null in /var/www/yonger.loc/modules/chat/chatserver.php:45
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(71): Workerman\Worker::runAll()
+#11 {main}
+2021-02-16 14:45:48 pid:827003 Worker[827003] process terminated
+2021-02-16 14:45:48 pid:827002 worker[none:827003] exit with status 64000
+2021-02-16 14:46:30 pid:827026 Error: Call to a member function msgRouter() on null in /var/www/yonger.loc/modules/chat/chatserver.php:45
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(71): Workerman\Worker::runAll()
+#13 {main}
+2021-02-16 14:46:30 pid:827026 Worker[827026] process terminated
+2021-02-16 14:46:30 pid:827002 worker[none:827026] exit with status 64000
+2021-02-16 14:46:33 pid:827002 Workerman[chatserver.php] stopping ...
+2021-02-16 14:46:33 pid:827002 Workerman[chatserver.php] has been stopped
+2021-02-16 14:46:34 pid:827553 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 14:57:42 pid:827553 Workerman[chatserver.php] stopping ...
+2021-02-16 14:57:42 pid:827553 Workerman[chatserver.php] has been stopped
+2021-02-16 14:57:43 pid:830933 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 14:57:50 pid:830934 Error: Cannot use object of type Workerman\Connection\TcpConnection as array in /var/www/yonger.loc/modules/chat/chatserver.php:95
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(46): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#12 {main}
+2021-02-16 14:57:50 pid:830934 Worker[830934] process terminated
+2021-02-16 14:57:50 pid:830933 worker[none:830934] exit with status 64000
+2021-02-16 14:59:02 pid:830933 Workerman[chatserver.php] stopping ...
+2021-02-16 14:59:02 pid:830933 Workerman[chatserver.php] has been stopped
+2021-02-16 14:59:02 pid:831396 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 14:59:14 pid:831397 Error: Cannot use object of type stdClass as array in /var/www/yonger.loc/modules/chat/chatserver.php:96
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(46): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#12 {main}
+2021-02-16 14:59:14 pid:831397 Worker[831397] process terminated
+2021-02-16 14:59:14 pid:831396 worker[none:831397] exit with status 64000
+2021-02-16 14:59:52 pid:831396 Workerman[chatserver.php] stopping ...
+2021-02-16 14:59:52 pid:831396 Workerman[chatserver.php] has been stopped
+2021-02-16 14:59:53 pid:831652 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:00:00 pid:831653 Error: Cannot use object of type Workerman\Connection\TcpConnection as array in /var/www/yonger.loc/modules/chat/chatserver.php:96
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(46): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#12 {main}
+2021-02-16 15:00:00 pid:831653 Worker[831653] process terminated
+2021-02-16 15:00:00 pid:831652 worker[none:831653] exit with status 64000
+2021-02-16 15:00:45 pid:831667 Error: Cannot use object of type Workerman\Connection\TcpConnection as array in /var/www/yonger.loc/modules/chat/chatserver.php:96
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(46): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#14 {main}
+2021-02-16 15:00:45 pid:831667 Worker[831667] process terminated
+2021-02-16 15:00:45 pid:831652 worker[none:831667] exit with status 64000
+2021-02-16 15:00:48 pid:831652 Workerman[chatserver.php] stopping ...
+2021-02-16 15:00:48 pid:831652 Workerman[chatserver.php] has been stopped
+2021-02-16 15:00:49 pid:831987 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:02:00 pid:831987 Workerman[chatserver.php] stopping ...
+2021-02-16 15:02:00 pid:831987 Workerman[chatserver.php] has been stopped
+2021-02-16 15:02:01 pid:832362 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:05:54 pid:832362 Workerman[chatserver.php] stopping ...
+2021-02-16 15:05:54 pid:832362 Workerman[chatserver.php] has been stopped
+2021-02-16 15:05:55 pid:833083 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:09:02 pid:833083 Workerman[chatserver.php] stopping ...
+2021-02-16 15:09:02 pid:833083 Workerman[chatserver.php] has been stopped
+2021-02-16 15:09:03 pid:833601 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:15:59 pid:833601 Workerman[chatserver.php] stopping ...
+2021-02-16 15:15:59 pid:833601 Workerman[chatserver.php] has been stopped
+2021-02-16 15:15:59 pid:834896 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:17:05 pid:834896 Workerman[chatserver.php] stopping ...
+2021-02-16 15:17:05 pid:834896 Workerman[chatserver.php] has been stopped
+2021-02-16 15:17:06 pid:835200 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:19:31 pid:835200 Workerman[chatserver.php] stopping ...
+2021-02-16 15:19:31 pid:835200 Workerman[chatserver.php] has been stopped
+2021-02-16 15:19:32 pid:836381 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:20:24 pid:836381 Workerman[chatserver.php] stopping ...
+2021-02-16 15:20:24 pid:836381 Workerman[chatserver.php] has been stopped
+2021-02-16 15:20:25 pid:836828 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:21:03 pid:836828 Workerman[chatserver.php] stopping ...
+2021-02-16 15:21:03 pid:836828 Workerman[chatserver.php] has been stopped
+2021-02-16 15:21:04 pid:837117 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:22:26 pid:837117 Workerman[chatserver.php] stopping ...
+2021-02-16 15:22:26 pid:837117 Workerman[chatserver.php] has been stopped
+2021-02-16 15:22:26 pid:837586 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:22:52 pid:837586 Workerman[chatserver.php] stopping ...
+2021-02-16 15:22:52 pid:837586 Workerman[chatserver.php] has been stopped
+2021-02-16 15:22:53 pid:837747 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:23:39 pid:837747 Workerman[chatserver.php] stopping ...
+2021-02-16 15:23:39 pid:837747 Workerman[chatserver.php] has been stopped
+2021-02-16 15:23:39 pid:838265 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:28:26 pid:838265 Workerman[chatserver.php] stopping ...
+2021-02-16 15:28:26 pid:838265 Workerman[chatserver.php] has been stopped
+2021-02-16 15:28:26 pid:839124 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:41:13 pid:839124 Workerman[chatserver.php] stopping ...
+2021-02-16 15:41:13 pid:839124 Workerman[chatserver.php] has been stopped
+2021-02-16 15:41:13 pid:842187 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:41:20 pid:842188 Error: Cannot use object of type Workerman\Worker as array in /var/www/yonger.loc/modules/chat/chatserver.php:94
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(46): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/chatserver.php(74): Workerman\Worker::runAll()
+#12 {main}
+2021-02-16 15:41:20 pid:842188 Worker[842188] process terminated
+2021-02-16 15:41:20 pid:842187 worker[none:842188] exit with status 64000
+2021-02-16 15:41:53 pid:842210 Error: Cannot use object of type Workerman\Worker as array in /var/www/yonger.loc/modules/chat/chatserver.php:94
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(46): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(74): Workerman\Worker::runAll()
+#14 {main}
+2021-02-16 15:41:53 pid:842210 Worker[842210] process terminated
+2021-02-16 15:41:53 pid:842187 worker[none:842210] exit with status 64000
+2021-02-16 15:42:11 pid:842187 Workerman[chatserver.php] stopping ...
+2021-02-16 15:42:11 pid:842187 Workerman[chatserver.php] has been stopped
+2021-02-16 15:42:11 pid:842546 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:50:42 pid:842546 Workerman[chatserver.php] stopping ...
+2021-02-16 15:50:42 pid:842546 Workerman[chatserver.php] has been stopped
+2021-02-16 15:50:43 pid:843987 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:51:35 pid:843987 Workerman[chatserver.php] stopping ...
+2021-02-16 15:51:35 pid:843987 Workerman[chatserver.php] has been stopped
+2021-02-16 15:51:35 pid:844184 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:52:01 pid:844184 Workerman[chatserver.php] stopping ...
+2021-02-16 15:52:01 pid:844184 Workerman[chatserver.php] has been stopped
+2021-02-16 15:52:01 pid:844339 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:55:19 pid:844339 Workerman[chatserver.php] stopping ...
+2021-02-16 15:55:19 pid:844339 Workerman[chatserver.php] has been stopped
+2021-02-16 15:55:20 pid:845458 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 15:55:25 pid:845459 Exception: You can't send(object) to client, you need to convert it to a string.  in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 /var/www/yonger.loc/modules/chat/chatserver.php(47): Workerman\Connection\TcpConnection->send()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#12 /var/www/yonger.loc/modules/chat/chatserver.php(73): Workerman\Worker::runAll()
+#13 {main}
+2021-02-16 15:55:25 pid:845459 Worker[845459] process terminated
+2021-02-16 15:55:25 pid:845458 worker[none:845459] exit with status 64000
+2021-02-16 15:56:26 pid:845485 Exception: You can't send(object) to client, you need to convert it to a string.  in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 /var/www/yonger.loc/modules/chat/chatserver.php(47): Workerman\Connection\TcpConnection->send()
+#2 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1692): Workerman\Worker::forkWorkers()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1641): Workerman\Worker::monitorWorkersForLinux()
+#13 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(544): Workerman\Worker::monitorWorkers()
+#14 /var/www/yonger.loc/modules/chat/chatserver.php(73): Workerman\Worker::runAll()
+#15 {main}
+2021-02-16 15:56:26 pid:845485 Worker[845485] process terminated
+2021-02-16 15:56:26 pid:845458 worker[none:845485] exit with status 64000
+2021-02-16 15:56:30 pid:845458 Workerman[chatserver.php] stopping ...
+2021-02-16 15:56:30 pid:845458 Workerman[chatserver.php] has been stopped
+2021-02-16 15:56:31 pid:845838 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 16:00:53 pid:845838 Workerman[chatserver.php] stopping ...
+2021-02-16 16:00:53 pid:845838 Workerman[chatserver.php] has been stopped
+2021-02-16 16:00:54 pid:847225 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 16:02:25 pid:847225 Workerman[chatserver.php] stopping ...
+2021-02-16 16:02:25 pid:847225 Workerman[chatserver.php] has been stopped
+2021-02-16 16:02:26 pid:848790 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 16:03:52 pid:848790 Workerman[chatserver.php] stopping ...
+2021-02-16 16:03:52 pid:848790 Workerman[chatserver.php] has been stopped
+2021-02-16 16:03:53 pid:849234 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 16:15:48 pid:849234 Workerman[chatserver.php] stopping ...
+2021-02-16 16:15:48 pid:849234 Workerman[chatserver.php] has been stopped
+2021-02-16 16:15:48 pid:852092 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 16:15:54 pid:852093 Exception: You can't send(object) to client, you need to convert it to a string.  in /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Protocols/Websocket.php:236
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(321): Workerman\Protocols\Websocket::encode()
+#1 /var/www/yonger.loc/modules/chat/chatserver.php(133): Workerman\Connection\TcpConnection->send()
+#2 /var/www/yonger.loc/modules/chat/chatserver.php(46): chat->msgRouter()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#4 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#5 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#11 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#12 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#13 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#14 {main}
+2021-02-16 16:15:54 pid:852093 Worker[852093] process terminated
+2021-02-16 16:15:54 pid:852092 worker[none:852093] exit with status 64000
+2021-02-16 16:17:17 pid:852092 Workerman[chatserver.php] stopping ...
+2021-02-16 16:17:17 pid:852092 Workerman[chatserver.php] has been stopped
+2021-02-16 16:17:18 pid:852611 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:02:00 pid:852611 Workerman[chatserver.php] stopping ...
+2021-02-16 18:02:00 pid:852611 Workerman[chatserver.php] has been stopped
+2021-02-16 18:02:01 pid:869765 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:03:23 pid:869765 Workerman[chatserver.php] stopping ...
+2021-02-16 18:03:23 pid:869765 Workerman[chatserver.php] has been stopped
+2021-02-16 18:03:23 pid:870015 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:08:13 pid:870015 Workerman[chatserver.php] stopping ...
+2021-02-16 18:08:13 pid:870015 Workerman[chatserver.php] has been stopped
+2021-02-16 18:08:16 pid:871187 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:11:20 pid:871187 Workerman[chatserver.php] stopping ...
+2021-02-16 18:11:20 pid:871187 Workerman[chatserver.php] has been stopped
+2021-02-16 18:11:21 pid:871834 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:16:15 pid:871834 Workerman[chatserver.php] stopping ...
+2021-02-16 18:16:15 pid:871834 Workerman[chatserver.php] has been stopped
+2021-02-16 18:16:17 pid:872787 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:17:05 pid:872787 Workerman[chatserver.php] stopping ...
+2021-02-16 18:17:05 pid:872787 Workerman[chatserver.php] has been stopped
+2021-02-16 18:17:06 pid:873004 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:20:31 pid:873004 Workerman[chatserver.php] stopping ...
+2021-02-16 18:20:31 pid:873004 Workerman[chatserver.php] has been stopped
+2021-02-16 18:20:31 pid:873766 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:21:50 pid:873766 Workerman[chatserver.php] stopping ...
+2021-02-16 18:21:50 pid:873766 Workerman[chatserver.php] has been stopped
+2021-02-16 18:21:51 pid:874131 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:27:50 pid:876005 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:27:50 pid:876005 Workerman[./chatserver.php] already running
+2021-02-16 18:27:53 pid:876035 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:27:53 pid:876035 Workerman[./chatserver.php] already running
+2021-02-16 18:27:54 pid:876038 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:27:54 pid:876038 Workerman[./chatserver.php] already running
+2021-02-16 18:28:09 pid:876066 Workerman[./chatserver.php] stop 
+2021-02-16 18:28:09 pid:876066 Workerman[./chatserver.php] is stopping ...
+2021-02-16 18:28:14 pid:876066 Workerman[./chatserver.php] stop fail
+2021-02-16 18:28:16 pid:876128 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:28:16 pid:876128 Workerman[./chatserver.php] already running
+2021-02-16 18:28:24 pid:876167 Workerman[./chatserver.php] stop 
+2021-02-16 18:28:24 pid:876167 Workerman[./chatserver.php] is stopping ...
+2021-02-16 18:28:29 pid:876167 Workerman[./chatserver.php] stop fail
+2021-02-16 18:28:30 pid:876189 Workerman[./chatserver.php] stop 
+2021-02-16 18:28:30 pid:876189 Workerman[./chatserver.php] is stopping ...
+2021-02-16 18:28:35 pid:876189 Workerman[./chatserver.php] stop fail
+2021-02-16 18:28:36 pid:876212 Workerman[./chatserver.php] stop 
+2021-02-16 18:28:36 pid:876212 Workerman[./chatserver.php] is stopping ...
+2021-02-16 18:28:41 pid:876212 Workerman[./chatserver.php] stop fail
+2021-02-16 18:28:45 pid:876257 Workerman[./chatserver.php] stop 
+2021-02-16 18:28:45 pid:876257 Workerman[./chatserver.php] is stopping ...
+2021-02-16 18:28:50 pid:876257 Workerman[./chatserver.php] stop fail
+2021-02-16 18:28:51 pid:876279 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:28:51 pid:876279 Workerman[./chatserver.php] already running
+2021-02-16 18:29:33 pid:874131 Workerman[chatserver.php] stopping ...
+2021-02-16 18:29:33 pid:874131 Workerman[chatserver.php] stopping ...
+2021-02-16 18:29:33 pid:874131 Workerman[chatserver.php] stopping ...
+2021-02-16 18:29:33 pid:874131 Workerman[chatserver.php] stopping ...
+2021-02-16 18:29:33 pid:874131 Workerman[chatserver.php] has been stopped
+2021-02-16 18:30:53 pid:6302 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:31:24 pid:6302 Workerman[chatserver.php] stopping ...
+2021-02-16 18:31:24 pid:6302 Workerman[chatserver.php] has been stopped
+2021-02-16 18:31:56 pid:6669 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:33:55 pid:6669 Workerman[chatserver.php] stopping ...
+2021-02-16 18:33:55 pid:6669 Workerman[chatserver.php] has been stopped
+2021-02-16 18:36:57 pid:8144 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:37:22 pid:8144 Workerman[chatserver.php] stopping ...
+2021-02-16 18:37:22 pid:8144 Workerman[chatserver.php] has been stopped
+2021-02-16 18:37:24 pid:8241 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:39:04 pid:8241 Workerman[chatserver.php] stopping ...
+2021-02-16 18:39:04 pid:8241 Workerman[chatserver.php] has been stopped
+2021-02-16 18:39:05 pid:8969 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:39:51 pid:8969 Workerman[chatserver.php] stopping ...
+2021-02-16 18:39:51 pid:8969 Workerman[chatserver.php] has been stopped
+2021-02-16 18:39:52 pid:9265 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:40:35 pid:9265 Workerman[chatserver.php] stopping ...
+2021-02-16 18:40:35 pid:9265 Workerman[chatserver.php] has been stopped
+2021-02-16 18:40:37 pid:9680 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:41:18 pid:9680 Workerman[chatserver.php] stopping ...
+2021-02-16 18:41:18 pid:9680 Workerman[chatserver.php] has been stopped
+2021-02-16 18:41:19 pid:11084 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:43:08 pid:11084 Workerman[chatserver.php] stopping ...
+2021-02-16 18:43:08 pid:11084 Workerman[chatserver.php] has been stopped
+2021-02-16 18:43:09 pid:11508 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:44:29 pid:11508 Workerman[chatserver.php] stopping ...
+2021-02-16 18:44:29 pid:11508 Workerman[chatserver.php] has been stopped
+2021-02-16 18:44:30 pid:11879 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:45:30 pid:11879 Workerman[chatserver.php] stopping ...
+2021-02-16 18:45:30 pid:11879 Workerman[chatserver.php] has been stopped
+2021-02-16 18:45:34 pid:12176 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 18:46:35 pid:12176 Workerman[chatserver.php] stopping ...
+2021-02-16 18:46:35 pid:12176 Workerman[chatserver.php] has been stopped
+2021-02-16 18:46:36 pid:12528 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 19:05:03 pid:12528 Workerman[chatserver.php] stopping ...
+2021-02-16 19:05:03 pid:12528 Workerman[chatserver.php] has been stopped
+2021-02-16 19:05:03 pid:15915 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 19:05:29 pid:15916 Error: Call to undefined function channelUsers() in /var/www/yonger.loc/modules/chat/chatserver.php:131
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/chatserver.php(46): chat->msgRouter()
+#1 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#3 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#10 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#11 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#12 {main}
+2021-02-16 19:05:29 pid:15916 Worker[15916] process terminated
+2021-02-16 19:05:29 pid:15915 worker[none:15916] exit with status 64000
+2021-02-16 19:06:15 pid:15915 Workerman[chatserver.php] stopping ...
+2021-02-16 19:06:15 pid:15915 Workerman[chatserver.php] has been stopped
+2021-02-16 19:06:16 pid:16184 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 19:09:10 pid:16184 Workerman[chatserver.php] stopping ...
+2021-02-16 19:09:10 pid:16184 Workerman[chatserver.php] stopping ...
+2021-02-16 19:09:10 pid:16184 Workerman[chatserver.php] has been stopped
+2021-02-16 19:13:03 pid:6599 Workerman[./chatserver.php] start in DEBUG mode

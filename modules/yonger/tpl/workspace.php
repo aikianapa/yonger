@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" data-ajax="{'url':'/cms/ajax/form/messages/list/','html':'.content-body'}"
+                        <a href="#" data-ajax="{'url':'/module/chat/','html':'.content-body'}"
                             class="nav-link">
                             <svg class="mi mi-messages-chat-07" wb-module="myicons"></svg>
                             <span>Сообщения</span>
