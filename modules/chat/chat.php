@@ -18,7 +18,7 @@ class modChat
         $avatar = $this->app->vars('_sess.user.avatar.0');
 
         $this->json = (object)[
-            'server' => $this->app->route->domain,
+            'server' => $this->app->route->host,
             'project' => 'yonger',
             'room' => '',
             'sender' => [

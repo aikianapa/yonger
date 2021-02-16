@@ -2,10 +2,11 @@ var modChat = function (project = 'test', room = null) {
     var current_room = null;
     var conn = null;
     let json = json_decode($('script#schema').html());
+    let url = parse_url(json.server);
 
     var chat_connect = function () {
         if (conn && conn.OPEN) return conn;
-        conn = new WebSocket('ws://'+json.server+':8000')
+        conn = new WebSocket('ws://'+url.host+':8000')
         if (conn.OPEN) {
             conn.onopen = function (e) {
                 console.log("Connection established!")
