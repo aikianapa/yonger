@@ -95,7 +95,6 @@ class chat
         return $id;
     }
 
-
     public function channelId($msg) {
         $msg = (array)$msg;
         $id = 'id' . md5($msg['server'] . $msg['project'] . $msg['room']);
@@ -126,11 +125,20 @@ class chat
         !isset($connection->channels) ? $connection->channels = [] : null;
         switch ($data->command) {
             case 'join': // Вход в комнату
-                $msg->msg = $this->channelId($msg);
-                !in_array($msg->msg, $connection->channels) ? $connection->channels[] = $msg->msg : null;
-                $msg->users = $this->channelUsers($msg->msg);
+                $chid = $this->channelId($msg);
+                $msg->msg = $chid;
+                !in_array($chid, $connection->channels) ? $connection->channels[] = $chid : null;
                 $msg = json_encode($msg);
                 $connection->send($msg);
+                $umsg = $data;
+                $umsg->command = 'channelusers';
+                $umsg->msg = $this->channelUsers($chid);
+                $umsg->room = $chid;
+                $umsg = json_encode($umsg);
+                foreach($connections as $conn) {
+                    // обновляем список пользователей в комнате
+                    in_array($chid, $conn->channels) ? $conn->send($umsg) : null;
+                }
                 break;
             case 'leave': // Выход из комнаты
                 $msg->msg = $this->channelId($msg);

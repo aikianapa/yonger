@@ -61,7 +61,7 @@ var modChat = function (project = 'test', room = null) {
                 let msg = Object.assign({}, json); // copy json
                 msg.msg = $(this).find('input').val();
                 msg.command = 'message';
-                conn.send(json_encode(msg));
+                if (msg.msg.trim() > ' ') conn.send(json_encode(msg));
                 $(this)[0].reset();
                 e.preventDefault();
             });
@@ -96,8 +96,14 @@ var modChat = function (project = 'test', room = null) {
         }
     }
 
-    var chat_join = function (data) {
+    var chat_channelusers = function(data) {
         console.log(data);
+        wbapp.storage('mod.chat.roomusers',data.msg);
+        wbapp.render("#chatRoomUsers");
+        $('#showMemberList span').text(count(data.msg));
+    }
+
+    var chat_join = function (data) {
         current_room = data.msg;
         json.room = data.room;
         let bind = 'mod.chat.room.' + current_room

@@ -178,32 +178,16 @@
             <div class="chat-sidebar-right">
               <div class="pd-y-20 pd-x-10">
                 <div class="tx-10 tx-uppercase tx-medium tx-color-03 tx-sans tx-spacing-1 pd-l-10">Собеседники</div>
-                <div class="chat-member-list">
+                <div class="chat-member-list" id="chatRoomUsers">
+                  <wb-foreach wb="from=result&bind=mod.chat.roomusers&render=client">
                   <a href="#" class="media">
                     <div class="avatar avatar-sm avatar-online"><span class="avatar-initial rounded-circle">b</span></div>
                     <div class="media-body mg-l-10">
-                      <h6 class="mg-b-0">dfbot</h6>
+                      <h6 class="mg-b-0" data-id="{{id}}">{{name}}</h6>
                     </div><!-- media-body -->
-                  </a><!-- media -->
-                  <a href="#" class="media">
-                    <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/350" class="rounded-circle" alt=""></div>
-                    <div class="media-body mg-l-10">
-                      <h6 class="mg-b-0">situmay</h6>
-                    </div><!-- media-body -->
-                  </a><!-- media -->
-                  <a href="#" class="media">
-                    <div class="avatar avatar-sm avatar-offline"><img src="https://via.placeholder.com/600" class="rounded-circle" alt=""></div>
-                    <div class="media-body mg-l-10">
-                      <h6 class="mg-b-0">acantones</h6>
-                    </div><!-- media-body -->
-                  </a><!-- media -->
-                  <a href="#" class="media">
-                    <div class="avatar avatar-sm avatar-offline"><img src="https://via.placeholder.com/500" class="rounded-circle" alt=""></div>
-                    <div class="media-body mg-l-10">
-                      <h6 class="mg-b-0">rlabares</h6>
-                    </div><!-- media-body -->
-                  </a><!-- media -->
-                </div><!-- chat-msg-list -->
+                  </a>
+                  </wb-foreach>
+                </div>
               </div>
             </div><!-- chat-sidebar-right -->
 
