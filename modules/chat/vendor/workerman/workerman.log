@@ -1951,3 +1951,32 @@ Stack trace:
 2021-02-16 22:08:21 pid:6599 Workerman[chatserver.php] stopping ...
 2021-02-16 22:08:21 pid:6599 Workerman[chatserver.php] has been stopped
 2021-02-16 22:13:34 pid:24366 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 23:49:16 pid:24366 Workerman[chatserver.php] stopping ...
+2021-02-16 23:49:16 pid:24366 Workerman[chatserver.php] has been stopped
+2021-02-16 23:49:17 pid:35065 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 23:49:21 pid:35066 Error: Object of class stdClass could not be converted to string in /var/www/yonger.loc/modules/chat/chatserver.php:62
+Stack trace:
+#0 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Connection/TcpConnection.php(637): {closure}()
+#1 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(245): Workerman\Connection\TcpConnection->baseRead()
+#2 /var/www/yonger.loc/modules/chat/vendor/react/event-loop/src/StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity()
+#3 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Events/React/Base.php(137): Workerman\Events\React\Base->run()
+#5 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(2430): Workerman\Events\React\Base->loop()
+#6 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1555): Workerman\Worker->run()
+#7 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1385): Workerman\Worker::forkOneWorkerForLinux()
+#8 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(1359): Workerman\Worker::forkWorkersForLinux()
+#9 /var/www/yonger.loc/modules/chat/vendor/workerman/workerman/Worker.php(542): Workerman\Worker::forkWorkers()
+#10 /var/www/yonger.loc/modules/chat/chatserver.php(72): Workerman\Worker::runAll()
+#11 {main}
+2021-02-16 23:49:21 pid:35066 Worker[35066] process terminated
+2021-02-16 23:49:21 pid:35065 worker[none:35066] exit with status 64000
+2021-02-16 23:50:05 pid:35427 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 23:50:05 pid:35427 Workerman[./chatserver.php] already running
+2021-02-16 23:50:09 pid:35457 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 23:50:09 pid:35457 Workerman[./chatserver.php] already running
+2021-02-16 23:50:13 pid:35458 Workerman[./chatserver.php] stop 
+2021-02-16 23:50:13 pid:35458 Workerman[./chatserver.php] is stopping ...
+2021-02-16 23:50:18 pid:35458 Workerman[./chatserver.php] stop fail
+2021-02-16 23:50:19 pid:35499 Workerman[./chatserver.php] start in DEBUG mode
+2021-02-16 23:50:19 pid:35499 Workerman[./chatserver.php] already running
+2021-02-16 23:50:53 pid:35568 Workerman[./chatserver.php] start in DEBUG mode

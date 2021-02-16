@@ -160,8 +160,9 @@ class chat
                 $msg = json_encode($msg);
                 break;
             default:
-                $msg = $this->ajax($server.'/module/chat/'.$command, $msg);
-                $connection->send($msg);
+//                $msg = $this->ajax($server.'/module/chat/'.$command, $msg);
+//                $connection->send($msg);
+                $msg = json_encode($msg);
 
                 break;
         }
