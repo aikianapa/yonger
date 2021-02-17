@@ -1,4 +1,6 @@
 <html>
+  <link href="/modules/yonger/tpl/assets/css/dashforge.chat.css" rel="stylesheet" />
+  <script src="/modules/yonger/tpl/assets/js/dashforge.chat.js"></script>
         <div class="chat-wrapper chat-wrapper-two">
 
           <div class="chat-sidebar">
@@ -43,7 +45,7 @@
               </div>
 
               <div class="flex-fill pd-y-20 pd-x-10 bd-t">
-                <p class="tx-10 tx-uppercase tx-medium tx-color-03 tx-sans tx-spacing-1 pd-l-10 mg-b-10">Direct Messages</p>
+                <p class="tx-10 tx-uppercase tx-medium tx-color-03 tx-sans tx-spacing-1 pd-l-10 mg-b-10">Приватные сообщения</p>
                 <div id="chatDirectMsg" class="chat-msg-list">
                   <a href="#" class="media">
                     <div class="avatar avatar-sm avatar-online"><span class="avatar-initial bg-dark rounded-circle">b</span></div>

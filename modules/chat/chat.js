@@ -1,6 +1,4 @@
 var modChat = function (project = 'test', room = null) {
-    wbapp.loadStyles(['/modules/yonger/tpl/assets/css/dashforge.chat.css']);
-    wbapp.loadScripts(['/modules/yonger/tpl/assets/js/dashforge.chat.js']);
     var current_room = null;
     var conn = null;
     let json = json_decode($('script#schema').html());
