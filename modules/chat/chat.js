@@ -112,12 +112,14 @@ var modChat = function (project = 'test', room = null) {
         wbapp.template["#chatRoom"].params.bind = bind;
         if (wbapp.storage(bind) == undefined) wbapp.storage(bind, {});
         wbapp.render("#chatRoom");
-        chat_to_bottom();
+        chat_to_bottom(true);
     }
 
-    var chat_to_bottom = function() {
-        $("#chatRoom").css('min-height','3000px');
-        $(".chat-content-body").scrollTop(0) 
+    var chat_to_bottom = function(init = false) {
+        if (init == true) {
+            $("#chatRoom").css('min-height','3000px');
+            $(".chat-content-body").scrollTop(0) 
+        }
         setTimeout(function () {
             $(".chat-content-body").animate({ scrollTop: $('.chat-content-body').prop("scrollHeight") }, 500);
         }, 10)
