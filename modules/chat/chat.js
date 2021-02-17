@@ -1,4 +1,6 @@
 var modChat = function (project = 'test', room = null) {
+    wbapp.loadStyles(['/modules/yonger/tpl/assets/css/dashforge.chat.css']);
+    wbapp.loadScripts(['/modules/yonger/tpl/assets/js/dashforge.chat.js']);
     var current_room = null;
     var conn = null;
     let json = json_decode($('script#schema').html());
@@ -78,7 +80,6 @@ var modChat = function (project = 'test', room = null) {
     var chat_setrooms = function (data) {
         wbapp.storage('mod.chat.rooms', data.msg);
         wbapp.render('#allChannels');
-        console.log(data);
     }
 
     var chat_message = function (data) {
@@ -93,6 +94,7 @@ var modChat = function (project = 'test', room = null) {
                 'name': data.sender.name,
                 'time': date('d.m.Y H:i:s', strtotime(data._created))
             });
+            chat_to_bottom();
         }
     }
 
@@ -110,6 +112,15 @@ var modChat = function (project = 'test', room = null) {
         wbapp.template["#chatRoom"].params.bind = bind;
         if (wbapp.storage(bind) == undefined) wbapp.storage(bind, {});
         wbapp.render("#chatRoom");
+        chat_to_bottom();
+    }
+
+    var chat_to_bottom = function() {
+        $("#chatRoom").css('min-height','3000px');
+        $(".chat-content-body").scrollTop(0) 
+        setTimeout(function () {
+            $(".chat-content-body").animate({ scrollTop: $('.chat-content-body').prop("scrollHeight") }, 500);
+        }, 10)
     }
 
 

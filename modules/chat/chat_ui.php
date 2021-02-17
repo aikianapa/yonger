@@ -147,7 +147,7 @@
                   <a href="#modalInvitePeople" data-toggle="modal"><span data-toggle="tooltip" title="Invite People"><i data-feather="user-plus"></i></span></a>
                   <a id="showMemberList" href="" data-toggle="tooltip" data-trigger="hover" title="Собеседники" class="d-flex align-items-center">
                     <svg class="mi mi-legal-friction-talk-users" wb-module="myicons"></svg>
-                    <span class="tx-medium mg-l-5">25</span>
+                    <span class="tx-medium mg-l-5"></span>
                   </a>
                 </nav>
                 <nav id="directNav" class="d-none">
@@ -164,7 +164,7 @@
 
             <div class="chat-content-body">
               <div class="chat-group" id="chatRoom">
-                <wb-foreach wb="from=result&bind=mod.chat.room&render=client">
+                <wb-foreach wb="from=result&bind=mod.chat.null&render=client">
                 <!--div class="chat-group-divider">February 20, 2019</div-->
                 <div class="media">
                   <div class="avatar avatar-sm avatar-online"><span class="avatar-initial rounded-circle">k</span></div>
