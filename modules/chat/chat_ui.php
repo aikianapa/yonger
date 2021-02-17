@@ -30,7 +30,9 @@
                 <div class="d-flex align-items-center justify-content-between pd-x-10 mg-b-10">
                   <span class="tx-10 tx-uppercase tx-medium tx-color-03 tx-sans tx-spacing-1">Каналы</span>
                   <a href="#modalCreateChannel" class="chat-btn-add" data-toggle="modal">
-                    <span data-toggle="tooltip" title="Создать канал"><i data-feather="plus-circle"></i></span>
+                    <span data-toggle="tooltip" title="Создать канал">
+                      <svg class="mi mi-message-chat-medical-cross" wb-module="myicons"></svg>
+                    </span>
                   </a>
                 </div>
                 <nav id="allChannels" class="nav flex-column nav-chat mg-b-20">
@@ -143,7 +145,7 @@
               <div class="d-flex">
                 <nav id="channelNav">
                   <a href="#modalInvitePeople" data-toggle="modal"><span data-toggle="tooltip" title="Invite People"><i data-feather="user-plus"></i></span></a>
-                  <a id="showMemberList" href="" data-toggle="tooltip" title="Собеседники" class="d-flex align-items-center">
+                  <a id="showMemberList" href="" data-toggle="tooltip" data-trigger="hover" title="Собеседники" class="d-flex align-items-center">
                     <svg class="mi mi-legal-friction-talk-users" wb-module="myicons"></svg>
                     <span class="tx-medium mg-l-5">25</span>
                   </a>
@@ -194,7 +196,7 @@
             <form method="post" id="modChatMsg" class="chat-content-footer m-0">
                 <input type="text" class="form-control align-self-center bd-0" placeholder="Сообщение">
               <div class="d-flex align-items-center pd-l-10 pd-r-10 bd-l">
-                <a href="javascript:$('#modChatMsg').submit();"  data-toggle="tooltip" title="Отправить сообщение">
+                <a href="javascript:$('#modChatMsg').submit();"  data-toggle="tooltip" data-trigger="hover" title="Отправить сообщение">
                     <svg class="mi mi-send-message-send-share.2 wd-30" wb-module="myicons"></svg></a>
               </div>
               <nav>

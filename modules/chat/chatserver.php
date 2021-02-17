@@ -10,6 +10,7 @@ php chatserver.php reload
 */
 
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/ObsceneCensorRus.php';
 
 use Workerman\Worker;
 
@@ -84,7 +85,6 @@ class chat
         $this->clients->attach($conn);
         $this->clients->detach($conn);
 */
-
     }
 
     function newId()
@@ -153,6 +153,8 @@ class chat
                 $channel = $this->channelId($msg);
                 $msg->_created = date('Y-m-d H:i:s');
                 $msg->id = $this->newId();
+                $msg->msg = ObsceneCensorRus::getFiltered($msg->msg);
+
                 foreach ($connections as $conn) {
                     if ($msg->room > "") {
                         if (in_array($channel, $connection->channels)) {
