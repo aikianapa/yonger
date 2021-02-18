@@ -6,7 +6,7 @@ var modChat = function (project = 'test', room = null) {
 
     if (document.modChat == undefined) {
         document.modChat = setInterval(function () {
-            if ($(document).find('.chat-wrapper').length) {
+            if ($(document).find('.chat-wrapper').length && !conn.OPEN) {
                 conn = null;
                 console.log('Reconnect');
                 chat_connect();
