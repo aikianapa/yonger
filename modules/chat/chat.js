@@ -1,8 +1,22 @@
 var modChat = function (project = 'test', room = null) {
-    var current_room = null;
-    var conn = null;
+    let current_room = null;
+    let conn = null;
     let json = json_decode($('script#schema').html());
     let url = parse_url(json.server);
+
+    if (document.modChat == undefined) {
+        document.modChat = setInterval(function () {
+            if ($(document).find('.chat-wrapper').length) {
+                conn = null;
+                console.log('Reconnect');
+                chat_connect();
+            } else {
+                clearInterval(document.modChat);
+                delete document.modChat;
+            }
+        }, 4000);
+    }
+    
 
     var chat_connect = function () {
         if (conn && conn.OPEN) return conn;
@@ -33,27 +47,95 @@ var modChat = function (project = 'test', room = null) {
             };
 
             conn.onclose = function (e) {
-                console.log("Connection closed!");
+                if (conn.OPEN) {
+                    wbapp.toast("Ошибка","Соединение с сервером разорвано! Подключаемся...",{'bgcolor':'danger','delay':2000});
+                    console.log("Connection closed!");
+                }
             }
 
             $(document).undelegate('#allChannels .nav-link', 'tap click');
-            $(document).delegate('#allChannels .nav-link', 'tap click', function () {
+            $(document).delegate('#allChannels .nav-link', 'tap click', function (e) {
+                e.preventDefault()
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+
+                $('#chatDirectMsg .active').removeClass('active');
+
+                // replace channel title
+                let href = $(this).attr('data-id').trim();
+                $('#channelTitle').text('#' + href);
+
+                // view channel title
+                $('#channelTitle').removeClass('d-none');
+                $('#directTitle').addClass('d-none');
+
+                // view channel nav icon
+                $('#channelNav').removeClass('d-none');
+                $('#directNav').addClass('d-none');
+
+                if (window.matchMedia('(max-width: 991px)').matches) {
+                    showChatContent();
+                }
+
+
                 let msg = Object.assign({}, json); // copy json
-                msg.room = msg.msg = $(this).text().trim();
-                $('#channelTitle').text('#' + msg.msg);
+                msg.room = msg.msg = href;
                 msg.command = 'join';
                 conn.send(json_encode(msg));
             });
 
+            // direct message click
+            $(document).undelegate('#chatDirectMsg .media', 'click');
+            $(document).delegate('#chatDirectMsg .media','click', function (e) {
+                e.preventDefault();
+
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+
+                $('#allChannels .active').removeClass('active');
+
+                var directUser = $(this).find('h6').text();
+                $('#directTitle h6').text('@' + directUser);
+
+                var avatar = $(this).find('.avatar');
+                $('#directTitle .avatar').replaceWith(avatar.clone());
+
+                // view direct title
+                $('#channelTitle').addClass('d-none');
+                $('#directTitle').removeClass('d-none');
+
+                // view direct nav icon
+                $('#channelNav').addClass('d-none');
+                $('#directNav').removeClass('d-none');
+
+                if (window.matchMedia('(max-width: 991px)').matches) {
+                    showChatContent();
+                }
+
+                $('body').removeClass('show-sidebar-right');
+                $('#showMemberList').removeClass('active');
+
+                let msg = Object.assign({}, json); // copy json
+                msg.room = msg.msg = $(this).text().trim();
+                msg.command = 'direct';
+                conn.send(json_encode(msg));
+
+            })
+
+            $(document).undelegate('#chatRoomUsers .media', 'click');
+            $(document).delegate('#chatRoomUsers .media', 'click',function(e){
+                let receiver = $(this).attr('data-id');
+                let msg = Object.assign({}, json); // copy json
+                msg.room = msg.msg = '@' + receiver;
+                msg.receiver = receiver;
+                msg.command = 'join';
+                conn.send(json_encode(msg));
+            });
+            
+
             $(document).undelegate('#channelTitle', 'tap click');
             $(document).delegate('#channelTitle', 'tap click', function () {
                 $('body').toggleClass("chat-content-show chat-content-hide");
-            });
-
-            $(document).undelegate('#showMemberList', 'tap click');
-            $(document).delegate('#showMemberList', 'tap click', function (e) {
-                $('body').toggleClass("show-sidebar-right");
-                e.preventDefault();
             });
 
             $(document).undelegate('#modChatMsg', 'submit');
@@ -65,7 +147,6 @@ var modChat = function (project = 'test', room = null) {
                 $(this)[0].reset();
                 e.preventDefault();
             });
-            $(document).data('modChat', conn);
         }
         return conn
     }
@@ -97,18 +178,25 @@ var modChat = function (project = 'test', room = null) {
     }
 
     var chat_channelusers = function(data) {
-        console.log(data);
-        wbapp.storage('mod.chat.roomusers',data.msg);
-        wbapp.render("#chatRoomUsers");
+        if (data.receiver > '' ) {
+            wbapp.storage('mod.chat.privusers.' + data.receiver, data.msg[data.receiver]);
+            wbapp.render("#chatDirectMsg");
+            $('body').removeClass('show-sidebar-right');
+            $(`#chatDirectMsg [data-id='${data.receiver}']`).trigger('tap click');
+        } else {
+            wbapp.storage('mod.chat.roomusers', data.msg);
+            wbapp.render("#chatRoomUsers");
+        }
         $('#showMemberList span').text(count(data.msg));
     }
 
     var chat_join = function (data) {
         current_room = data.msg;
+        console.log(data);
         json.room = data.room;
         let bind = 'mod.chat.room.' + current_room
-        wbapp.template["#chatRoom"].params.bind = bind;
         if (wbapp.storage(bind) == undefined) wbapp.storage(bind, {});
+        wbapp.template["#chatRoom"].params.bind = bind;
         wbapp.render("#chatRoom");
         chat_to_bottom(true);
     }
@@ -125,10 +213,11 @@ var modChat = function (project = 'test', room = null) {
 
 
     setTimeout(function () {
+        wbapp.render("#modChatUser", wbapp._session.user);
         wbapp.render('#allChannels');
     }, 100)
 
+
 }
 
-//if ($(document).data('modChat') == undefined) modChat(); // run once
-modChat('yonger', 'yonger_test');
+if (document.modChat == undefined) modChat('yonger', 'yonger_test');

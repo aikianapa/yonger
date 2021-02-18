@@ -45,21 +45,6 @@ $worker->onMessage = function ($connection, $data) {
     $worker = &$connection->worker;
     $chat = $worker->chat;
     $data = $chat->msgRouter($data, $connection->id);
-
-        //print_r($connections->channels);
-    /*
-        foreach($connections as $conn) {
-            $con = (array)$connections;
-            if ($conn == $connection) {
-                $data = $chat->msgRouter($data);
-                $connection->send($data);
-            } else {
-                $data = $chat->msgUser($data);
-                $connection->send($data);
-            }
-        }
-        */
-    //$data = json_decode($data,true);
     echo "{$data}\n";
 };
 
@@ -137,7 +122,7 @@ class chat
                 $umsg = json_encode($umsg);
                 foreach($connections as $conn) {
                     // обновляем список пользователей в комнате
-                    in_array($chid, $conn->channels) ? $conn->send($umsg) : null;
+                    in_array($chid, (array)$conn->channels) ? $conn->send($umsg) : null;
                 }
                 break;
             case 'leave': // Выход из комнаты

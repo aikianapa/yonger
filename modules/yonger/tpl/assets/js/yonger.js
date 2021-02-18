@@ -74,7 +74,6 @@ $(document).on("wb-ajax-done",function(e,params) {
 
 var yongerWorkspace = function() {
     wbapp.storage('cms.profile.user',wbapp._session.user);
-    console.log(2542345);
     var profileMenu = Ractive({
       target: "#userProfileMenu",
       template: wbapp.template["#userProfileMenu"].html,
