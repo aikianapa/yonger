@@ -15,6 +15,7 @@
 				,"{{_var.base}}/assets/js/dashforge.js"
 				,"{{_var.base}}/assets/js/dashforge.aside.js"
 				,"{{_var.base}}/assets/lib/js-cookie/js.cookie.js"
+				,"{{_var.base}}./assets/js/yonger.js"
 			]);
 
 		</script>

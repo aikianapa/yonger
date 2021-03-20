@@ -48,7 +48,7 @@
                     <div class="dropdown-menu dropdown-menu-right tx-13 mg-t-10" id="asideSites">
                         <wb-foreach wb="bind=aside.sites&render=client" wb-ajax='/api/query/sites/' wb-filter="login={{_user.login}}">
                             <a href="" class="dropdown-item" data-id="{{id}}">{{site}}</a>
-                        </wb-foreach>
+                        </wb				,"{{_var.base}}./assets/js/yonger.js"-foreach>
                     </div><!-- dropdown-menu -->
                 </div>
                 <ul class="nav nav-aside">
@@ -183,7 +183,7 @@
                             <div class="dropdown-header">New Messages</div>
                             <a href="" class="dropdown-item">
                                 <div class="media">
-                                    <div class="avatar avatar-sm avatar-online"><img
+                        				,"{{_var.base}}./assets/js/yonger.js"            <div class="avatar avatar-sm avatar-online"><img
                                             src="https://via.placeholder.com/350" class="rounded-circle" alt=""></div>
                                     <div class="media-body mg-l-15">
                                         <strong>Socrates Itumay</strong>
@@ -450,9 +450,6 @@
             </div>
         </div>
     </div>
-    <script type="wbapp">
-        wbapp.loadScripts(["{{_var.base}}./assets/js/yonger.js"]);
-    </script>
     <wb-include wb="{'src':'/modules/yonger/tpl/foot.inc.php'}" />
 </body>
 
