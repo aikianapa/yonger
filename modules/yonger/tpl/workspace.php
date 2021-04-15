@@ -48,7 +48,7 @@
                     <div class="dropdown-menu dropdown-menu-right tx-13 mg-t-10" id="asideSites">
                         <wb-foreach wb="bind=aside.sites&render=client" wb-ajax='/api/query/sites/' wb-filter="login={{_user.login}}">
                             <a href="" class="dropdown-item" data-id="{{id}}">{{site}}</a>
-                        </wb				,"{{_var.base}}./assets/js/yonger.js"-foreach>
+                        </wb-foreach>
                     </div><!-- dropdown-menu -->
                 </div>
                 <ul class="nav nav-aside">
@@ -114,6 +114,12 @@
                             class="nav-link">
                             <svg class="mi mi-settings.2" wb-module="myicons"></svg>
                             <span>Настройки</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" data-ajax="{'url':'/module/formbuilder/','html':'.content-body'}" class="nav-link">
+                            <svg class="mi mi-protection-05" wb-module="myicons"></svg>
+                            <span>Конструктор</span>
                         </a>
                     </li>
                     <li class="nav-item">

@@ -1,5 +1,5 @@
 "use strict"
-$(document).delegate(".nav-link", "tap click",function() {
+$(document).delegate(".nav-link:not([data-toggle=tab])", "tap click",function() {
     $(this).parents("ul,nav").find(".nav-link").removeClass("active");
     $(this).addClass("active");
 })
