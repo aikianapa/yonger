@@ -118,7 +118,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" data-ajax="{'url':'/module/formbuilder/','html':'.content-body'}" class="nav-link">
-                            <svg class="mi mi-protection-05" wb-module="myicons"></svg>
+                            <svg class="mi mi-design-47" wb-module="myicons"></svg>
                             <span>Конструктор</span>
                         </a>
                     </li>
