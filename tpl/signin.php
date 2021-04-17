@@ -55,6 +55,8 @@
                                 <a href="#"  class="d-none btn-repeat">Отправить код ещё раз</a>
                                 <br>
                                 <span class="msg-repeat">Повторная отправка возможна через <span class='wait'></span> секунд</span>
+                                <a href="#" onclick="wbapp.sign.login();"
+                                    class="btn btn-secondary mt-5 w-100">Войти</a>
                             </div>
                             <div class="col-12 d-none tx-danger pt-3"></div>
                             <div class="col-12 d-none tx-success pt-3">
