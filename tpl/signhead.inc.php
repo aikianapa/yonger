@@ -22,28 +22,34 @@
                     'phone':phone,
                     'type':type
                     },function(data){
-                    //wbapp.toast('Код',data.code);
-                    wbapp.toast('Код',data.code,{target:'.content-toasts','bgcolor':'warning','txcolor':'white'});
-                    $('#form phone').text(phone);
-                    $('#form .btn-primary').addClass('d-none');
-                    $('#form .after-send-code').removeClass('d-none');
-                    var wait = 3;
-                    var timer = setInterval(function(){
-                        wait--;
-                        $('#form .wait').text(wait);    
-                    },1000);
-                    $('#form .wait').text(wait);
-                    setTimeout(function(){
-                        $('#form .btn-repeat').removeClass('d-none');
-                        $('#form .msg-repeat').addClass('d-none');
-                        clearInterval(timer);
-                    }, (wait*1000));
+                    if (data.error) {
+                        $('#form .tx-danger').text(data.msg).removeClass('d-none');
+                    } else {
+                        $('#form .tx-danger').addClass('d-none');
+                        wbapp.toast('Код',data.code,{target:'.content-toasts','bgcolor':'primary','txcolor':'white'});
+                        $('#form phone').text(phone);
+                        $('#form .btn-primary').addClass('d-none');
+                        $('#form .after-send-code').removeClass('d-none');
+                        var wait = 3;
+                        var timer = setInterval(function(){
+                            wait--;
+                            $('#form .wait').text(wait);    
+                        },1000);
+                        $('#form .wait').text(wait);
+                        setTimeout(function(){
+                            $('#form .btn-repeat').removeClass('d-none');
+                            $('#form .msg-repeat').addClass('d-none');
+                            clearInterval(timer);
+                        }, (wait*1000));
+                    }
                 })
                 $('#form .btn-repeat').off('tap click');
                 $('#form .btn-repeat').on('tap click',function(){
+                    let type = 'reg';
                     $('#form .btn-repeat').addClass('d-none');
                     $('#form .msg-repeat').removeClass('d-none');
-                    wbapp.sign.checkphone();
+                    $('#form .btn-repeat').hasClass('login') ? type = 'login' : null ;
+                    wbapp.sign.checkphone(type);
                 });
             },
             reg: function() {
@@ -68,6 +74,8 @@
                     },function(data){
                         if (data.login == true && data.error == false) {
                             document.location.href = data.user.group.url_login;
+                        } else {
+                            $('#form .tx-danger').text(data.msg).removeClass('d-none');
                         }
                     });
             }

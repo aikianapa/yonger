@@ -52,16 +52,13 @@
                             <div class="col-12 after-send-code d-none tx-secondary pt-3">
                                 Мы отправили код подтверждения<br>
                                 на номер <phone></phone><br>
-                                <a href="#"  class="d-none btn-repeat">Отправить код ещё раз</a>
+                                <a href="#" class="d-none btn-repeat login">Отправить код ещё раз</a>
                                 <br>
                                 <span class="msg-repeat">Повторная отправка возможна через <span class='wait'></span> секунд</span>
                                 <a href="#" onclick="wbapp.sign.login();"
                                     class="btn btn-secondary mt-5 w-100">Войти</a>
                             </div>
                             <div class="col-12 d-none tx-danger pt-3"></div>
-                            <div class="col-12 d-none tx-success pt-3">
-                                Регистрация успешно завершена.
-                            </div>
                         </div>
                         <p class="mt-5 tx-12">
                             *Бесплатное использование по плану Free рассчитывается ежедневно. Детали немного отличаются

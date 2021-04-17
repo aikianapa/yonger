@@ -44,10 +44,10 @@ class modPhonecheck {
                 'password'  =>  $this->check
             ]);
         } else {
-            echo json_encode(['error' => true, 'msg' => 'Пользователь не зарегистрирван']);    
+            header('Content-Type: application/json');
+            echo json_encode(['error' => true, 'msg' => 'Пользователь не зарегистрирван']);
+            die;
         }
-
-
     }
 
     private function login() {
@@ -63,7 +63,7 @@ class modPhonecheck {
             $this->app->login($user);
             return json_encode(['login'=>true,'error'=>false,'redirect'=>$user->group->url_login,'user'=>$user,'role'=>$user->role]);
         } else {
-            return json_encode(['login'=>false,'error'=>true]);
+            return json_encode(['login'=>false,'error'=>true,'msg'=>'Ошибка! Вход не выполнен.']);
         }
     }
 
