@@ -1,77 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <wb-var assets="/modules/yonger/tpl/assets" />
-<wb-include wb-tpl="head.inc.php" />
+<wb-include wb-tpl="signhead.inc.php" />
 
-<body class="bg-light">
+<body class="bg-light" id="signup">
+    <div class="row">
+        <div class="col-12 d-none d-sm-inline col-sm-6 col-lg-7 pr-0" id="image">
+            <div class="d-flex">
+                <div class="container">
+                    <img src="/tpl/assets/img/logo.svg" class="position-absolute" style="top: 10vh; width: 150px;">
+                    <h1>
+                        Легко создавайте,
+                        <br />развивайте сайты
+                        <br />и онлайн-сервисы
+                    </h1>
+                    <p class="mt-5">
+                        Yonger - это мощное, многофункциональное ядро для разработки веб-приложений любой сложности. Мы
+                        подготовили все необходимое, чтобы вам было как можно комфортнее работать.
+                    </p>
+                    <a class="btn btn-secondary btn-rounded">Подробнее</a>
+                </div>
 
-
-    <wb-include wb-tpl="signhead.inc.php" />
-
-    <div class="content content-fixed content-auth">
-        <div class="container">
-            <div class="ht-100p">
-
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center">
-                        <h1 class="display-4">Войти</h1>
-                        <p class="lead">Войдите в систему, или
-                            <a href="/signup">зарегистрируйтесь</a>.</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-5" id="form">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-12 col-md-6 offset-md-4 offset-xl-5">
+                        <p class="">Ещё нет аккаунта?</p>
+                        <h4><a href="/signup">Зарегистрироваться</a></h4>
                     </div>
                 </div>
-                <div class="row  justify-content-center mt-5">
-                    <div class="col-md-6">
-                        <form class="tx-14" id="signin">
-                            <fieldset class="form-fieldset">
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <input type="text" class="form-control" placeholder="Ваш Email/логин" name="login">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-12">
-                                        <input type="password" class="form-control" placeholder="Пароль" name="password">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-6">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="check">
-                                            <label class="custom-control-label" for="check">Запомнить меня</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 text-right">
-                                        <a href="/signrc">Забыли пароль?</a>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <a class="btn btn-primary w-100" href="javascript:wbapp.auth('#signin', 'signin');">Войти</a>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <div class="signin-error alert alert-danger text-center mt-3 d-none">
-                                Не удалось выполнить вход.<br>Пожалуйста, попробуйте ещё раз.
+                <div class="d-flex">
+                    <form class="d-block">
+                        <h2 class="mb-4">Вход</h2>
+                        <div class="row">
+                            <div class="col-12 col-md-7">
+                                <label class="form-control-label">Телефон</label>
+                                <input type="phone" wb-mask='+7 (999) 999-99-99' placeholder="" class="form-control"
+                                    name="phone" required>
                             </div>
-                        </form>
-                        <p class="text-center">
-                            <a href="/signup">У вас еще нет учетной записи? Зарегистрироваться</a>
+                            <div class="col-12 col-md-5">
+                                <a href="#" onclick="wbapp.sign.checkphone('login');" class="btn btn-primary mt-4 w-100">
+                                    <nobr>Получить код</nobr>
+                                </a>
+                                <label class="form-control-label after-send-code d-none">Проверочный код</label>
+                                <input type="text" placeholder="Проверочный код" wb-mask='999-999'
+                                        class="form-control after-send-code d-none" name="code">
+                                <a href="/workspace" class="btn btn-primary d-none after-reg mt-4 w-100">Войти в систему</a>
+                            </div>
+                            <div class="col-12 after-send-code d-none tx-secondary pt-3">
+                                Мы отправили код подтверждения<br>
+                                на номер <phone></phone><br>
+                                <a href="#"  class="d-none btn-repeat">Отправить код ещё раз</a>
+                                <br>
+                                <span class="msg-repeat">Повторная отправка возможна через <span class='wait'></span> секунд</span>
+                            </div>
+                            <div class="col-12 d-none tx-danger pt-3"></div>
+                            <div class="col-12 d-none tx-success pt-3">
+                                Регистрация успешно завершена.
+                            </div>
+                        </div>
+                        <p class="mt-5 tx-12">
+                            *Бесплатное использование по плану Free рассчитывается ежедневно. Детали немного отличаются
+                            для
+                            облачных функций, Firebase ML, Phone Auth и Test Lab.
+                            <br><br>
+                            Дополнительные сведения см. в разделе
+                            <a href="/faq">Часто задаваемые вопросы</a>
                         </p>
-                    </div>
+                    </form>
                 </div>
             </div>
-            <!-- media -->
         </div>
-        <!-- container -->
     </div>
-    <!-- content -->
-    <wb-include wb-tpl="signfoot.inc.php" />
+
     <wb-include wb-snippet="wbapp" />
     <wb-include wb-snippet="lineawesome" />
-    <wb-include wb-tpl="scripts.inc.php" />
+
 </body>
 
 </html>

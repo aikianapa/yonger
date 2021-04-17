@@ -1,130 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <wb-var assets="/modules/yonger/tpl/assets" />
-<wb-include wb-tpl="head.inc.php" />
+<wb-include wb-tpl="signhead.inc.php" />
 
-<body class="bg-light">
+<body class="bg-light" id="signup">
 
+    <div class="row">
+        <div class="col-12 d-none d-sm-inline col-sm-6 col-lg-7 pr-0" id="image">
+            <div class="d-flex">
+                <div class="container">
+                    <img src="/tpl/assets/img/logo.svg" class="position-absolute" style="top: 10vh; width: 150px;">
+                    <h1>
+                        Легко создавайте,
+                        <br />развивайте сайты
+                        <br />и онлайн-сервисы
+                    </h1>
+                    <p class="mt-5">
+                        Yonger - это мощное, многофункциональное ядро для разработки веб-приложений любой сложности. Мы
+                        подготовили все необходимое, чтобы вам было как можно комфортнее работать.
+                    </p>
+                    <a class="btn btn-secondary btn-rounded">Подробнее</a>
+                </div>
 
-    <wb-include wb-tpl="signhead.inc.php" />
-
-    <div class="content content-fixed content-auth">
-        <div class="container">
-            <div class="ht-100p">
-
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center">
-                        <h1 class="display-4">Регистрация</h1>
-                        <p class="lead">Давайте сначала зарегистрируемся на сайте.</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-5" id="form">
+            <div class="container">
+            <div class="row mt-5">
+                    <div class="col-12 col-md-6 offset-md-4 offset-xl-5">
+                        <p>Уже зарегистрированы?</p>
+                        <h4><a href="/signin">Войти</a></h4>
                     </div>
                 </div>
-                <div class="row  justify-content-center mt-5">
-                    <div class="col-md-6">
-                        <form class="tx-14" id="signup">
-                            <fieldset class="form-fieldset signup-form">
-                                <div class="form-group row">
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" placeholder="Имя" name="first_name">
-                                    </div>
 
-                                    <div class="col-sm-6 mt-3 mt-sm-0">
-                                        <input type="text" class="form-control" placeholder="Фамилия" name="last_name">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" placeholder="Номер телефона" name="phone" wb="module=mask" wb-mask="+7 (999) 999-99-99">
-                                    </div>
-
-                                    <div class="col-sm-6 mt-3 mt-sm-0">
-                                        <input type="text" class="form-control" placeholder="Проверочный код" data-name="phone-confirm">
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <input type="email" class="form-control" placeholder="Электронная почта" name="email" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Адрес профиля" name="login" wb-module="smartid" required autocomplete="off">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text bg-white">.{{_route.domain}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control" placeholder="Пароль" name="password" required>
-                                    </div>
-                                    <div class="col-sm-6 mt-3 mt-sm-0">
-                                        <input type="password" class="form-control" placeholder="Пароль повторно" name="password-confirm" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="check" required>
-                                            <label class="custom-control-label" for="check">Регистрируясь, вы даёте согласие на обработку
-                                                <a href>Персональных данных</a> и принимаете
-                                                <a href>Пользовательское соглашение</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-sm-4">
-                                    <a class="btn btn-secondary w-100" href="/signin">Войти</a>
-                                    </div>
-                                    <div class="col-sm-8">
-                                    <a class="btn btn-primary w-100" href="javascript:wbapp.auth('#signup','signup');">Зарегистрироваться</a>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <div class="signup-error alert alert-danger text-center mt-3 d-none">
-                                Не удалось выполнить регистрацию пользователя.<br>Возможно, такой пользователь уже существует.
+                <div class="d-flex">
+                    <form class="d-block">
+                        <h2 class="mb-4">Регистрация</h2>
+                        <div class="row">
+                            <div class="col-12 col-md-7">
+                                <label class="form-control-label">Телефон</label>
+                                <input type="phone" wb-mask='+7 (999) 999-99-99' placeholder="" class="form-control"
+                                    name="phone" required>
                             </div>
-                            <div class="signup-success alert alert-success text-center mt-3 d-none">
-                                <p>Вы успешно зарегистрировались и можете войти в систему.</p>
-                                <a class="btn btn-primary w-50" href="/signin">Войти</a>
+                            <div class="col-12 col-md-5">
+                                <a href="#" onclick="wbapp.sign.checkphone();" class="btn btn-primary mt-4">
+                                    <nobr>Получить код</nobr>
+                                </a>
+                                <label class="form-control-label after-send-code d-none">Проверочный код</label>
+                                <input type="text" placeholder="Проверочный код" wb-mask='999-999'
+                                        class="form-control after-send-code d-none" name="code">
+                                <a href="/workspace" class="btn btn-primary d-none after-reg mt-4 w-100">Войти в систему</a>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-12 after-send-code d-none tx-secondary pt-3">
+                                Мы отправили код подтверждения<br>
+                                на номер <phone></phone><br>
+                                <a href="#" class="d-none btn-repeat">Отправить код ещё раз</a>
+                                <br>
+                                <span class="msg-repeat">Повторная отправка возможна через <span class='wait'></span> секунд</span>
+                                <a href="#" onclick="wbapp.sign.reg();"
+                                    class="btn btn-secondary mt-5 w-100">Зарегистрироваться</a>
+                            </div>
+                            <div class="col-12 d-none tx-danger pt-3"></div>
+                            <div class="col-12 d-none tx-success pt-3">
+                                Регистрация успешно завершена.
+                            </div>
+                        </div>
+                        <p class="mt-5 tx-12">
+                            *Бесплатное использование по плану Free рассчитывается ежедневно. Детали немного отличаются
+                            для
+                            облачных функций, Firebase ML, Phone Auth и Test Lab.
+                            <br><br>
+                            Дополнительные сведения см. в разделе
+                            <a href="/faq">Часто задаваемые вопросы</a>
+                        </p>
+                    </form>
                 </div>
             </div>
-            <!-- media -->
         </div>
-        <!-- container -->
     </div>
-    <!-- content -->
-
-    <footer class="footer">
-        <div>
-            <span>&copy; 2021 Yonger v1.0.0. </span>
-            <span>Created by
-                <a href="{{_route.host}}">{{_sett.header}}</a>
-            </span>
-        </div>
-        <div>
-            <nav class="nav">
-                <a href="https://themeforest.net/licenses/standard" class="nav-link">Licenses</a>
-                <a href="../../change-log.html" class="nav-link">Change Log</a>
-                <a href="https://discordapp.com/invite/RYqkVuw" class="nav-link">Get Help</a>
-            </nav>
-        </div>
-    </footer>
 
     <wb-include wb-snippet="wbapp" />
     <wb-include wb-snippet="lineawesome" />
-    <wb-include wb-tpl="scripts.inc.php" />
+
+
 </body>
 
 </html>
