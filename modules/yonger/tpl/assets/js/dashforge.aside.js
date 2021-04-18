@@ -1,8 +1,6 @@
 $(function(){
-
   'use strict'
-
-  $('[data-toggle="tooltip"]').tooltip()
+  if (!$('.aside-body').length) return;
 
   const asideBody = new PerfectScrollbar('.aside-body', {
     suppressScrollX: true

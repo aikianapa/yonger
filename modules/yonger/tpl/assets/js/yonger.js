@@ -73,13 +73,15 @@ $(document).on("wb-ajax-done",function(e,params) {
 });
 
 var yongerWorkspace = function() {
-    wbapp.storage('cms.profile.user',wbapp._session.user);
-    var profileMenu = Ractive({
-      target: "#userProfileMenu",
-      template: wbapp.template["#userProfileMenu"].html,
-      data: () => {return wbapp.storage('cms.profile.user');}
-    });
-    $("#userProfileMenu").data("ractive",profileMenu);
+    if ($("#userProfileMenu").length) {
+        wbapp.storage('cms.profile.user',wbapp._session.user);
+        var profileMenu = Ractive({
+        target: "#userProfileMenu",
+        template: wbapp.template["#userProfileMenu"].html,
+        data: () => {return wbapp.storage('cms.profile.user');}
+        });
+        $("#userProfileMenu").data("ractive",profileMenu);
+    }
     wbapp.lazyload();
 };
 

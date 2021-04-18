@@ -26,7 +26,12 @@ class modYonger
         if ($login == '' OR $role !== 'user') {
             $form = $app->controller('form');
             return $form->get404();
-        } /*else if ($login !== $subdom) {
+        } else if ($login == '_new') {
+            $master = $ws = $app->fromFile(__DIR__."/tpl/master.php", true);
+            $master->fetch();
+            return $master;
+        }
+        /*else if ($login !== $subdom) {
             print_r($app->route);
             $url = $app->route->scheme.'://'.$app->vars('_sess.user.login').'.'.$app->route->domain.$app->route->uri;
             echo $url;
