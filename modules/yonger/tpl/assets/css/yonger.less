@@ -5,6 +5,8 @@
 @color-hover: #0062FF;
 @color-logo: #273244;
 @color-gray: #E2E2EA;
+@color-light: #D8D8D8;
+@color-link: #323232;
 
 body {
     overflow: hidden;
@@ -261,6 +263,84 @@ body {
     }
 
 
+}
+
+#startMaster {
+    @radius: 1rem;
+    @duration: .3s;
+
+    .form-control {
+        border: none;
+        border-bottom: 1px @color-gray solid;
+        border-radius: 0;
+        background: transparent;
+        &:focus, &:focus +.input-group-append .input-group-text {
+            border-bottom: 1px @color-hover solid;
+            box-shadow: none;
+        }
+    }
+    .input-group-text {
+        background: transparent;
+        border: none;
+        border-bottom: 1px @color-gray solid;
+        border-radius: 0;
+    }
+
+    #avatar {
+        a {
+            color: @color-link;
+        }
+    }
+
+    .hidden {
+        display:none;
+    }
+    .checkholder {
+        border-radius: @radius;
+        border: 1px transparent solid;
+        background-color: @color-gray;
+        background: transparent\9;
+        min-height: 3.1rem;
+        display: flex;
+        align-items: center;
+        color: @color-menu;
+        span {
+            padding: 0 0.5rem;
+        }
+        cursor: pointer;
+        .icon {
+            min-width: 3rem;
+            min-height: 3rem;
+            border-radius: @radius;
+            background-color: @color-light;
+            display: flex;
+            align-items: center;
+            svg {
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    }
+    input + .checkholder:hover {
+        background: #C4DBFF;
+        transition-duration: @duration;
+        .icon {
+            background: @color-gray;
+        }
+    }
+
+    input:checked + .checkholder {
+        background: #C4DBFF;
+        transition-duration: @duration;
+        .icon {
+            background: #50B5FF;
+            transition-duration: @duration;
+            svg [stroke] {
+                stroke: white;
+                transition-duration: @duration;
+            }
+        }
+    }
 }
 
 .cursor-pointer {

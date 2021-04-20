@@ -26,7 +26,7 @@
                         $('#form .tx-danger').text(data.msg).removeClass('d-none');
                     } else {
                         $('#form .tx-danger').addClass('d-none');
-                        wbapp.toast('Код',data.code,{target:'.content-toasts','bgcolor':'primary','txcolor':'white'});
+                        alert(data.code);
                         $('#form phone').text(phone);
                         $('#form .btn-primary').addClass('d-none');
                         $('#form .after-send-code').removeClass('d-none');
