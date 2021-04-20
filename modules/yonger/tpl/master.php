@@ -249,7 +249,7 @@
                                             </div>
                                         </template>
                                     </div>
-                                    <input wb="module=filepicker&mode=single" class="d-none" wb-path="/test" name="avatar">
+                                    <input wb="module=filepicker&mode=single" class="d-none" wb-path="/uploads/avatars" name="avatar">
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col-6">
