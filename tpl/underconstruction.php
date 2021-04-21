@@ -5,32 +5,32 @@
  <title>Сайт в разработке!</title>
   <style type="text/css">
    BODY {
-    background: #F7F9FB; /* цвет фона */
+    background:url(/tpl/assets/img/abstractgradient.png) 50% 50% no-repeat;
+    background-size: cover;
     color: #fc0; /* цвет текста */
+    overflow: hidden;
+    padding: 0;
+    height: 100vh;
    }
-   table {
-     height: 90vh;
+   .logo {
+     display: flex;
+     width: 100vw;
+     height: 100%;
+     overflow: hidden;
+     align-items: center;
+   }
+   .logo img {
+    align-items: center;
+     width: 35vw;
+     height: auto;
+     margin-left: auto;
+     margin-right: auto;
    }
   </style>
 </head>
-<body bgcolor="#000" style="background:url(/tpl/assets/img/abstractgradient.png)">
-
-<div>
- <table align="center">
-   <tr>
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-<td><img src="/tpl/assets/img/yops.svg" /></td>   
-   
-   </tr>
-
-
-
-  </table>
+<body style="">
+<div class="logo">
+  <img src="/tpl/assets/img/yops.svg" />
 </div>
-
-
-
-
-
 </body>
 </html>
