@@ -4,7 +4,6 @@
 				,"{{_var.base}}/assets/css/dashforge.chat.css"
 				,"{{_var.base}}/assets/css/skin.cool.css"
         ,"{{_var.base}}/assets/css/yonger.less"
-        ,"{{_var.base}}/assets/css/custom.css"
         ,"/engine/lib/fonts/remixicons/remixicon.css"
         ,"/engine/lib/fonts/font-awesome/css/font-awesome.min.css"
 			]);

@@ -2,5 +2,6 @@
 /database/users.json
 /database/_cache/*
 engine
+/sites
 *.pid
 *.log

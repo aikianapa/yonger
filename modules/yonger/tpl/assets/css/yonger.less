@@ -1,6 +1,7 @@
 @import url("/engine/css/modals.less");
 @icon_size: 21px;
-@round: 0.25rem;
+@radius: 10px;
+@duration: .3s;
 @color-menu: #171725;
 @color-hover: #0062FF;
 @color-logo: #273244;
@@ -11,14 +12,14 @@
 body {
     overflow: hidden;
     font-family: 'Roboto';
-    font-weight: 400;
+    font-weight: 400;    
 
     svg.mi [stroke] {
         stroke: #92929D;
     }
 
     .rounded {
-        border-radius: @round;
+        border-radius: @radius;
     }
 
     .content {
@@ -67,6 +68,24 @@ body {
         vertical-align: middle;
     }
 
+
+    .form-control {
+        border: none;
+        border-bottom: 1px @color-gray solid;
+        border-radius: 0;
+        background: transparent;
+        &:focus, &:focus +.input-group-append .input-group-text {
+            border-bottom: 1px @color-hover solid;
+            box-shadow: none;
+        }
+    }
+    .input-group-text {
+        background: transparent;
+        border: none;
+        border-bottom: 1px @color-gray solid;
+        border-radius: 0;
+    }
+
     .input-group-append {
         min-width: 40px;
         text-align: center;
@@ -77,6 +96,22 @@ body {
     }
 
     .modal {
+        .modal-content {
+            border-radius: @radius;
+        }
+        .modal-header {
+            padding: .5rem 1rem;
+            border-bottom: 0;
+        }
+        .modal-body {
+            padding: .5rem 1rem;
+            +.modal-footer {
+                padding-top: 0;
+            }
+        }
+        .modal-footer {
+            border-top: 0;
+        }
         &.contain {
             .modal-dialog {
                 margin-top: 0;
@@ -101,28 +136,31 @@ body {
         width: 250px;
         transition-duration: .4s;
 
-        .aside-logo {
-            white-space: nowrap;
-            overflow: hidden;
-            color: @color-logo;
-            svg path:not(.d,.c) {
-                fill: @color-logo;
-                stroke: @color-logo;
-            }
-            svg path:not(.c) {
-                fill: @color-logo;
-            }
-        }
-
-
         .aside-body {
             height: 100vh;
             padding: 20px;
-        }
+            .aside-loggedin {
+                span {
+                    text-transform: uppercase;
+                    color: #92929D;
+                    font-size: 14px;
+                }
+                button {
+                    text-transform: uppercase;
+                    color: #0062FF;
+                    font-size: 12px;
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
 
-        .aside-menu-link {
-            font-size: 20px;
-            line-height: 20px;
+            }
+            .aside-menu-link {
+                font-size: 20px;
+                line-height: 20px;
+            }
+    
         }
 
         .nav-aside {
@@ -184,14 +222,6 @@ body {
             }
         }
 
-        #userProfileMenu {
-            .avatar {
-                img {
-                    width: 48px;
-                    height: 48px;
-                }
-            }
-        }
 
         @media (max-width: 991px) {
             &:not(.aside-show) {
@@ -215,21 +245,78 @@ body {
             display: none;
         }
 
-        &.minimize {
+        &.minimize:not(.maximize) {
             ul {
                 padding-left: 0;
             }
-
-            #userProfileMenu {
-                .avatar {
-                    img {
-                        width: 30px;
-                        height: 30px;
+            .aside-loggedin {
+                > span {
+                    display: none;
+                }
+                > button {
+                    background-color: transparent;
+                    padding: 0;
+                    margin-bottom: 0.5rem;
+                    span {
+                        display: none;
                     }
+                    svg {
+                        display: inline-block;
+                    }
+                }
+                +hr {
+                    display: none;
+                }
+            }
+            .nav-aside > li:not(.nav-item) {
+                border-bottom: 1px @color-light solid;
+                > div {
+                    display: none;
                 }
             }
 
         }
+
+        .aside-header {
+            border-right: none;
+
+            .logo-menu {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px;
+                cursor: pointer;
+                width: 32px;
+                height: 32px;
+            }
+
+            .aside-logo {
+                white-space: nowrap;
+                overflow: hidden;
+                color: @color-logo;
+                svg path:not(.d,.c) {
+                    fill: @color-logo;
+                    stroke: @color-logo;
+                }
+                svg path:not(.c) {
+                    fill: @color-logo;
+                }
+            }
+            
+        }
+        
+        @media (min-width: 1200px) {
+            .aside-fixed + .content {
+                margin-left: 250px;
+            }
+        }
+        
+        .nav-aside > li > div {
+            text-transform: uppercase;
+            color: #92929D;
+            font-size: 14px;
+        }
+
     }
 
     &.chat-content-show {
@@ -266,24 +353,12 @@ body {
 }
 
 #startMaster {
-    @radius: 1rem;
-    @duration: .3s;
-
-    .form-control {
-        border: none;
-        border-bottom: 1px @color-gray solid;
-        border-radius: 0;
-        background: transparent;
-        &:focus, &:focus +.input-group-append .input-group-text {
-            border-bottom: 1px @color-hover solid;
-            box-shadow: none;
-        }
+    #form {
+        overflow-y: auto;
     }
-    .input-group-text {
-        background: transparent;
-        border: none;
-        border-bottom: 1px @color-gray solid;
-        border-radius: 0;
+
+    #steps {
+        overflow-y: auto;
     }
 
     #avatar {
@@ -356,3 +431,59 @@ body {
 .nobr {
     white-space: nowrap;
 }
+
+a.nav__item {
+    color: #171725;
+    font-size: 13px;
+    
+}
+
+.nav__item:hover .nav__icon {
+    background-color: #F6FAFF;
+}
+
+.nav__list span {
+    font-weight: 500;
+}
+
+.nav__icon {
+    width: 38px;
+    height: 38px;
+    background-color: #FAFAFB;
+    border-radius: 10px;
+    transition: all .3s;
+    margin-right: 10px;
+}
+
+.navbar-search {
+    z-index: 99999;
+}
+.backdrop {
+    z-index: 9999;
+}
+
+.navbar-right-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.avatar {
+    margin-right: 10px;
+}
+
+.dropdown-link svg {
+    color: #92929D;
+}
+
+.btn {
+    border-radius: @radius;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+

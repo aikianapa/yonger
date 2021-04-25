@@ -5,9 +5,11 @@
 <body wb-allow="user">
     <div id="startMaster">
         <div class="row h-100">
-            <div class="col-4 bg-dark p-5" id="steps">
-                <div class="d-flex align-items-center h-75">
-                    <img src="/tpl/assets/img/logo.svg" class="position-absolute" style="top: 10vh; width: 150px;">
+            <div class="col-4 bg-dark px-5 py-2" id="steps">
+                <div class="d-flex flex-wrap h-100">
+                <div class="w-100">
+                    <img src="/tpl/assets/img/logo.svg" class="my-3" style="width: 150px;">
+                </div>
                     <ul class="steps steps-vertical text-white-50" role="tablist">
                         <li class="step-item active">
                             <a href="#step-1" class="step-link">
@@ -43,8 +45,8 @@
 
                 </div>
             </div>
-            <div class="col-8" id="form">
-                <div class="d-flex flex-wrap pt-5 h-100">
+            <div class="col-8 pt-5" id="form">
+                <div class="d-flex align-items-start pt-5 h-100">
                     <div class="container">
                         <form class="text-black-50 tab-content" autocomplete="off">
                             <div class="tab-pane active" id="step-1">
@@ -56,8 +58,7 @@
                                 </p>
 
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="login" placeholder="Ваш профиль"
-                                        _required>
+                                    <input class="form-control" type="text" name="login" placeholder="Ваш профиль" wb-module="smartid">
                                     <div class="input-group-append">
                                         <span class="input-group-text" id="my-addon">.{{_route.domain}}</span>
                                     </div>
@@ -85,7 +86,7 @@
                                     деятельность
                                 </p>
                                 <div class="input-group">
-                                    <select class="form-control" name="activity" _required>
+                                    <select class="form-control" name="activity" required placeholder="Сфера деятельности">
                                         <option value="" disabled selected>Сфера деятельности</option>
                                         <option value="1">Маркетинг и дизайн</option>
                                         <option value="2">Продажи</option>
@@ -110,7 +111,7 @@
 
                                 <div class="col-12 pb-2">
                                     <input type="radio" class="form-control hidden" id="activityType1" checked
-                                        value="1" name="activity" _required>
+                                        value="1" name="activity">
                                     <label class="checkholder px-4" for="activityType1">
                                         <div class="icon">
                                             <svg class="mi-hotel-building size-24" stroke="323232"
@@ -123,11 +124,11 @@
                                                 <div class="col-12 pb-2 tx-14">
                                                     Включает:
                                                 </div>
-                                                <div class="col"><svg class="mi-checkmark-sqaure.1 size-20"
+                                                <div class="col nobr"><svg class="mi-checkmark-sqaure.1 size-20"
                                                         stroke="7987a1" wb-module="myicons"></svg> Проекты</div>
-                                                <div class="col"><svg class="mi-document-content.16 size-20"
+                                                <div class="col nobr"><svg class="mi-document-content.16 size-20"
                                                         stroke="7987a1" wb-module="myicons"></svg> Документы</div>
-                                                <div class="col"><svg class="mi-user-square size-20" stroke="7987a1"
+                                                <div class="col nobr"><svg class="mi-user-square size-20" stroke="7987a1"
                                                         wb-module="myicons"></svg> Контакты</div>
                                             </div>
                                         </div>
@@ -136,7 +137,7 @@
 
                                 <div class="col-12 pb-2">
                                     <input type="radio" class="form-control hidden" id="activityType2" 
-                                        value="2" name="activity" _required>
+                                        value="2" name="activity">
                                     <label class="checkholder px-4" for="activityType2">
                                         <div class="icon">
                                             <svg class="mi-hotel-building size-24" stroke="323232"
@@ -149,11 +150,11 @@
                                                 <div class="col-12 pb-2 tx-14">
                                                     Включает:
                                                 </div>
-                                                <div class="col"><svg class="mi-checkmark-sqaure.1 size-20"
+                                                <div class="col nobr"><svg class="mi-checkmark-sqaure.1 size-20"
                                                         stroke="7987a1" wb-module="myicons"></svg> Проекты</div>
-                                                <div class="col"><svg class="mi-document-content.16 size-20"
+                                                <div class="col nobr"><svg class="mi-document-content.16 size-20"
                                                         stroke="7987a1" wb-module="myicons"></svg> Документы</div>
-                                                <div class="col"><svg class="mi-user-square size-20" stroke="7987a1"
+                                                <div class="col nobr"><svg class="mi-user-square size-20" stroke="7987a1"
                                                         wb-module="myicons"></svg> Контакты</div>
                                             </div>
                                         </div>
@@ -162,7 +163,7 @@
 
                                 <div class="col-12 pb-2">
                                     <input type="radio" class="form-control hidden" id="activityType3" 
-                                        value="3" name="activity" _required>
+                                        value="3" name="activity">
                                     <label class="checkholder px-4" for="activityType3">
                                         <div class="icon">
                                             <svg class="mi-hotel-building size-24" stroke="323232"
@@ -175,11 +176,11 @@
                                                 <div class="col-12 pb-2 tx-14">
                                                     Включает:
                                                 </div>
-                                                <div class="col"><svg class="mi-checkmark-sqaure.1 size-20"
+                                                <div class="col nobr"><svg class="mi-checkmark-sqaure.1 size-20"
                                                         stroke="7987a1" wb-module="myicons"></svg> Проекты</div>
-                                                <div class="col"><svg class="mi-document-content.16 size-20"
+                                                <div class="col nobr"><svg class="mi-document-content.16 size-20"
                                                         stroke="7987a1" wb-module="myicons"></svg> Документы</div>
-                                                <div class="col"><svg class="mi-user-square size-20" stroke="7987a1"
+                                                <div class="col nobr"><svg class="mi-user-square size-20" stroke="7987a1"
                                                         wb-module="myicons"></svg> Контакты</div>
                                             </div>
                                         </div>
@@ -201,11 +202,11 @@
                                 <div class="row mt-4">
                                     <div class="col-12 col-md-6 pb-2">
                                         <label class="form-control-label">Имя</label>
-                                        <input type="text" class="form-control" name="first_name" _required>
+                                        <input type="text" class="form-control" name="first_name" required>
                                     </div>
                                     <div class="col-12 col-md-6 pb-2">
                                         <label class="form-control-label">Фамилия</label>
-                                        <input type="text" class="form-control" name="last_name" _required>
+                                        <input type="text" class="form-control" name="last_name" required>
                                     </div>
                                     <div class="col-12 col-md-6 pb-2">
                                         <label class="form-control-label">Эл.почта</label>
@@ -306,7 +307,7 @@
                                 <div class="row mt-4">
                                     <div class="col-6">
                                         <a href="#" onclick="wbapp.yongerMaster.nextstep(this);"
-                                            class="btn btn-primary w-100">Продолжить</a>
+                                            class="btn btn-success w-100" id="finish">Финиш</a>
                                     </div>
                                 </div>
                             </div>
@@ -323,25 +324,30 @@
     wbapp.yongerMaster = {
         init: function() {
             wbapp.render('#avatar');
-            $('#steps .step-link').on('tap click',function(){
+            $('#startMaster #steps .step-link').on('tap click',function(){
                 if (!$(this).parent('.step-item').is('.active,.complete')) return;
                 if (!wbapp.yongerMaster.checkform()) return;
+                let pos = $(this).parent('.step-item').index();
                 let id = $(this).attr('href');
-                $('#steps .step-item').removeClass('active');
-                $('#form .tab-pane.active').removeClass('active');
-                $('#form .tab-pane'+ id).addClass('active');
+                $('#startMaster #steps .step-item').removeClass('active').removeClass('complete');
+                $('#startMaster #steps .step-item').each(function(i){
+                    if (i < pos) $(this).addClass('complete');
+                });
+                $('#startMaster #form .tab-pane.active').removeClass('active');
+                $('#startMaster #form .tab-pane'+ id).addClass('active');
+                
                 $(this).parent('.step-item').addClass('active').removeClass('complete');
             });
 
-            $('#form').delegate('#avatarAdd, #avatarChange','tap click',function(){
-                $('#form .filepicker .card').trigger('click');
+            $('#startMaster #form').delegate('#avatarAdd, #avatarChange','tap click',function(){
+                $('#startMaster #form .filepicker .card').trigger('click');
             })
-            $('#form').delegate('#avatarRemove','tap click',function(){
-                $('#form .filepicker .card a.delete').trigger('click');
+            $('#startMaster #form').delegate('#avatarRemove','tap click',function(){
+                $('#startMaster #form .filepicker .card a.delete').trigger('click');
                 wbapp.storage('cms.profile.user.avatar','/');
             })
 
-            $('.filepicker').on('mod-filepicker-done',function(e,list){
+            $('#startMaster #form .filepicker').on('mod-filepicker-done',function(e,list){
                 wbapp.storage('cms.profile.user.avatar',list[0].img);
             });
         },
@@ -349,16 +355,25 @@
             if (verify && !wbapp.yongerMaster.checkform()) return;
             let $pane = $(ev).parents('.tab-pane.active');
             let id = $pane.attr('id');
-            let $step = $('#steps .step-item.active:last').next('.step-item').addClass('active');
+            let $step = $('#startMaster #steps .step-item.active:last').next('.step-item').addClass('active');
             $pane.next().addClass('active');
             $pane.removeClass('active');
+            if ($(ev).is('#finish')) wbapp.yongerMaster.finish();
+        },
+        finish: function() {
+            let form = $('#startMaster #form form').serializeJson();
+            let data = wbapp.postSync('/module/yonger/finishRegistration',form);
+            if (data.error == true) {
+                $('#startMaster #steps .step-link:eq(0)').trigger('click');
+            } else {
+                document.location.reload();
+            }
         },
         checkform: function() {
             if ($('form').verify()) {
-                $('#steps .step-item.active').addClass('complete');
+                $('#startMaster #steps .step-item.active').addClass('complete');
                 return true;
             } else {
-                $('#steps .step-item').removeClass('complete');
                 return false;
             }
         }
