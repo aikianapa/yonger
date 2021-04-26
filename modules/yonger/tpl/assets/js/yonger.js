@@ -75,7 +75,7 @@ $(document).on("wb-ajax-done",function(e,params) {
     if ($(document).find(".chat-sidebar").length == 0) $("body").removeClass("chat-content-show");
 });
 
-var yongerWorkspace = function() {
+yonger.workspace = function() {
     if ($("#userProfileMenu").length) {
         wbapp.storage('cms.profile.user',wbapp._session.user);
         var profileMenu = Ractive({
@@ -88,14 +88,14 @@ var yongerWorkspace = function() {
     wbapp.lazyload();
 };
 
-var createSite = function () {
-    let form = '#createSite';
-    $(form).verify();
-    wbapp.ajax({ 'form': form, 'url': '/module/yonger/create_site/' }, function (params, data) {
-        if (data.error == false) {
-            wbapp.storage('aside.sites.'+data.data.id,data.data);
-        }
-    });
+yonger.siteWorkspace = function(sid) {
+    let res = wbapp.postSync('/module/yonger/goto/'+sid);
+    console.log(res);
+    let $form = $('<form class="d-none" method="post" action="'+res.goto+'" />');
+    $form.append('<input name="token" value="'+wbapp._session.token+'">');
+    $form.append('<input name="uid" value="'+wbapp._session.user.id+'">');
+    $form.appendTo('body');
+    $form.submit();
 }
 
-yongerWorkspace();
+yonger.workspace();

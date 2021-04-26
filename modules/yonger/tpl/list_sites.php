@@ -13,11 +13,11 @@
             </tr>
 
         </thead>
-        <tbody>
+        <tbody id="yongerListSites">
             <wb-foreach wb="table=sites&sort=_created:d" wb-filter="{'login':'{{_sess.user.login}}'}">
                 <tr data-id="{{id}}">
                     <td class="w-50">
-                        <a href="{{_route.scheme}}://{{id}}.{{_route.domain}}">
+                        <a href="#" onclick="yonger.siteWorkspace('{{id}}');">
                             {{name}}
                         </a>
                     </td>
@@ -27,7 +27,7 @@
                         <a href="/workspace/{{id}}">
                             <svg class="mi mi-brush-edit-create-sqaure" wb-module="myicons"></svg>
                         </a>
-                        <a href="/workspace/{{id}}/remove" onclick="confirm('Удалить сайт?')">
+                        <a href="/module/yonger/remove/{{id}}" onclick="confirm('Удалить сайт?')">
                             <svg class="mi mi-trash-delete-bin-2" wb-module="myicons"></svg>
                         </a>
                     </td>
@@ -37,5 +37,4 @@
         </tbody>
     </table>
 </div>
-
 </html>

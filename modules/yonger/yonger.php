@@ -5,7 +5,7 @@ class modYonger
     {
         $mode = $app->route->mode;
         
-        in_array($mode,['workspace'])? null : $app->apikey('module');
+        in_array($mode,['workspace','logo'])? null : $app->apikey('module');
         $this->app = $app;
         if (method_exists($this, $mode)) {
             echo $this->$mode();
@@ -19,10 +19,20 @@ class modYonger
     public function workspace()
     {
         $app = &$this->app;
-        $subdom = $app->vars('_route.subdomain');
+        $subdom = $app->route->subdomain;
+        if ($subdom > '' && $app->vars('_post.token') > '' && $app->vars('_post.uid') > '') {
+            $tok = file_get_contents( $app->vars('_env.path_app').'/database/_token.json');
+            $tok = json_decode($tok);
+            if ($tok->token == $app->vars('_post.token') && $tok->uid == $app->vars('_post.uid')) {
+                $app->login($tok->uid);          
+            }
+        }
+
+        $user = $app->vars('_sess.user');
         $login = $app->vars('_sess.user.login');
         $role = $app->vars('_sess.user.role');
-        if ($login == '' OR $role !== 'user') {
+
+        if ($subdom == '' AND ($login == '' OR $role !== 'user')) {
             $form = $app->controller('form');
             return $form->get404();
         } else if ($login == '_new') {
@@ -30,14 +40,6 @@ class modYonger
             $master->fetch();
             return $master;
         }
-
-        /*else if ($login !== $subdom) {
-            print_r($app->route);
-            $url = $app->route->scheme.'://'.$app->vars('_sess.user.login').'.'.$app->route->domain.$app->route->uri;
-            echo $url;
-            header('Location: '.$url);
-            die;
-        }*/
 
         $ws = $app->fromFile(__DIR__."/tpl/workspace.php", true);
         $ws->fetch();
@@ -47,9 +49,26 @@ class modYonger
         return $ws;
     }
 
+    private function logo() {
+        header( 'Content-type: image/svg+xml' ); 
+        return file_get_contents(__DIR__. '/tpl/assets/img/logo.svg');
+    }
+
+    private function goto() {
+        $sid = $this->app->route->params[0];
+        $uid = $this->app->vars('_sess.user.id');
+        $path = $this->app->vars('_env.path_app').'/sites/'.$sid;
+        file_put_contents( $path.'/database/_token.json', json_encode(['token'=>$_SESSION['token'],'uid'=>$uid]));
+        header("Content-type: application/json; charset=utf-8");
+        return json_encode([
+            'goto' => $this->app->route->scheme . '://' . $sid . '.' . $this->app->route->domain . '/workspace'
+        ]);
+    }
+
     private function createSite() {
         $app = &$this->app;
         $sid = $app->newId("","ys");
+        $uid = $app->vars('_sess.user.id');
         $site = $app->vars('_post');
         if (isset($site['url'])) {
             $form = $this->app->fromFile(__DIR__ . '/tpl/create_site.php');
@@ -61,12 +80,14 @@ class modYonger
             $hosts = $app->vars('_env.path_app').'/sites/hosts';
             is_dir($path) ? null : mkdir($path, 0777, true);
             is_dir($hosts) ? null : mkdir($hosts, 0777, true);
-            foreach(['database','uploads','tpl'] as $dir) {
+            foreach(['database','uploads','tpl','modules'] as $dir) {
                 is_dir($path.'/'.$dir) ? null : mkdir($path.'/'.$dir, 0777, true);
             }
             symlink($app->vars('_env.path_engine'), $path.'/engine' );
+            symlink(__DIR__ , $path.'/modules/yonger' );
             copy ($app->vars('_env.path_engine').'/index.php' , $path. '/index.php' );
             $domain = $app->route->domain;
+            $this->createSiteUser($path);
             file_put_contents($hosts.'/.domainname',$domain);
             $res = $app->itemSave('sites',$site);
             file_put_contents($hosts.'/'.$sid,null);
@@ -78,6 +99,22 @@ class modYonger
                 return json_encode(['error'=>true,'msg'=>'Ошибка создания сайта']);
             }
         }
+    }
+
+    private function createSiteUser($path) {
+        $app = &$this->app;
+        $uid = $app->vars('_sess.user.id');
+        $users = $app->itemList('users',['filter'=>[
+            'active'=>'on',
+            '$or'=> [
+                ['isgroup' => 'on'], 
+                ['id' => $uid]
+            ]
+        ]]);
+        $users = $users['list'];
+        $users[$uid]['role'] = 'admin';
+        $users = json_encode($app->arrayToObj($users));
+        file_put_contents($path.'/database/users.json',$users);
     }
 
     private function listSites() {
