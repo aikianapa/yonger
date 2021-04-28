@@ -1,2 +1,20 @@
-1.  Для запуска демона поддоменов выполнить: `sudo nohup php daemonDomains.php &`
+1.  Для запуска демона поддоменов выполнить: 
+    $ a2enmod vhost_alias
+    $ systemctl restart apache2
+    $ nohup php daemonDomains.php &
+
+    в yonger.conf добавить:
+
+<VirtualHost *:80>
+        ServerAdmin site@yandex.ru
+        ServerName yonger.loc
+        ServerAlias *.yonger.loc
+
+        UseCanonicalName Off
+        VirtualDocumentRoot /var/www/yonger.loc/sites/%-3
+
+        ErrorLog ${APACHE_LOG_DIR}/yonger_sites_error.log
+        CustomLog ${APACHE_LOG_DIR}/yonger_sites_access.log combined
+</VirtualHost>
+
     В идеале повесить эту задачу в сервисы

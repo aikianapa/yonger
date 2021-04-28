@@ -130,6 +130,7 @@ class modYonger
             if ($user) {
                 isset($user['sitenum']) ? $sitenum = intval($user['sitenum'])+1 : $sitenum = 1;
                 $sid = $site['login'].'-'.$sitenum;
+                $uid = $user['id'];
                 $site['id'] = $sid;
                 $app->login($user);
                 $path = $app->vars('_env.path_app').'/sites/'.$sid;
@@ -147,6 +148,7 @@ class modYonger
                 $domain = $app->route->domain;
                 $this->createSiteUser($path);
                 file_put_contents($hosts.'/.domainname',$domain);
+                $tmp = $app->itemSave('users',['id'=>$uid,'sitenum'=>$sitenum]);
                 $res = $app->itemSave('sites',$site);
                 file_put_contents($hosts.'/'.$sid,null);
                 header("Content-type: application/json; charset=utf-8");
