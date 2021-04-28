@@ -1,6 +1,7 @@
+<wb-var auto="auto" wb-if='"{{_route.subdomain}}" == ""' />
 <nav class="nav nav__list d-flex align-items-center">
     <a href="#sites" class="nav-link nav__item d-flex align-items-center mg-r-10"
-        data-ajax="{'url':'/module/yonger/listSites','html':'.content-body'}" auto>
+        data-ajax="{'url':'/module/yonger/listSites','html':'.content-body'}" _var.auto >
         <div class="nav__icon d-flex align-items-center justify-content-center">
             <svg class="mi mi-cursor.1" wb-module="myicons">
             </svg>

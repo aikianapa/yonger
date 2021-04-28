@@ -4,7 +4,7 @@
         <div class="mg-y-20">Навигация</div>
     </li>
     <li class="nav-item">
-        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" class="nav-link">
+        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" auto class="nav-link">
             <svg class="mi mi-settings.2" wb-module="myicons"></svg>
             <span>Настройки</span>
         </a>
