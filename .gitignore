@@ -1,7 +1,7 @@
-database/users.json
-database/sites.json
-database/_cache
-engine
-sites
+/database/users.json
+/database/sites.json
+/database/_cache
+/engine
+/sites
 *.pid
 *.log

@@ -23,11 +23,18 @@ class modYonger
     {
         $app = &$this->app;
         $subdom = $app->route->subdomain;
-        if ($subdom > '' && $app->vars('_post.token') > '' && $app->vars('_post.uid') > '') {
+        if ($subdom > '' && $app->vars('_post.token') > '' && $app->vars('_post.login') > '') {
             $tok = file_get_contents( $app->vars('_env.path_app').'/database/_token.json');
             $tok = json_decode($tok);
-            if ($tok->token == $app->vars('_post.token') && $tok->uid == $app->vars('_post.uid')) {
-                $app->login($tok->uid);          
+            if ($tok->token == $app->vars('_post.token') && $tok->login == $app->vars('_post.login')) {
+                $user = $app->itemList('users',['filter'=>[
+                    'active' => 'on',
+                    'login' => $tok->login,
+                    'role' => 'admin',
+                    'default' => true
+                ]]);
+                $user = array_pop($user['list']);
+                $app->login($user);          
             }
         }
 
@@ -69,13 +76,17 @@ class modYonger
     }
 
     private function goto() {
-        $sid = $this->app->route->params[0];
-        $uid = $this->app->vars('_sess.user.id');
-        $path = $this->app->vars('_env.path_app').'/sites/'.$sid;
-        file_put_contents( $path.'/database/_token.json', json_encode(['token'=>$_SESSION['token'],'uid'=>$uid]));
+        $app = &$this->app;
+        $sid = $app->route->params[0];
+        $login = $app->vars('_sess.user.login');
+        $path = $app->vars('_env.path_app').'/sites/'.$sid;
+        $app->route->subdomain == '' ? null : $path = realpath($app->vars('_env.path_app').'/../'.$sid);
+        $token = md5($_SESSION['token'].time());
+        file_put_contents( $path.'/database/_token.json', json_encode(['token'=>$token,'login'=>$login]));
         header("Content-type: application/json; charset=utf-8");
         return json_encode([
-            'goto' => $this->app->route->scheme . '://' . $sid . '.' . $this->app->route->domain . '/workspace'
+            'goto' => $app->route->scheme . '://' . $sid . '.' . $app->route->domain . '/workspace',
+            'token' => $token
         ]);
     }
 
@@ -86,16 +97,16 @@ class modYonger
 
         $allow = false;
         $user = &$app->vars('_sess.user');
-        $path = $this->app->vars('_env.path_app').'/sites/'.$sid;
+        $path = $app->vars('_env.path_app').'/sites/'.$sid;
         $res = ['error'=>true,'msg'=>'Ошибка удаления сайта'];
         $self = false;
         if ($app->route->subdomain > '') {
             $sid == $app->route->subdomain ? $self = true : null;
             $site = $app->itemRead('sites',$sid);
             $site && $site['login'] == $user['login'] ? $allow = true : null;
-            $path = realpath($this->app->vars('_env.path_app').'/../'.$sid);
+            $path = realpath($app->vars('_env.path_app').'/../'.$sid);
         } else {
-            $path = $this->app->vars('_env.path_app').'/sites/'.$sid;
+            $path = $app->vars('_env.path_app').'/sites/'.$sid;
             $allow = true;
         }
 
@@ -124,7 +135,7 @@ class modYonger
             $user = $app->itemList('users',['filter'=>[
                 'active' => 'on',
                 'login' => $site['login'],
-                'role' => 'user'
+                'role' => 'user',
             ]]);
             $user = array_pop($user['list']);
             if ($user) {
@@ -149,6 +160,15 @@ class modYonger
                 $this->createSiteUser($path);
                 file_put_contents($hosts.'/.domainname',$domain);
                 $tmp = $app->itemSave('users',['id'=>$uid,'sitenum'=>$sitenum]);
+                $settings = json_encode((object)[
+                    'settings' => [
+                        'id'       => 'settings'
+                        ,'header'   =>  $site['name']
+                        ,'email'    =>  $user['email']
+                    ]
+                ]);
+                file_put_contents($path.'/database/_settings.json',$settings);
+
                 $res = $app->itemSave('sites',$site);
                 file_put_contents($hosts.'/'.$sid,null);
                 header("Content-type: application/json; charset=utf-8");
@@ -164,7 +184,10 @@ class modYonger
 
     private function createSiteUser($path) {
         $app = &$this->app;
-        $uid = $app->vars('_sess.user.id');
+        $user = $this->getMainUser();
+        $uid = $user['id'];
+        //$uid = $app->vars('_sess.user.id');
+        // тут нужно не текущего пользователя брать, а того, который в yonger регился
         $users = $app->itemList('users',['filter'=>[
             'active'=>'on',
             '$or'=> [
@@ -174,8 +197,21 @@ class modYonger
         ]]);
         $users = $users['list'];
         $users[$uid]['role'] = 'admin';
+        $users[$uid]['default'] = true;
         $users = json_encode($app->arrayToObj($users));
         file_put_contents($path.'/database/users.json',$users);
+    }
+
+    private function getMainUser($login = null) {
+        $app = &$this->app;
+        if (!$login) $login = $app->vars('_sess.user.login');
+        $user = $app->itemList('users',['filter'=>[
+            'active' => 'on',
+            'login' => $login,
+            'role' => 'user'
+        ]]);
+        $user = array_pop($user['list']);
+        return $user;
     }
 
     private function listSites() {

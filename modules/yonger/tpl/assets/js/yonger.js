@@ -88,6 +88,24 @@ yonger.workspace = function() {
     wbapp.lazyload();
 };
 
+yonger.siteCreator = function(){
+    if ($('#yongerSiteCreator form').verify()) {
+        let form = $('#yongerSiteCreator form').serializeJson();
+        let domain = document.location.host.split('.');
+        let scheme = document.location.protocol; 
+        domain = array_slice(domain,-2).join('.');
+        let data = wbapp.postSync(scheme+'//'+domain+'/module/yonger/createSite',form);
+        //let data = wbapp.postSync('/module/yonger/createSite',form);
+        if (data.error == true) {
+            wbapp.toast('Ошибка',data.msg);
+        } else {
+            $('#yongerSiteCreator').modal('hide').on('hidden.bs.modal',function(){
+                $('.content-header nav a[href="#sites"]').trigger('click');
+            });
+        }
+    }
+}
+
 yonger.siteRemove = function(sid) {
     let confirm = window.confirm("Удалить сайт?");
     if (confirm) {
@@ -103,9 +121,10 @@ yonger.siteRemove = function(sid) {
 
 yonger.siteWorkspace = function(sid) {
     let res = wbapp.postSync('/module/yonger/goto/'+sid);
+    if (res.goto == undefined) return;
     let $form = $('<form class="d-none" method="post" action="'+res.goto+'" />');
-    $form.append('<input name="token" value="'+wbapp._session.token+'">');
-    $form.append('<input name="uid" value="'+wbapp._session.user.id+'">');
+    $form.append('<input name="token" value="'+res.token+'">');
+    $form.append('<input name="login" value="'+wbapp._session.user.login+'">');
     $form.appendTo('body');
     $form.submit();
 }
