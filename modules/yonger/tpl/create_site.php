@@ -12,6 +12,7 @@
             <div class="modal-body">
                 <form>
                     <input class="form-control" type="text" name="name" placeholder="Название сайта">
+                    <input type="hidden" name="login" value="{{_sess.user.login}}">
                 </form>
             </div>
             <div class="modal-footer">
@@ -24,7 +25,11 @@
     yonger.siteCreator = function(){
         if ($('#yongerSiteCreator form').verify()) {
             let form = $('#yongerSiteCreator form').serializeJson();
-            let data = wbapp.postSync('/module/yonger/createSite',form);
+            let domain = document.location.host.split('.');
+            let scheme = document.location.protocol; 
+            domain = array_slice(domain,-2).join('.');
+            let data = wbapp.postSync(scheme+'//'+domain+'/module/yonger/createSite',form);
+            //let data = wbapp.postSync('/module/yonger/createSite',form);
             if (data.error == true) {
                 wbapp.toast('Ошибка',data.msg);
             } else {

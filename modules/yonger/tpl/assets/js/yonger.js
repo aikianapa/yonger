@@ -88,9 +88,18 @@ yonger.workspace = function() {
     wbapp.lazyload();
 };
 
+yonger.siteRemove = function(sid) {
+    let confirm = window.confirm("Удалить сайт?");
+    if (confirm) {
+        let res = wbapp.postSync('/module/yonger/removeSite/'+sid);
+        if (res._removed == true) {
+            $('#yongerListSites tr[data-id="'+sid+'"]').remove();
+        }
+    }
+}
+
 yonger.siteWorkspace = function(sid) {
     let res = wbapp.postSync('/module/yonger/goto/'+sid);
-    console.log(res);
     let $form = $('<form class="d-none" method="post" action="'+res.goto+'" />');
     $form.append('<input name="token" value="'+wbapp._session.token+'">');
     $form.append('<input name="uid" value="'+wbapp._session.user.id+'">');

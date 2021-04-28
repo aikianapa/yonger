@@ -24,10 +24,10 @@
                     <td>{{id}}</td>
                     <td>{{date("d.m.Y H:i",strtotime({{_created}}))}}</td>
                     <td>
-                        <a href="/workspace/{{id}}">
+                        <a href="#" onclick="yonger.siteWorkspace('{{id}}');">
                             <svg class="mi mi-brush-edit-create-sqaure" wb-module="myicons"></svg>
                         </a>
-                        <a href="/module/yonger/remove/{{id}}" onclick="confirm('Удалить сайт?')">
+                        <a href="#"  onclick="yonger.siteRemove('{{id}}');">
                             <svg class="mi mi-trash-delete-bin-2" wb-module="myicons"></svg>
                         </a>
                     </td>

@@ -4,8 +4,11 @@ class modYonger
     public function __construct($app)
     {
         $mode = $app->route->mode;
-        
-        in_array($mode,['workspace','logo'])? null : $app->apikey('module');
+        in_array($mode,explode(',','workspace,logo,signin,signup,signrc,createSite,removeSite'))? null : $app->apikey('module');
+        if (in_array($mode,explode(',','createSite,removeSite')) AND $app->getDomain( $app->route->refferer) !== $app->route->domain ) {
+            echo json_encode(['error'=>true,'msg'=>'Access denied']);
+            die;
+        }
         $this->app = $app;
         if (method_exists($this, $mode)) {
             echo $this->$mode();
@@ -40,18 +43,29 @@ class modYonger
             $master->fetch();
             return $master;
         }
-
         $ws = $app->fromFile(__DIR__."/tpl/workspace.php", true);
         $ws->fetch();
-//        if (is_callable('modCmsBeforeShow')) {
-//            modCmsBeforeShow($cms);
-//        }
         return $ws;
     }
 
     private function logo() {
         header( 'Content-type: image/svg+xml' ); 
         return file_get_contents(__DIR__. '/tpl/assets/img/logo.svg');
+    }
+
+    private function signin() {
+        $form = $this->app->fromFile(__DIR__ . '/tpl/signin.php');
+        return $form->fetch();
+    }
+
+    private function signup() {
+        $form = $this->app->fromFile(__DIR__ . '/tpl/signup.php');
+        return $form->fetch();
+    }
+
+    private function signrc() {
+        $form = $this->app->fromFile(__DIR__ . '/tpl/signrc.php');
+        return $form->fetch();
     }
 
     private function goto() {
@@ -65,17 +79,49 @@ class modYonger
         ]);
     }
 
+    private function removeSite() {
+        $app = &$this->app;
+        $this->setMainDba();        
+        $sid = $app->route->params[0];
+        $allow = false;
+        $user = &$app->vars('_sess.user');
+        if ($app->route->subdomain > '') {
+            $site = $app->itemRead('sites',$sid);
+            $site && $site['login'] == $user['login'] ? $allow = true : null;
+        } else {
+            $allow = true;
+        }
+
+        if ($allow) {
+            $path = $this->app->vars('_env.path_app').'/sites/'.$sid;
+            $app->recurseDelete($path);
+            $res = $app->itemRemove('sites',$sid);
+        } else {
+            $res = ['error'=>true,'msg'=>'Ошибка удаления сайта'];
+        }
+        header("Content-type: application/json; charset=utf-8");
+        return json_encode($res);
+    }
+
     private function createSite() {
         $app = &$this->app;
         $sid = $app->newId("","ys");
-        $uid = $app->vars('_sess.user.id');
         $site = $app->vars('_post');
+        $dirmod = dirname(__DIR__ .'..');
         if (isset($site['url'])) {
             $form = $this->app->fromFile(__DIR__ . '/tpl/create_site.php');
             return $form->fetch();
         } else {
+            $this->setMainDba();
             $site['id'] = $sid;
-            $site['login'] = $app->vars('_sess.user.login');
+            isset($site['login']) ? null : $site['login'] = $app->vars('_sess.user.login');
+            $user = $app->itemList('users',['filter'=>[
+                'active' => 'on',
+                'login' => $site['login'],
+                'role' => 'user'
+            ]]);
+            $user = array_pop($user['list']);
+            $app->login($user);
             $path = $app->vars('_env.path_app').'/sites/'.$sid;
             $hosts = $app->vars('_env.path_app').'/sites/hosts';
             is_dir($path) ? null : mkdir($path, 0777, true);
@@ -85,6 +131,8 @@ class modYonger
             }
             symlink($app->vars('_env.path_engine'), $path.'/engine' );
             symlink(__DIR__ , $path.'/modules/yonger' );
+            symlink($dirmod.'/phonecheck', $path.'/modules/phonecheck');
+            
             copy ($app->vars('_env.path_engine').'/index.php' , $path. '/index.php' );
             $domain = $app->route->domain;
             $this->createSiteUser($path);
@@ -118,6 +166,7 @@ class modYonger
     }
 
     private function listSites() {
+        $this->setMainDba();
         $list = $this->app->fromFile(__DIR__ . '/tpl/list_sites.php');
         return $list->fetch();
     }
@@ -150,14 +199,24 @@ class modYonger
         die;
     }
 
+    private function setMainDba() {
+        $app = &$this->app;
+        $dba = $this->app->vars('_env.dba');
+        if ($this->app->route->subdomain > '') {
+            $dba = str_replace('/sites/'.$this->app->route->subdomain,'',$dba);
+            $this->app->vars('_env.dba',$dba);
+        }
+    }
+
+    /*
     private function create_site() {
-        header("Content-type: application/json; charset=utf-8");
         $app = $this->app;
         $login = $this->main_login();
         if ($login) {
             $site = $app->vars('_post.formdata');
             $site['login'] = $login;
             $site = $app->itemSave('sites',$site);
+            header("Content-type: application/json; charset=utf-8");
             if ($site) {
                 return json_encode(['error'=>false,'data'=>$site]);
             } else {
@@ -167,7 +226,7 @@ class modYonger
             return json_encode(['error'=>true,'msg'=>'Запрещено для данного пользователя']);
         }
     }
-
+    */
     private function main_login() {
         $user = $this->app->vars('_user');
         $login = false;
