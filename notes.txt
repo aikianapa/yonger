@@ -2,9 +2,9 @@
     $ a2enmod vhost_alias
     $ systemctl restart apache2
     $ nohup php daemonDomains.php &
-
+    В идеале повесить эту задачу в сервисы
+    
     в yonger.conf добавить:
-
 <VirtualHost *:80>
         ServerAdmin site@yandex.ru
         ServerName yonger.loc
@@ -17,4 +17,4 @@
         CustomLog ${APACHE_LOG_DIR}/yonger_sites_access.log combined
 </VirtualHost>
 
-    В идеале повесить эту задачу в сервисы
+ 
