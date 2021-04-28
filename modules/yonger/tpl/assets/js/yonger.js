@@ -92,8 +92,11 @@ yonger.siteRemove = function(sid) {
     let confirm = window.confirm("Удалить сайт?");
     if (confirm) {
         let res = wbapp.postSync('/module/yonger/removeSite/'+sid);
-        if (res._removed == true) {
+        if (res.error == false) {
             $('#yongerListSites tr[data-id="'+sid+'"]').remove();
+            if (res.self == true) {
+                document.location.href = $('aside a.aside-logo').attr('href');
+            }
         }
     }
 }

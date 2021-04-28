@@ -83,19 +83,26 @@ class modYonger
         $app = &$this->app;
         $this->setMainDba();        
         $sid = $app->route->params[0];
+
         $allow = false;
         $user = &$app->vars('_sess.user');
+        $path = $this->app->vars('_env.path_app').'/sites/'.$sid;
+        $res = ['error'=>true,'msg'=>'Ошибка удаления сайта'];
+        $self = false;
         if ($app->route->subdomain > '') {
+            $sid == $app->route->subdomain ? $self = true : null;
             $site = $app->itemRead('sites',$sid);
             $site && $site['login'] == $user['login'] ? $allow = true : null;
+            $path = realpath($this->app->vars('_env.path_app').'/../'.$sid);
         } else {
+            $path = $this->app->vars('_env.path_app').'/sites/'.$sid;
             $allow = true;
         }
 
         if ($allow) {
-            $path = $this->app->vars('_env.path_app').'/sites/'.$sid;
             $app->recurseDelete($path);
-            $res = $app->itemRemove('sites',$sid);
+            $app->itemRemove('sites',$sid);
+            $res = ['error'=>false,'msg'=>'Сайт удалён', 'self'=>$self];
         } else {
             $res = ['error'=>true,'msg'=>'Ошибка удаления сайта'];
         }
@@ -105,15 +112,14 @@ class modYonger
 
     private function createSite() {
         $app = &$this->app;
-        $sid = $app->newId("","ys");
         $site = $app->vars('_post');
         $dirmod = dirname(__DIR__ .'..');
         if (isset($site['url'])) {
             $form = $this->app->fromFile(__DIR__ . '/tpl/create_site.php');
             return $form->fetch();
         } else {
+            $res = false;
             $this->setMainDba();
-            $site['id'] = $sid;
             isset($site['login']) ? null : $site['login'] = $app->vars('_sess.user.login');
             $user = $app->itemList('users',['filter'=>[
                 'active' => 'on',
@@ -121,25 +127,30 @@ class modYonger
                 'role' => 'user'
             ]]);
             $user = array_pop($user['list']);
-            $app->login($user);
-            $path = $app->vars('_env.path_app').'/sites/'.$sid;
-            $hosts = $app->vars('_env.path_app').'/sites/hosts';
-            is_dir($path) ? null : mkdir($path, 0777, true);
-            is_dir($hosts) ? null : mkdir($hosts, 0777, true);
-            foreach(['database','uploads','tpl','modules'] as $dir) {
-                is_dir($path.'/'.$dir) ? null : mkdir($path.'/'.$dir, 0777, true);
+            if ($user) {
+                isset($user['sitenum']) ? $sitenum = intval($user['sitenum'])+1 : $sitenum = 1;
+                $sid = $site['login'].'-'.$sitenum;
+                $site['id'] = $sid;
+                $app->login($user);
+                $path = $app->vars('_env.path_app').'/sites/'.$sid;
+                $hosts = $app->vars('_env.path_app').'/sites/hosts';
+                is_dir($path) ? null : mkdir($path, 0777, true);
+                is_dir($hosts) ? null : mkdir($hosts, 0777, true);
+                foreach(['database','uploads','tpl','modules'] as $dir) {
+                    is_dir($path.'/'.$dir) ? null : mkdir($path.'/'.$dir, 0777, true);
+                }
+                symlink($app->vars('_env.path_engine'), $path.'/engine' );
+                symlink(__DIR__ , $path.'/modules/yonger' );
+                symlink($dirmod.'/phonecheck', $path.'/modules/phonecheck');
+                
+                copy ($app->vars('_env.path_engine').'/index.php' , $path. '/index.php' );
+                $domain = $app->route->domain;
+                $this->createSiteUser($path);
+                file_put_contents($hosts.'/.domainname',$domain);
+                $res = $app->itemSave('sites',$site);
+                file_put_contents($hosts.'/'.$sid,null);
+                header("Content-type: application/json; charset=utf-8");
             }
-            symlink($app->vars('_env.path_engine'), $path.'/engine' );
-            symlink(__DIR__ , $path.'/modules/yonger' );
-            symlink($dirmod.'/phonecheck', $path.'/modules/phonecheck');
-            
-            copy ($app->vars('_env.path_engine').'/index.php' , $path. '/index.php' );
-            $domain = $app->route->domain;
-            $this->createSiteUser($path);
-            file_put_contents($hosts.'/.domainname',$domain);
-            $res = $app->itemSave('sites',$site);
-            file_put_contents($hosts.'/'.$sid,null);
-            header("Content-type: application/json; charset=utf-8");
             if ($res) {
                 $this->app->login($res);
                 return json_encode(['error'=>false,'msg'=>'Сайт успешно создан']);
