@@ -38,7 +38,7 @@ class modPhonecheck {
     private function setcode() {
         $number = preg_replace('/[^0-9]/','',$this->phone);
         $user = $this->app->checkUser($number,'phone');
-        if ($user && $user->role == 'user') {
+        if ($user) {
             $user = $this->app->itemSave('users',[
                 'id'        =>  $user->id,
                 'password'  =>  $this->check

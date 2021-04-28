@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <wb-var assets="/modules/yonger/tpl/assets" />
-<wb-include wb-tpl="signhead.inc.php" />
+<wb-include wb-src="signhead.inc.php" />
 
 <body class="bg-light" id="signup">
     <div class="row h-100">
         <div class="col-12 d-none d-sm-inline col-sm-6 col-lg-7 pr-0" id="image">
             <div class="d-flex align-items-center">
                 <div class="container">
-                    <img src="/tpl/assets/img/logo.svg" class="position-absolute" style="top: 10vh; width: 150px;">
+                    <img src="/module/yonger/logo" class="position-absolute" style="top: 10vh; width: 150px;">
                     <h1>
                         Легко создавайте,
                         <br />развивайте сайты
@@ -75,8 +75,6 @@
     </div>
 
     <wb-include wb-snippet="wbapp" />
-    <wb-include wb-snippet="lineawesome" />
-
 </body>
 
 </html>

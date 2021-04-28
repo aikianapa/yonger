@@ -100,7 +100,7 @@
     }
 
     #image {
-        background: url(/tpl/assets/img/signup_bg.jpg) 50% 0%;
+        background: url(/modules/yonger/tpl/assets/img/signup_bg.jpg) 50% 0%;
         background-size: cover;
         height: 100vh;
 
