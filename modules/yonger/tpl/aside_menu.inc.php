@@ -4,12 +4,7 @@
     <li>
         <div class="mg-y-20">Навигация</div>
     </li>
-    <li class="nav-item">
-        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" auto class="nav-link">
-            <svg class="mi mi-settings.2" wb-module="myicons"></svg>
-            <span>Настройки</span>
-        </a>
-    </li>
+
     <li class="nav-item with-sub">
         <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/list/','html':'.content-body'}" class="nav-link">
             <svg class="mi mi-browser-internet-web-network-window-app-icon" wb-module="myicons"></svg>
@@ -47,16 +42,16 @@
     </li>
 
     <li class="nav-item">
-        <a href="#" data-ajax="{'url':'/module/formbuilder/','html':'.content-body'}" class="nav-link">
-            <svg class="mi mi-design-47" wb-module="myicons"></svg>
-            <span>Конструктор</span>
+        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" auto class="nav-link">
+            <svg class="mi mi-settings.2" wb-module="myicons"></svg>
+            <span>Настройки</span>
         </a>
     </li>
     <li class="nav-item">
-        <a href="#" data-ajax="{'url':'/module/filemanager','html':'.content-body'}" class="nav-link">
-            <svg class="mi mi-protection-06" wb-module="myicons"></svg>
-            <span>Поддержка</span>
-        </a>
+            <a href="#" data-ajax="{'url':'/module/yonger/support','html':'.content-body'}" class="nav-link">
+                <svg class="mi mi-protection-06" wb-module="myicons"></svg>
+                <span>Поддержка</span>
+            </a>
     </li>
 </ul>
 
