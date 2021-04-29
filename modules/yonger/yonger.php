@@ -75,6 +75,12 @@ class modYonger
         return $form->fetch();
     }
 
+    private function support() {
+        $form = $this->app->fromFile(__DIR__ . '/tpl/support.php');
+        return $form->fetch();
+    }
+
+
     private function goto() {
         $app = &$this->app;
         $sid = $app->route->params[0];

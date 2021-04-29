@@ -170,6 +170,10 @@ body {
                 font-size: 16px;
             }
 
+            li {
+                width: 100%;
+            }
+
             ul {
                 padding-left: 0px;
                 font-size: 12px;
@@ -268,6 +272,9 @@ body {
                     display: none;
                 }
             }
+            .divider-text {
+                display: none;
+            }
             .nav-aside > li:not(.nav-item) {
                 border-bottom: 1px @color-light solid;
                 > div {
@@ -324,10 +331,6 @@ body {
             @media (max-width: 992px) {
                 .burger-menu {
                     display: flex !important;
-                }
-
-                .aside-menu-link {
-                    display: none !important;
                 }
             }
         }
@@ -476,6 +479,10 @@ a.nav__item {
 }
 
 .btn {
+    border-radius: @radius;
+}
+
+.card {
     border-radius: @radius;
 }
 

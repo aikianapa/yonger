@@ -1,4 +1,5 @@
-<div class="divider-text"  wb-if='"{{_route.subdomain}}" > ""'>{{_route.subdomain}}</div>
+<div class="divider-text" wb-if='"{{_route.subdomain}}" > ""'>{{_route.subdomain}}</div>
+<hr wb-if='"{{_route.subdomain}}" == ""'>
 <ul class="nav nav-aside" wb-if='"{{_route.subdomain}}" > ""'>
     <li>
         <div class="mg-y-20">Навигация</div>
@@ -58,3 +59,35 @@
         </a>
     </li>
 </ul>
+
+<div wb-if='"{{_route.subdomain}}" == ""'>
+    <ul class="nav nav-aside">
+        <li>
+            <div class="mg-y-20">Система</div>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" data-ajax="{'url':'/module/yonger/_settings/','html':'.content-body'}" class="nav-link">
+                <svg class="mi mi-setting-edit-filter-gear.1" wb-module="myicons"></svg>
+                <span>Настройки</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" data-ajax="{'url':'/module/yonger/support','html':'.content-body'}" class="nav-link">
+                <svg class="mi mi-protection-06" wb-module="myicons"></svg>
+                <span>Поддержка</span>
+            </a>
+        </li>
+    </ul>
+
+
+    <div class="card bg-primary text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+            <p>Хочешь больше возможностей?</p>
+            <div class="blockquote-footer text-white">
+            Используй Yonger Pro
+            </div>
+        </blockquote>
+        <a href="#" class="btn btn-secondary mt-3">ПОДКЛЮЧИТЬ</a>
+    </div>
+</div>
