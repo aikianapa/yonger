@@ -1,25 +1,11 @@
 <html>
 <div class="m-3" id="yongerSupport">
 
-
     <nav class="nav navbar navbar-expand-md col">
-        <h3 class="tx-bold tx-spacing--2 order-1">Страницы</h3>
-        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/edit/_new','html':'#yongerSupport modals'}" class="ml-auto order-2 float-right btn btn-primary">
-            <img src="/module/myicons/item-select-plus-add.svg?size=24&stroke=FFFFFF" /> Добавить страницу
-        </a>
+        <a class="navbar-brand tx-bold tx-spacing--2 order-1" href="javascript:">Страницы</a>
     </nav>
 
     <div id="yongerPagesTree" class="dd">
-        <span class="bg-light">
-            <div class="header p-2">
-                <span clsss="row">
-                <div class="col-3">
-                <input type="search" class="form-control">
-                </div>
-                </span>
-            </div>
-            
-        </span>
         <ol>
             <li data-id="home">Главная</li>
             <li>О проекте</li>
@@ -34,7 +20,8 @@
             <li>Документы</li>
 
         </ol>
-        <modals></modals>
+
+
     </div>
     <script wb-app>
     wbapp.loadStyles(['/engine/lib/js/nestable/nestable.css']);
@@ -43,15 +30,14 @@
         $('#yongerPagesTree ol').addClass('dd-list')
         $('#yongerPagesTree li').contents().filter(function() {
             return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
-        }).wrap('<span class="dd-text nobr"/>');
+        }).wrap('<span class="dd-text"/>');
 
         $('#yongerPagesTree li').each(function() {
             $(this)
                 .addClass('dd-item row')
                 .children('.dd-text')
                 .addClass('col-3')
-                .prepend(
-                    '<img src="/module/myicons/dots-2.svg?size=20px&stroke=323232" class="dd-handle"/>')
+                .before('<span class="dd-handle"><img src="/module/myicons/dots-2.svg?size=20px&stroke=000000" /></span>')
                 .after('<span class="dd-info col-9"><span class="row" /></span>');
             $(this).children('.dd-info').children('.row')
                 .append('<span class="dd-path col-6">/project </span>')
@@ -74,12 +60,7 @@
         $('#yongerPagesTree li').mouseout(function() {
             $(this).removeClass('hover');
         });
-
-        $('#yongerPagesTree li[data-id] .dd-edit').on('tap click touchstart',function(){
-            let item = $(this).parents('[data-id]').attr('data-id')
-            wbapp.ajax({'url':'/cms/ajax/form/pages/edit/'+item,'html':'#yongerSupport modals'});
-           
-        });
+        
 
     })
     </script>
