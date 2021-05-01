@@ -6,7 +6,7 @@
     </li>
 
     <li class="nav-item with-sub">
-        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/list/','html':'.content-body'}" class="nav-link">
+        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/list/','html':'.content-body'}" auto class="nav-link">
             <svg class="mi mi-browser-internet-web-network-window-app-icon" wb-module="myicons"></svg>
             <span>Страницы</span>
         </a>
@@ -42,7 +42,7 @@
     </li>
 
     <li class="nav-item">
-        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" auto class="nav-link">
+        <a href="#" data-ajax="{'url':'/cms/settings/settings_ui','html':'.content-body'}" class="nav-link">
             <svg class="mi mi-settings.2" wb-module="myicons"></svg>
             <span>Настройки</span>
         </a>
