@@ -1,11 +1,23 @@
 <html>
 <div class="m-3" id="yongerSupport">
-
-    <nav class="nav navbar navbar-expand-md col">
-        <a class="navbar-brand tx-bold tx-spacing--2 order-1" href="javascript:">Страницы</a>
+<nav class="nav navbar navbar-expand-md col">
+        <h3 class="tx-bold tx-spacing--2 order-1">Страницы</h3>
+        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/edit/_new','html':'#yongerSupport modals'}" class="ml-auto order-2 float-right btn btn-primary">
+            <img src="/module/myicons/item-select-plus-add.svg?size=24&stroke=FFFFFF" /> Добавить страницу
+        </a>
     </nav>
 
     <div id="yongerPagesTree" class="dd">
+        <span class="bg-light">
+            <div class="header p-2">
+                <span clsss="row">
+                <div class="col-3">
+                <input type="search" class="form-control" placeholder="Поиск страницы">
+                </div>
+                </span>
+            </div>
+            
+        </span>
         <ol>
             <li data-id="home">Главная</li>
             <li>О проекте</li>
