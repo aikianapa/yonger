@@ -25,7 +25,7 @@
                     if (data.error) {
                         $('#form .tx-danger').text(data.msg).removeClass('d-none');
                     } else {
-                        alert(data.code);
+                        $('#form [name=code]').val(data.code);
                         $('#form .tx-danger').addClass('d-none');
                         $('#form phone').text(phone);
                         $('#form .btn-primary').addClass('d-none');

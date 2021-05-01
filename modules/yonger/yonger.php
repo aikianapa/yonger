@@ -160,6 +160,7 @@ class modYonger
                 symlink($app->vars('_env.path_engine'), $path.'/engine' );
                 symlink(__DIR__ , $path.'/modules/yonger' );
                 symlink($dirmod.'/phonecheck', $path.'/modules/phonecheck');
+                symlink(__DIR__ .'/forms' , $path.'/forms' );
                 
                 copy ($app->vars('_env.path_engine').'/index.php' , $path. '/index.php' );
                 $domain = $app->route->domain;

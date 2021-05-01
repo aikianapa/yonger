@@ -100,7 +100,7 @@ body {
             border-radius: @radius;
         }
         .modal-header {
-            padding: .5rem 1rem;
+            padding: 1rem 1rem;
             border-bottom: 0;
         }
         .modal-body {
@@ -250,6 +250,9 @@ body {
         }
 
         &.minimize:not(.maximize) {
+            .card {
+                display: none;
+            }
             ul {
                 padding-left: 0;
             }
@@ -353,6 +356,111 @@ body {
     }
 
 
+
+
+}
+
+#yongerPagesTree {
+    @dd-height: 50px;
+    @dd-bkg: #FFFCFC;
+    @dd-header: #F1F1F5;
+    @dd-header-inp: #FAFAFB;
+    background: @dd-bkg;
+    border-radius: @radius;
+    .header {
+        background-color: @dd-header;
+        border-top-left-radius: @radius;
+        border-top-right-radius: @radius;
+        input {
+            border:0;
+            border-radius: @radius;
+            background-color: @dd-header-inp;
+        }
+    }
+    >ol {
+        padding:20px;
+        padding-top: 10px;
+    }
+    &.dd {
+        max-width: 100%;
+        width: 100%;
+    }
+    .dd-item {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: @dd-height;
+        font-size: 14px;
+        font-style: normal;
+        align-items: center;
+        &.hover {
+            >.dd-text {
+                background-color: #f2f4fc;
+                border-end-start-radius: @radius;
+                border-start-start-radius: @radius;
+            }
+            >.dd-info {
+                background-color: #f2f4fc;
+                border-end-end-radius: @radius;
+                border-start-end-radius: @radius;
+            }
+            cursor: pointer;
+        }
+        .dd-text {
+            font-weight: 600;
+            height: @dd-height;
+            line-height: @dd-height;
+            align-items: center;
+        }        
+        .dd-info {
+            height: @dd-height;
+            align-items: center;
+            margin:0;
+            .row {
+                height: @dd-height;
+                align-items: center;
+            }
+            img {
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+                &:hover {
+                    background: @color-light;
+                    backdrop-filter: blur(21px);
+                    border-radius: 5px;
+                }
+            }
+        }
+        button[data-action] {
+            margin-right: -25px;
+            z-index: 100;
+            height: 24px;
+            &[data-action=collapse]:before {
+                content: ' ';
+                background: url(/module/myicons/arrows-diagrams-08.svg?stroke=323232&size=24) 50% 50% no-repeat;
+                width: 30px;
+                height: 24px;
+                top:0;
+            }
+            &[data-action=expand]:before {
+                content: ' ';
+                background: url(/module/myicons/arrows-diagrams-04.svg?stroke=323232&size=24) 50% 50% no-repeat;
+                width: 30px;
+                height: 24px;
+                top:0;
+            }
+        }
+        .dd-handle {
+            display: inline;
+            border:0;
+            background: none;
+            margin-left: 20px;
+        }
+        ol {
+            width: 100%;
+            padding-left: 30px;
+        }
+    }
 }
 
 #startMaster {
