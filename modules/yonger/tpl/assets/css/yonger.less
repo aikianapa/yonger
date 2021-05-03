@@ -555,6 +555,20 @@ body {
     white-space: nowrap;
 }
 
+.nav-tabs {
+    .nav-item {
+        .nav-link {
+            border:0;
+            background: transparent;
+            border-bottom: 1px #e1e5ed solid;
+            &.active {
+                border-bottom: 1px @color-hover solid;
+                box-shadow: 0 1px @color-hover;
+            }
+        }
+    }
+}
+
 a.nav__item {
     color: #171725;
     font-size: 13px;
