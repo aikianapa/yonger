@@ -19,7 +19,7 @@
             
         </span>
         <ol id="pagesList" class="dd-list">
-            <wb-foreach wb="table=pages&bind=cms.list.pages">
+            <wb-foreach wb="from=list&form=pages&bind=cms.list.pages">
                 <li class="dd-item row" data-item="{{id}}">
                     <span class="dd-handle"><img src="/module/myicons/dots-2.svg?size=20px&stroke=000000" /></span>
                     <span class="dd-text col-3">
@@ -27,7 +27,8 @@
                     </span>
                     <span class="dd-info col-9">
                         <span class="row" >
-                            <span class="dd-path col-6">{{parent}}/{{id}}</span>
+                            <wb-var wb-if='"{{path}}" == "" AND "{{id}}" == "home"' path="/" else="{{path}}/{{id}}" />
+                            <span class="dd-path col-6" data-path="{{_var.path}}">{{_var.path}}</span>
                             <form method="post" class="col-6 text-right m-0">
                                 <wb-var wb-if='"{{active}}" == ""' stroke="FC5A5A" else="82C43C" />
                                 <input type="checkbox" name="active" class="d-none">
@@ -75,6 +76,9 @@
         $(document).on('bind-cms.list.pages',function(){
             $('#yongerPagesTree').nestable({
                 maxDepth: 100,
+                beforeDragStop: function(l,e, p){
+                    console.log(l,e,p);
+                }
             });
         })
         $(document).trigger('bind-cms.list.pages');
