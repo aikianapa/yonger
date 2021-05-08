@@ -33,9 +33,9 @@
                             <label class="col-12 form-control-label">Адрес страницы</label>
                             <div class="col-12">
                                 <select class="form-control" placeholder="/" name="path">
-                                    <wb-foreach wb='table=pages&sort=id' wb-filter="{'id':{'$ne':'{{id}}'}}">
-                                        <wb-var if='"{{path}}" > ""' path="{{path}}" else="/" />
-                                        <option value="{{_var.path}}/{{id}}">{{_var.path}}/{{id}}</option>
+                                    <wb-foreach wb='table=pages&sort=url' wb-filter="{'id':{'$ne':'{{id}}'}}">
+                                        <wb-var wb-if='"{{url}}" == "/"' url="/home" else="{{url}}" />
+                                        <option value="{{_var.path}}/{{name}}">{{_var.url}}</option>
                                     </wb-foreach>
                                 </select>
                             </div>
@@ -43,7 +43,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text px-0">{{_route.hostname}}<span class="path"></span></span>
                                 </div>
-                                <input type="text" name="_id" class="form-control" wb="module=smartid" required>
+                                <input type="text" name="name" class="form-control" wb="module=smartid" required>
                             </div>
                         </div>
 
@@ -137,7 +137,7 @@ var yongerPageEditor = function(){
     let $form = $('#{{_form}}EditForm');
     $form.delegate('[name=path]','change',function(){
         let path = $(this).val() + '/';
-        $form.find('[name=_id]').parents('.input-group').find('.path').html(path);
+        $form.find('[name=name]').parents('.input-group').find('.path').html(path);
     });
     $form.find('[name=path]').trigger('change');
 }

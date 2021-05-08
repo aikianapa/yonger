@@ -19,18 +19,18 @@
             
         </span>
         <ol id="pagesList" class="dd-list">
-            <wb-foreach wb="from=list&form=pages&bind=cms.list.pages">
-                <li class="dd-item row" data-item="{{id}}">
+            <wb-foreach wb="from=list&form=pages&bind=cms.list.pages" wb-filter="{'login':'{{_sess.user.login}}' }">
+                <li class="dd-item row" data-item="{{id}}" data-name="{{name}}">
                     <span class="dd-handle"><img src="/module/myicons/dots-2.svg?size=20px&stroke=000000" /></span>
                     <span class="dd-text col-3">
                     {{header}}
                     </span>
                     <span class="dd-info col-9">
-                        <span class="row" >
-                            <wb-var wb-if='"{{path}}" == "" AND "{{id}}" == "home"' path="/" else="{{path}}/{{id}}" />
-                            <span class="dd-path col-6" data-path="{{_var.path}}">{{_var.path}}</span>
+                        <span class="row">
+                            <span class="dd-path col-6" data-path="{{url}}">{{url}}</span>
                             <form method="post" class="col-6 text-right m-0">
                                 <wb-var wb-if='"{{active}}" == ""' stroke="FC5A5A" else="82C43C" />
+                                {{_var.stroke}}
                                 <input type="checkbox" name="active" class="d-none">
                                 <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke={{_var.stroke}}" class="dd-active cursor-pointer">
                                 <img src="/module/myicons/content-edit-pen.svg?size=24&stroke=323232" class="dd-edit">
@@ -47,6 +47,8 @@
     <script wb-app>
     wbapp.loadStyles(['/engine/lib/js/nestable/nestable.css']);
     wbapp.loadScripts(['/engine/lib/js/nestable/nestable.min.js'], '', function() {
+
+        var datapath = [] ; // для передачи списка при смене путей
 
         $('#yongerPagesTree').delegate('li','mouseover',function(e) {
                 $('#yongerPagesTree li').removeClass('hover');
@@ -77,10 +79,33 @@
             $('#yongerPagesTree').nestable({
                 maxDepth: 100,
                 beforeDragStop: function(l,e, p){
-                    console.log(l,e,p);
+                    datapath = {};
+                    changePath(e,p).then(function(){
+                        wbapp.post('/cms/ajax/form/pages/path',{'data':datapath});
+                    });
+                    console.log(datapath);
+                    
                 }
             });
-        })
+        });
+
+        var changePath = async function (e,p) {
+            let self = $(e).attr('data-item');
+            let name = $(e).attr('data-name');
+            let parent = $(p).closest('.dd-item').find('.dd-path').attr('data-path');
+            if (parent == undefined) {parent = '';} 
+            if (parent == '/') {parent = '/home'}
+            let path = parent + '/' + name;
+            datapath[self] = parent;
+            
+            console.log(self,path);
+            $(e).children('.dd-info').find('.dd-path')
+                .text(path)
+                .attr('data-path',path);
+                $(e).find('ol.dd-list .dd-item').each(await function(){
+                        changePath(this,e);
+                });
+        }
         $(document).trigger('bind-cms.list.pages');
     })
     </script>

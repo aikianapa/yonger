@@ -5,16 +5,29 @@ class pagesClass extends cmsFormsClass {
 
 function beforeItemShow(&$item) {
     $lang = $item['lang'][$this->app->vars('_sess.lang')];
-    $item = array_merge($item,$lang);
+    $item = array_merge($lang,$item);
 }
+
+function afterItemRead(&$item) {
+    if ($item['path'] == '/') $item['path'] = '';
+    $item['url'] = $item['path'] . '/' .$item['name'];
+    $item['url'] == '/home' ? $item['url'] = '/' : null;
+}
+
+function beforeItemSave(&$item) {
+    $item['login'] = $this->app->vars('_sess.user.login');
+}
+
+function afterItemSave(&$item) {
+    
+}
+
 
 function list() {
     $app = &$this->app;
     $this->jq = new Jsonq();
     $this->count = 0;
     $out = $app->fromFile(__DIR__ . '/list.php');
-    //$list = $app->itemList('pages',["projection" => ['id','header','path']]);
-    //$this->list = $list['list'];
     $this->tpl = $out->find('#pagesList');
     $res = $this->listNested();
     $out->find('#pagesList')->replaceWith($res);
@@ -22,7 +35,7 @@ function list() {
     echo wbUsageStat();
 }
 
-private function listNested($path = '') {
+function listNested($path = '') {
     $this->count++;
     $level = $this->app->itemList('pages',['filter'=>['path'=>$path]]);
     $count = $level['count'];
@@ -30,17 +43,25 @@ private function listNested($path = '') {
     $out = $this->tpl->clone();
     $out->fetch(['list'=>$level]);
     foreach($level as $item) {
-            $path = $item['path'].'/'.$item['id'];
+            $path = $item['path'].'/'.$item['name'];
             $res = $this->listNested($path);
-               if ($path == '/home' && $item['id'] == 'home') $path = '/';
+            if ($res->find('li.dd-item')->length > 1) {
+               if ($path == '/home' && $item['name'] == 'home') $path = '/';
                 $li = $out->find('[data-path="'.$path.'"]')->parent()->parent()->parent();
                 $li->append($res);
-            
-    
+            }
     }
     return $out;
 }
 
+function path() {
+    $app = &$this->app;
+    $data = $app->vars('_post.data');
+    foreach(array_keys($data) as $id) {
+        $app->itemSave('pages',['_id'=>$id,'path'=>$data[$id]],false);
+    }
+    $app->tableFlush('pages');
+}
 
 }
 ?>
