@@ -26,7 +26,9 @@ class yongerPage {
     function blockform($form = null, $item = []) {
         if ($form == null) return;
         $out = $this->app->fromFile(__DIR__.'/blocks/'.$form);
+        $path = $out->path;
         $out = $out->find('edit');
+        $out->path = $path;
         $out->fetch($item);
         return $out->outer();
 

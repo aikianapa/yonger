@@ -4,5 +4,5 @@
     </header>
 </view>
 <edit header="Шапка">
-    
+<wb-include wb-src="common.inc.php" />
 </edit>

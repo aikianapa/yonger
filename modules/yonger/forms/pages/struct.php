@@ -53,7 +53,10 @@ var yongerPageBlocks = function() {
 
     $('#yongerPageBlocks').delegate('.dd-remove', 'tap click touchStart', function() {
         let id = $(this).parents('.dd-item').attr('data-id');
-        if (id > '') wbapp.storage('cms.page.blocks.'+id, null);
+        if (id > '') {
+            wbapp.storage('cms.page.blocks.'+id, null);
+            $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+        }
     });
 
     $('#yongerPageBlocks').delegate('.dd-edit', 'tap click touchStart', function() {

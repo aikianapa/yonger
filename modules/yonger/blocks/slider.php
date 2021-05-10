@@ -4,5 +4,5 @@
     </header>
 </view>
 <edit header="Слайдер">
-    
+<wb-include wb-src="common.inc.php" />
 </edit>
