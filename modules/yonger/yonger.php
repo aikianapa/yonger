@@ -1,22 +1,34 @@
 <?php
+// Author: oleg_frolov@mail.ru
+
+require_once __DIR__ . '/yonger_page.php';
+
 class modYonger
 {
-    public function __construct($app)
+    public function __construct($obj)
     {
-        $mode = $app->route->mode;
+        if (get_class($obj) == 'wbDom') {
+            $app = &$obj->app;
+            $mode = $obj->params->mode;
+            $this->dom = &$obj;
+        } else {
+            $app = &$obj;
+            $mode = $app->route->mode;
+        }
+
         in_array($mode,explode(',','workspace,logo,signin,signup,signrc,createSite,removeSite'))? null : $app->apikey('module');
         if (in_array($mode,explode(',','createSite,removeSite')) AND $app->getDomain( $app->route->refferer) !== $app->route->domain ) {
             echo json_encode(['error'=>true,'msg'=>'Access denied']);
             die;
         }
-        $this->app = $app;
+        $this->app = &$app;
         if (method_exists($this, $mode)) {
             echo $this->$mode();
         } else {
             $form = $app->controller('form');
             echo $form->get404();
         }
-        die;
+        if (!$this->dom) die;
     }
 
     public function workspace()
@@ -53,6 +65,27 @@ class modYonger
         $ws = $app->fromFile(__DIR__."/tpl/workspace.php", true);
         $ws->fetch();
         return $ws;
+    }
+
+    private function structure() {
+        $yp = new yongerPage($this->dom);
+        $this->dom->after($yp->list());
+        $this->dom->remove();
+    }
+
+    private function blocklist() {
+        header("Content-type: application/json; charset=utf-8");
+        $yp = new yongerPage();
+        $res = $yp->list();
+        return json_encode($res);
+    }
+
+    private function blockform() {
+        $res = new yongerPage($this->dom);
+        $form = $this->app->vars('_post.form');
+        $item = $this->app->vars('_post.item');
+        return $res->blockform($form, $item);
+        
     }
 
     private function logo() {

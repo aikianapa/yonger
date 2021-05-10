@@ -7,7 +7,7 @@
         </a>
     </nav>
     
-    <div id="yongerPagesTree" class="dd">
+    <div id="yongerPagesTree" class="dd yonger-nested">
         <span class="bg-light">
             <div class="header p-2">
                 <span clsss="row">
@@ -23,14 +23,13 @@
                 <li class="dd-item row" data-item="{{id}}" data-name="{{name}}">
                     <span class="dd-handle"><img src="/module/myicons/dots-2.svg?size=20px&stroke=000000" /></span>
                     <span class="dd-text col-3">
-                    {{header}}
+                    <span>{{header}}</span>
                     </span>
                     <span class="dd-info col-9">
                         <span class="row">
                             <span class="dd-path col-6" data-path="{{url}}">{{url}}</span>
                             <form method="post" class="col-6 text-right m-0">
                                 <wb-var wb-if='"{{active}}" == ""' stroke="FC5A5A" else="82C43C" />
-                                {{_var.stroke}}
                                 <input type="checkbox" name="active" class="d-none">
                                 <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke={{_var.stroke}}" class="dd-active cursor-pointer">
                                 <img src="/module/myicons/content-edit-pen.svg?size=24&stroke=323232" class="dd-edit">
@@ -42,8 +41,8 @@
                 </li>
             </wb-foreach>
         </ol>
-        <modals></modals>
     </div>
+    <modals></modals>
     <script wb-app>
     wbapp.loadStyles(['/engine/lib/js/nestable/nestable.css']);
     wbapp.loadScripts(['/engine/lib/js/nestable/nestable.min.js'], '', function() {

@@ -5,7 +5,8 @@ class pagesClass extends cmsFormsClass {
 
 function beforeItemShow(&$item) {
     $lang = $item['lang'][$this->app->vars('_sess.lang')];
-    $item = array_merge($lang,$item);
+    $item = (array)$lang + (array)$item;
+    $item['header'] = $item['header'][$_SESSION['lang']];
 }
 
 function afterItemRead(&$item) {

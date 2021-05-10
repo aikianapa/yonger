@@ -363,7 +363,7 @@ body {
 
 }
 
-#yongerPagesTree {
+.yonger-nested {
     @dd-height: 50px;
     @dd-bkg: #FFFCFC;
     @dd-header: #F1F1F5;
@@ -475,6 +475,18 @@ body {
             width: 100%;
             padding-left: 30px;
         }
+    }
+    &#yongerPageBlocks {
+        .dd-text {
+            line-height: 30px;
+        }
+    }
+}
+
+#yongerPageBlocks {
+    .dd-item:hover {
+        background-color: #f2f4fc;
+        border-radius: @radius;
     }
 }
 
