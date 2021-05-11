@@ -88,10 +88,11 @@
                                             Добавить блок
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="pageBlockAdd">
-                                            <wb-foreach wb="ajax=/module/yonger/blocklist&render=server">
-                                                <a class="dropdown-item"
-                                                    onclick="yonger.pageBlockAdd('{{file}}','{{name}}')"
-                                                    href="#">{{name}}</a>
+                                            <wb-foreach wb="ajax=/module/yonger/blocklist&render=client">
+                                                <a class="dropdown-item" href="#"
+                                                    onclick="yonger.pageBlockAdd('{{file}}','{{name}}')">
+                                                    {{name}}
+                                                </a>
                                             </wb-foreach>
                                         </div>
                                     </div>

@@ -5,3 +5,4 @@
 /sites
 *.pid
 *.log
+*.out
