@@ -4,22 +4,20 @@
         <wb-foreach wb="bind=cms.page.blocks&render=client">
             <li class="dd-item row" data-id="{{id}}" data-form="{{form}}" data-name="{{name}}">
                 <span class="dd-handle"><img src="/module/myicons/dots-2.svg?size=20px&stroke=000000" /></span>
-                <span class="dd-text col-3">
+                <span class="dd-text col-sm-6 ellipsis">
                     <b>{{header}}&nbsp;</b>
                     <small class="tx-gray lh--5"><br>{{name}}</small>
                 </span>
-                <span class="dd-info col-9">
+                <span class="dd-info col-sm-6">
                     <span class="row">
-                        <div method="post" class="col-12 text-right m-0">
-                            <wb-var wb-if='"{{active}}" == ""' stroke="FC5A5A" else="82C43C" />
-                            <input type="checkbox" name="active" class="d-none">
+                        <div method="post" class="col-12 text-right m-0 nobr">
                             {{#if active=='on'}}
-                            <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke=82C43C" />
+                            <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke=82C43C" class="dd-active on cursor-pointer">
                             {{else}}
-                            <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke=FC5A5A" />
+                            <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke=FC5A5A" class="dd-active cursor-pointer" />
                             {{/if}}
-                            <img src="/module/myicons/content-edit-pen.svg?size=24&stroke=323232" class="dd-edit">
-                            <img src="/module/myicons/trash-delete-bin.2.svg?size=24&stroke=323232" class="dd-remove">
+                            <img src="/module/myicons/content-edit-pen.svg?size=24&stroke=323232" class="dd-edit cursor-pointer">
+                            <img src="/module/myicons/trash-delete-bin.2.svg?size=24&stroke=323232" class="dd-remove cursor-pointer">
                         </div>
                     </span>
                 </span>
@@ -34,7 +32,7 @@ var yongerPageBlocks = function() {
     let $blocks = $('#yongerPageBlocks [name=blocks]');
     let $modal = $blockform.parents('.modal');
     let $current;
-    
+    let timeout = 50;
     if ($blocks.val() == '') $blocks.val('null');
 
     let data = json_decode($blocks.val(),true);
@@ -42,8 +40,21 @@ var yongerPageBlocks = function() {
         if (item.id == undefined) delete data[i];
     });
     wbapp.storage('cms.page.blocks', data);
+    
     $('#yongerPageBlocks').nestable({
         maxDepth: 0,
+        beforeDragStop: function(l,e, p){
+            let data = {};
+            setTimeout(() => {
+                $('#yongerPageBlocks .dd-item').each(function(){
+                    let id = $(this).attr('data-id');
+                    data[id] = wbapp.storage('cms.page.blocks.'+id);
+                });
+                wbapp.storage('cms.page.blocks',data);
+                $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+            }, timeout);
+
+        }
     });
 
 
@@ -55,8 +66,18 @@ var yongerPageBlocks = function() {
         let id = $(this).parents('.dd-item').attr('data-id');
         if (id > '') {
             wbapp.storage('cms.page.blocks.'+id, null);
+            setTimeout(() => {
             $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+            }, timeout);
         }
+    });
+
+    $('#yongerPageBlocks').delegate('.dd-active', 'tap click touchStart', function() {
+        let id = $(this).parents('.dd-item').attr('data-id');
+        let active = 'on';
+        if ($(this).hasClass('on')) active = '';
+        wbapp.storage('cms.page.blocks.'+id+'.active', active);
+        $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
     });
 
     $('#yongerPageBlocks').delegate('.dd-edit', 'tap click touchStart', function() {
@@ -69,7 +90,9 @@ var yongerPageBlocks = function() {
             'item': item
         }));
         $modal.find('.modal-header .header').text($editor.attr("header"));
-        $blockform.html($editor.html());
+        setTimeout(() => {
+            $blockform.html($editor.html());
+        }, timeout);
         $current = $line;
     })
 
@@ -81,10 +104,10 @@ var yongerPageBlocks = function() {
             data.name = $current.attr('data-name');
             data.form = $current.attr('data-form');
             wbapp.storage('cms.page.blocks.'+id,data);
-            $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+            setTimeout(() => {
+                $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+            }, timeout);
         }
-        
-
     }
 
 }

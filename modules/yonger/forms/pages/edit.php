@@ -27,32 +27,35 @@
                                     </div>
                                 </div>
                             </div>
+                            
 
                             <div class="form-group row">
-                                <label class="col-12 form-control-label">Адрес страницы</label>
-                                <div class="col-12">
-                                    <select class="form-control" placeholder="/" name="path">
-                                        <wb-foreach wb='table=pages&sort=url' wb-filter="{'id':{'$ne':'{{id}}'}}">
-                                            <wb-var wb-if='"{{url}}" == "/"' url="/home" else="{{url}}" />
-                                            <option value="{{_var.path}}/{{name}}">{{_var.url}}</option>
-                                        </wb-foreach>
-                                    </select>
+                                <div class="col-md-6">
+                                    <label class="form-control-label">Путь к странице</label>
+                                        <select class="form-control" placeholder="/" name="path">
+                                            <wb-foreach wb='table=pages&sort=url' wb-filter="{'id':{'$ne':'{{id}}'}}">
+                                                <wb-var wb-if='"{{url}}" == "/"' url="/home" else="{{url}}" />
+                                                <option value="{{_var.path}}/{{name}}">{{_var.url}}</option>
+                                            </wb-foreach>
+                                        </select>
                                 </div>
-                                <div class="input-group col-12">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text px-0">{{_route.hostname}}<span
-                                                class="path"></span></span>
-                                    </div>
+                                <div class="col-md-6">
+                                    <label class="form-control-label">Имя страницы</label>
                                     <input type="text" name="name" class="form-control" wb="module=smartid" required>
                                 </div>
+                                <div class="col-12 mt-1">
+                                    <div class="alert alert-info p-2 mb-0">
+                                    {{_route.scheme}}://{{_route.hostname}}<span class="path"></span>
+                                    </div>
+                                </div>
                             </div>
-
-                        <div class="form-group row">
-                            <label class="col-12 form-control-label">Заголовок</label>
-                            <div class="col-12">
-                                <input type="text" name="header" class="form-control" placeholder="Заголовок" wb="module=langinp" required>
+                            <div class="form-group row">
+                                <label class="col-md-4 form-control-label">Заголовок</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="header" class="form-control" placeholder="Заголовок"
+                                        wb="module=langinp" required>
+                                </div>
                             </div>
-                        </div>
 
                             <!--div class="form-group row">
                             <label class="col-12 form-control-label">Шаблон</label>
@@ -79,15 +82,16 @@
                                 <nav class="nav navbar navbar-expand-md col">
                                     <h5 class="order-1">Структура</h5>
                                     <div class="dropdown  dropright ml-auto order-2 float-right">
-                                        <a href="#" id="pageBlockAdd"
-                                            class="btn btn-sm btn-primary dropdown-toggle"
+                                        <a href="#" id="pageBlockAdd" class="btn btn-sm btn-primary dropdown-toggle"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <img src="/module/myicons/item-select-plus-add.svg?size=18&stroke=FFFFFF">
                                             Добавить блок
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="pageBlockAdd">
                                             <wb-foreach wb="ajax=/module/yonger/blocklist&render=server">
-                                            <a class="dropdown-item" onclick="yonger.pageBlockAdd('{{file}}','{{name}}')" href="#">{{name}}</a>
+                                                <a class="dropdown-item"
+                                                    onclick="yonger.pageBlockAdd('{{file}}','{{name}}')"
+                                                    href="#">{{name}}</a>
                                             </wb-foreach>
                                         </div>
                                     </div>
@@ -119,7 +123,13 @@ yonger.pageEditor = function() {
     let $form = $('#{{_form}}EditForm');
     $form.delegate('[name=path]', 'change', function() {
         let path = $(this).val() + '/';
-        $form.find('[name=name]').parents('.input-group').find('.path').html(path);
+        $form.find('.path').html(path);
+        $form.find('[name=name]').trigger('change');
+    });
+    $form.delegate('[name=name]', 'change keyup', function() {
+        let path = $form.find('[name=path]').val() + '/';
+        let name = $(this).val();
+        $form.find('.path').html(path + name);
     });
     $form.find('[name=path]').trigger('change');
 }

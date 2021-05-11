@@ -1,14 +1,12 @@
 <view>
-    <header>
-        <div class="jumbotron">
-            <h1 class="display-4">{{header}}</h1>
-            {{text}}
-            <wb-jq wb="$dom->find('p:first-child')->addClass('lead')" />
-            <a class="btn btn-primary btn-lg" href="#" role="button">Узнать больше</a>
-        </div>
-    </header>
+<section>
+    <h3 wb-if="header > ''">{{header}}</h3>
+    <div>
+        {{text}}
+    </div>
+</section>
 </view>
-<edit header="Шапка">
+<edit header="Контент">
     <wb-include wb-src="common.inc.php" />
     <wb-multilang wb-lang="ru,en" name="lang">
         <div class="form-group">
@@ -22,9 +20,11 @@
                 <wb-module wb="{'module':'jodit'}" name="text" />
             </div>
         </div>
-        <wb-lang>
-        [ru]
-        name = "Заголовок"
-        </wb-lang>
     </wb-multilang>
+    <wb-lang>
+        [ru]
+        name = "Наименование блока"
+        active = "Отображать блок"
+        template = Шаблон
+    </wb-lang>
 </edit>

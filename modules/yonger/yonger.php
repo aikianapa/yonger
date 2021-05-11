@@ -88,6 +88,17 @@ class modYonger
         
     }
 
+    private function blockview() {
+        $res = new yongerPage($this->dom);
+        $res = $res->blockview($this->dom->params->form);
+        $item = &$this->dom->item['_parent'];
+        if ($item['container'] == 'on') {
+            $res->children()->addClass('container');
+        }
+        $item = $item['lang'][$this->app->vars('_sess.lang')];
+        return $res->fetch($item)->inner();
+    }
+
     private function logo() {
         header( 'Content-type: image/svg+xml' ); 
         return file_get_contents(__DIR__. '/tpl/assets/img/logo.svg');

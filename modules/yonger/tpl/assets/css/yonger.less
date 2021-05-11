@@ -431,7 +431,7 @@ body {
             }
             img {
                 &:not(:last-child) {
-                    margin-right: 10px;
+                    margin-right: 3px;
                 }
                 &:hover {
                     background: @color-light;
@@ -643,3 +643,8 @@ button {
     background: transparent;
 }
 
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

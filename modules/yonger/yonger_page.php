@@ -12,10 +12,12 @@ class yongerPage {
         $list = [];
         foreach($files as $file) {
             $name = basename($file,'.php');
-            $form = $this->app->fromFile(__DIR__.'/blocks/'.$file);
-            $header = $form->find('edit')->attr('header');
-            $id = $this->app->newId();
-            $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file];
+            if ($name !== 'common.inc') {
+                $form = $this->app->fromFile(__DIR__.'/blocks/'.$file);
+                $header = $form->find('edit')->attr('header');
+                $id = $this->app->newId();
+                $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file];
+            }
         }
         if ($this->dom == null) return $list;
         $res = $this->app->fromFile(__DIR__.'/forms/pages/struct.php');
@@ -31,6 +33,14 @@ class yongerPage {
         $out->path = $path;
         $out->fetch($item);
         return $out->outer();
+
+    }
+
+    function blockview($form = null) {
+        if ($form == null) return;
+        $out = $this->app->fromFile(__DIR__.'/blocks/'.$form);
+        $out = $out->find('view');
+        return $out;
 
     }
 

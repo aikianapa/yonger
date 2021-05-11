@@ -13,6 +13,7 @@ function afterItemRead(&$item) {
     if ($item['path'] == '/') $item['path'] = '';
     $item['url'] = $item['path'] . '/' .$item['name'];
     $item['url'] == '/home' ? $item['url'] = '/' : null;
+    $item['blocks'] = json_decode($item['blocks'],true);
 }
 
 function beforeItemSave(&$item) {
