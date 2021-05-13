@@ -120,6 +120,7 @@
     </div>
 </div>
 <script wb-app>
+let timeout = 50;
 yonger.pageEditor = function() {
     let $form = $('#{{_form}}EditForm');
     $form.delegate('[name=path]', 'change', function() {
@@ -143,9 +144,11 @@ yonger.pageBlockAdd = function(form, name) {
         'name': name,
         'form': form
     }
-    console.log(data);
     wbapp.storage('cms.page.blocks.' + id, data);
     $('#yongerBlocksForm [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
+    setTimeout(() => {
+        $('#yongerPageBlocks').find('li.dd-item:last .dd-edit').trigger('click');
+    }, timeout);
 }
 
 yonger.pageEditor();

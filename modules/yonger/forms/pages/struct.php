@@ -40,7 +40,14 @@ var yongerPageBlocks = function() {
         if (item.id == undefined) delete data[i];
     });
     wbapp.storage('cms.page.blocks', data);
-    
+
+    $(document).delegate('#yonblocks','wb-render-done',function(ev,data){
+        if (!$current) $('#yongerPageBlocks').find('li.dd-item:first .dd-edit').trigger('click');
+        let id = $('#yongerPageBlocks').data('current');
+        $('#yongerPageBlocks').find('li.dd-item[data-id="'+id+'"]').addClass('active');
+        
+    })
+
     $('#yongerPageBlocks').nestable({
         maxDepth: 0,
         beforeDragStop: function(l,e, p){
@@ -85,15 +92,17 @@ var yongerPageBlocks = function() {
         let id = $line.attr('data-id');
         let form = $line.attr('data-form');
         let item = wbapp.storage('cms.page.blocks.'+id);
+        console.log(item);
+        $('#yongerPageBlocks').data('current', id);
+        $line.parents('.dd-list').find('.dd-item').removeClass('active');
         let $editor = $(wbapp.postSync('/module/yonger/blockform', {
             'form': form,
             'item': item
         }));
-        $modal.find('.modal-header .header').text($editor.attr("header"));
-        setTimeout(() => {
-            $blockform.html($editor.html());
-        }, timeout);
         $current = $line;
+        $current.addClass('active');
+        $modal.find('.modal-header .header').text($editor.attr("header"));
+        $blockform.html($editor.html());
     })
 
     var blockSave = function() {
