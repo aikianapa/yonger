@@ -8,7 +8,7 @@
 </view>
 <edit header="Контент">
     <wb-include wb-src="common.inc.php" />
-    <wb-multilang wb-lang="ru,en" name="lang">
+    <wb-multilang wb-lang="{{_sett.locales}}" name="lang">
         <div class="form-group">
         <div class="col-12">
             <label class="form-control-label">{{_lang.name}}</label>

@@ -30,16 +30,16 @@
                             
 
                             <div class="form-group row">
-                                <div class="col-md-6">
+                                <div class="col-lg-6">
                                     <label class="form-control-label">Путь к странице</label>
                                         <select class="form-control" placeholder="/" name="path">
                                             <wb-foreach wb='table=pages&sort=url' wb-filter="{'id':{'$ne':'{{id}}'}}">
                                                 <wb-var wb-if='"{{url}}" == "/"' url="/home" else="{{url}}" />
-                                                <option value="{{_var.path}}/{{name}}">{{_var.url}}</option>
+                                                <option value="{{path}}/{{name}}">{{_var.url}}</option>
                                             </wb-foreach>
                                         </select>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-lg-6">
                                     <label class="form-control-label">Имя страницы</label>
                                     <input type="text" name="name" class="form-control" wb="module=smartid" required>
                                 </div>
@@ -50,8 +50,8 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-4 form-control-label">Заголовок</label>
-                                <div class="col-md-8">
+                                <label class="col-lg-4 form-control-label">Заголовок</label>
+                                <div class="col-lg-8">
                                     <input type="text" name="header" class="form-control" placeholder="Заголовок"
                                         wb="module=langinp" required>
                                 </div>
@@ -136,7 +136,7 @@ yonger.pageEditor = function() {
     });
     $form.find('[name=path]').trigger('change');
 
-    $form.find('.pagelink').on('click tap touchStart',function(){
+    $form.find('.pagelink').on(wbapp.evClick,function(){
         let url = $(this).text();
         let target = md5(url);
         window.open(url, target).focus();
@@ -152,8 +152,8 @@ yonger.pageBlockAdd = function(form, name) {
         'form': form
     }
     wbapp.storage('cms.page.blocks.' + id, data);
-    $('#yongerBlocksForm [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
     setTimeout(() => {
+        $('#yongerBlocksForm [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
         $('#yongerPageBlocks').find('li.dd-item:last .dd-edit').trigger('click');
     }, timeout);
 }

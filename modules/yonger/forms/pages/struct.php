@@ -45,7 +45,7 @@ var yongerPageBlocks = function() {
         if (!$current) $('#yongerPageBlocks').find('li.dd-item:first .dd-edit').trigger('click');
         let id = $('#yongerPageBlocks').data('current');
         $('#yongerPageBlocks').find('li.dd-item[data-id="'+id+'"]').addClass('active');
-        
+        ev.stopPropagation();
     })
 
     $('#yongerPageBlocks').nestable({
@@ -92,7 +92,6 @@ var yongerPageBlocks = function() {
         let id = $line.attr('data-id');
         let form = $line.attr('data-form');
         let item = wbapp.storage('cms.page.blocks.'+id);
-        console.log(item);
         $('#yongerPageBlocks').data('current', id);
         $line.parents('.dd-list').find('.dd-item').removeClass('active');
         let $editor = $(wbapp.postSync('/module/yonger/blockform', {

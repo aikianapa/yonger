@@ -18,7 +18,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="#" data-ajax="{'url':'/cms/ajax/form/orders/list/','html':'.content-body'}" class="nav-link">
+        <a href="#" data-ajax="{'url':'/cms/ajax/form/quotes/list/','html':'.content-body'}" class="nav-link">
             <svg class="mi mi-document-contract-edit-pen" wb-module="myicons"></svg>
             <span>Заявки</span>
         </a>

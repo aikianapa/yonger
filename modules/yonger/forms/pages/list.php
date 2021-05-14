@@ -63,13 +63,22 @@
             $(this).removeClass('hover');
         });
 
+        $('#yongerPagesTree').delegate('.dd-path',wbapp.evClick,function(e){
+            e.stopPropagation();
+            let url = document.location.origin + $(this).text();
+            let target = md5(url);
+            window.open(url, target).focus();
+            e.stopPropogation();
+        });
+
         $('#yongerPagesTree').delegate('.dd-active',wbapp.evClick,function(e){
             let id = $(e.currentTarget).parents('[data-item]').attr('data-item');
             $(e.currentTarget).parent('form').find('[name=active]').trigger('click');
             wbapp.save($(e.currentTarget),{'table':'pages','id':id,'update':'cms.list.pages','silent':'true'})
         });
 
-        $('#yongerPagesTree').delegate('li[data-item] .dd-edit',wbapp.evClick,function(){
+        $('#yongerPagesTree').delegate('li[data-item] .dd-edit',wbapp.evClick,function(e){
+            e.stopPropagation();
             let item = $(this).parents('[data-item]').attr('data-item')
             wbapp.ajax({'url':'/cms/ajax/form/pages/edit/'+item,'html':'#yongerSupport modals'});
         });
@@ -82,8 +91,6 @@
                     changePath(e,p).then(function(){
                         wbapp.post('/cms/ajax/form/pages/path',{'data':datapath});
                     });
-                    console.log(datapath);
-                    
                 }
             });
         });
@@ -96,8 +103,6 @@
             if (parent == '/') {parent = '/home'}
             let path = parent + '/' + name;
             datapath[self] = parent;
-            
-            console.log(self,path);
             $(e).children('.dd-info').find('.dd-path')
                 .text(path)
                 .attr('data-path',path);
