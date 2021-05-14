@@ -44,7 +44,7 @@
                                     <input type="text" name="name" class="form-control" wb="module=smartid" required>
                                 </div>
                                 <div class="col-12 mt-1">
-                                    <div class="alert alert-info p-2 mb-0">
+                                    <div class="alert alert-info p-2 mb-0 cursor-pointer pagelink" >
                                     {{_route.scheme}}://{{_route.hostname}}<span class="path"></span>
                                     </div>
                                 </div>
@@ -131,9 +131,16 @@ yonger.pageEditor = function() {
     $form.delegate('[name=name]', 'change keyup', function() {
         let path = $form.find('[name=path]').val() + '/';
         let name = $(this).val();
+        if (path == '/' && name == 'home') name = '';
         $form.find('.path').html(path + name);
     });
     $form.find('[name=path]').trigger('change');
+
+    $form.find('.pagelink').on('click tap touchStart',function(){
+        let url = $(this).text();
+        let target = md5(url);
+        window.open(url, target).focus();
+    })
 }
 
 yonger.pageBlockAdd = function(form, name) {
