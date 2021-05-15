@@ -17,7 +17,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="quotesList" >
         <wb-foreach wb="table=quotes&sort=_created:d&bind=cms.list.quotes" wb-filter="{'login':'{{_sess.user.login}}' }">
             <tr>
                 <td>{{_created}}</td>

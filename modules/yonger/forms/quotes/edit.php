@@ -48,7 +48,7 @@
 
                     <div class="form-group">
                         <label class="form-control-label">{{_lang.msg}}</label>
-                        <textarea name="msg" rows="auto" class="form-control" placeholder="{{_lang.msg}}" required></textarea>
+                        <textarea name="message" rows="auto" class="form-control" placeholder="{{_lang.msg}}" required></textarea>
                     </div>
 
                 </div>
