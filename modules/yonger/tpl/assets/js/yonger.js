@@ -18,10 +18,13 @@ $(document).delegate(".chat-sidebar .nav-link", "tap click",function() {
 });
 
 $(document).on("data-ajax", function (e, params) {
-    var spinner = '<div class="text-center pt-5"><div class="spinner-border text-primary" role="status"></div></div>';
-    if (params.html) $(params.html).html(spinner);
-    if (params._tid) $(params._tid).html(spinner);
-    if (params.target) $(params.target).html(spinner);
+  //  var spinner = '<div class="text-center pt-5"><div class="spinner-border text-primary" role="status"></div></div>';
+  //  if (params.html) $(params.html).html(spinner);
+  //  if (params._tid) $(params._tid).html(spinner);
+  //  if (params.target) $(params.target).html(spinner);
+        if (params.html) wbapp.loading(params.html);
+        if (params._tid) wbapp.loading(params._tid);
+        if (params.target) wbapp.loading(params.target);
 })
 
 $(document).on("wb-save-start",function(e,params) {
@@ -70,6 +73,11 @@ $(document).on("wb-save-done", function (e, params) {
 })
 
 $(document).on("wb-ajax-done",function(e,params) {
+
+    if (params.html) wbapp.unloading(params.html);
+    if (params._tid) wbapp.unloading(params._tid);
+    if (params.target) wbapp.unloading(params.target);
+
     $(document).find(".content-body [type=search][data-ajax].search-header").each(function() {
         $(".content-header .content-search [type=search]").attr("data-ajax",$(this).attr("data-ajax")).prop("disabled",false);
         $(this).remove();
