@@ -13,7 +13,7 @@ function afterItemRead(&$item) {
     if ($item['path'] == '/') $item['path'] = '';
     $item['url'] = $item['path'] . '/' .$item['name'];
     $item['url'] == '/home' ? $item['url'] = '/' : null;
-    $item['blocks'] = json_decode($item['blocks'],true);
+    $item['blocks'] = $item['blocks'];
 }
 
 function beforeItemSave(&$item) {
@@ -47,7 +47,7 @@ function listNested($path = '') {
     foreach($level as $item) {
             $path = $item['path'].'/'.$item['name'];
             $res = $this->listNested($path);
-            if ($res->find('li.dd-item')->length > 1) {
+            if ($res->find('li.dd-item')->length > 0) {
                if ($path == '/home' && $item['name'] == 'home') $path = '/';
                 $li = $out->find('[data-path="'.$path.'"]')->parent()->parent()->parent();
                 $li->append($res);

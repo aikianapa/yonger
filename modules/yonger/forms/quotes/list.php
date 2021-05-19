@@ -33,7 +33,6 @@
                     </a>
                 </td>
             </tr>
-        
         </wb-foreach>
     </tbody>
     </table>

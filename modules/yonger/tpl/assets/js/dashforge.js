@@ -2,17 +2,6 @@
 $(function(){
   'use strict'
 
-  $('[data-toggle="tooltip"]').tooltip()
-  
-  ////////// NAVBAR //////////
-
-  // Initialize PerfectScrollbar of navbar menu for mobile only
-  if(window.matchMedia('(max-width: 991px)').matches) {
-    const psNavbar = new PerfectScrollbar('#navbarMenu', {
-      suppressScrollX: true
-    });
-  }
-
   // Showing sub-menu of active menu on navbar when mobile
   function showNavbarActiveSub() {
     if(window.matchMedia('(max-width: 991px)').matches) {
@@ -43,7 +32,7 @@ $(function(){
   })
 
   // Closing dropdown menu of navbar menu
-  $(document).on('click touchstart', function(e){
+  $(document).on('click tap touchstart', function(e){
     e.stopPropagation();
 
     // closing nav sub menu of header when clicking outside of it
@@ -55,24 +44,24 @@ $(function(){
     }
   })
 
-  $('#mainMenuClose').on('click', function(e){
+  $('#mainMenuClose').on('click tap touchstart', function(e){
     e.preventDefault();
     $('body').removeClass('navbar-nav-show');
   });
 
-  $('#sidebarMenuOpen').on('click', function(e){
+  $('#sidebarMenuOpen').on('click tap touchstart', function(e){
     e.preventDefault();
     $('body').addClass('sidebar-show');
   })
 
   // Navbar Search
-  $('#navbarSearch').on('click', function(e){
+  $('#navbarSearch').on('click tap touchstart', function(e){
     e.preventDefault();
     $('.navbar-search').addClass('visible');
     $('.backdrop').addClass('show');
   })
 
-  $('#navbarSearchClose').on('click', function(e){
+  $('#navbarSearchClose').on('click tap touchstart', function(e){
     e.preventDefault();
     $('.navbar-search').removeClass('visible');
     $('.backdrop').removeClass('show');

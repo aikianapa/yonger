@@ -26,7 +26,7 @@
             </div>
             <!-- content-header -->
             <div class="content-toasts pos-absolute t-10 r-10" style="z-index:5000;"></div>
-            <div class="content-body pd-0 pl-2">
+            <div class="content-body scroll-y pd-0 pl-2">
             </div>
         </div>
     </div>

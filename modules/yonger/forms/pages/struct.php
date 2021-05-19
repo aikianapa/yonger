@@ -24,7 +24,7 @@
             </li>
         </wb-foreach>
     </ul>
-    <textarea name="blocks" class="d-none"></textarea>
+    <textarea type="json" name="blocks" class="d-none"></textarea>
 </div>
 <script wb-app>
 var yongerPageBlocks = function() {
@@ -111,6 +111,7 @@ var yongerPageBlocks = function() {
             data.id  = id;
             data.name = $current.attr('data-name');
             data.form = $current.attr('data-form');
+            console.log(data);
             wbapp.storage('cms.page.blocks.'+id,data);
             setTimeout(() => {
                 $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));

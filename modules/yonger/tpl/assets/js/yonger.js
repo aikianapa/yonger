@@ -75,6 +75,7 @@ $(document).on("wb-ajax-done",function(e,params) {
         $(this).remove();
     });
     if ($(document).find(".chat-sidebar").length == 0) $("body").removeClass("chat-content-show");
+    yonger.plugins();
 });
 
 yonger.workspace = function() {
@@ -88,7 +89,29 @@ yonger.workspace = function() {
         $("#userProfileMenu").data("ractive",profileMenu);
     }
     wbapp.lazyload();
+    yonger.plugins();
 };
+
+yonger.plugins = function(){
+    $('[data-toggle="tooltip"]').tooltip()
+    $('.modal-body').addClass('scroll-y');
+    
+    $('.scroll-x').each(function(){
+        if (this.done) return;
+        this.done = true;
+        new PerfectScrollbar(this, {suppressScrollY: true});
+    });
+    $('.scroll-y').each(function(){
+        if (this.done) return;
+        this.done = true;
+        new PerfectScrollbar(this, {suppressScrollX: true});
+    });
+    $('.scroll').each(function(){
+        if (this.done) return;
+        this.done = true;
+        new PerfectScrollbar(this, {suppressScrollY: false,suppressScrollX: false});
+    });
+}
 
 yonger.siteCreator = function(){
     if ($('#yongerSiteCreator form').verify()) {
