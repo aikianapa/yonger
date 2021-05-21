@@ -37,5 +37,7 @@
 </nav>
 </view>
 <edit header="Меню навигации">
-<wb-include wb-src="common.inc.php" />
+    <div>
+        <wb-include wb-src="common.inc.php" />
+    </div>
 </edit>

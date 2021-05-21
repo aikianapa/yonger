@@ -24,7 +24,9 @@
     </footer>
 </view>
 <edit header="Подвал">
-    <wb-include wb-src="common.inc.php" />
+    <div>
+        <wb-include wb-src="common.inc.php" />
+    </div>
     <wb-multilang wb-lang="{{_sett.locales}}" name="lang">
         <div class="col-sm-6">
             <label class="form-control-label">{{_lang.name}}</label>

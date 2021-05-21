@@ -81,10 +81,10 @@ class modYonger
     }
 
     private function blockform() {
-        $res = new yongerPage($this->dom);
+        $ypg = new yongerPage($this->dom);
         $form = $this->app->vars('_post.form');
         $item = $this->app->vars('_post.item');
-        return $res->blockform($form, $item);
+        return $ypg->blockform($form, $item);
         
     }
 
@@ -95,7 +95,7 @@ class modYonger
         if ($item['container'] == 'on') {
             $res->children()->addClass('container');
         }
-        isset($item['lang']) ? $data = $item['lang'][$this->app->vars('_sess.lang')] : $data = &$item;
+        isset($item['lang']) ? $data = array_merge($item,$item['lang'][$this->app->vars('_sess.lang')]) : $data = &$item;
         $result = (object)$res->attributes();
         $result->result = $res->fetch($data)->inner();
         return $result;
@@ -111,14 +111,15 @@ class modYonger
         $body = &$html->find('body');
         foreach($blocks as $item) {
             if ($item['active'] == 'on') {
+                $item['_parent'] = $dom->item;
                 $res = $this->blockview($item);
                 if (isset($res->head)) {
                     $head->append($res->result);
                 } else {
                     $body->append($res->result);
+                    $body->find(':last-child')->attr('data-type',$item['name']);
                 }
             }
-        
         }
         $head->fetch();
         $body->fetch();

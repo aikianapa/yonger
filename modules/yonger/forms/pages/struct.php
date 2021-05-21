@@ -130,7 +130,6 @@ yonger.pageBlocks = function() {
             data.id = id;
             data.name = $current.attr('data-name');
             data.form = $current.attr('data-form');
-            console.log(data);
             wbapp.storage('cms.page.blocks.' + id, data);
             setTimeout(() => {
                 $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
@@ -152,6 +151,7 @@ yonger.pageBlocks = function() {
         }));
         $modal.find('.modal-header .header').text($editor.attr("header"));
         $blockform.html($editor.html());
+        wbapp.wbappScripts();
     }
 
     $('#yongerPageBlocks').delegate('.dd-edit', 'tap click touchStart', function() {

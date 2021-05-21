@@ -29,5 +29,7 @@
 </section>
 </view>
 <edit header="Слайдер">
-    <wb-include wb-src="common.inc.php" />
+    <div>
+        <wb-include wb-src="common.inc.php" />
+    </div>
 </edit>
