@@ -88,15 +88,40 @@ class modYonger
         
     }
 
-    private function blockview() {
-        $res = new yongerPage($this->dom);
-        $res = $res->blockview($this->dom->params->form);
-        $item = &$this->dom->item['_parent'];
+    private function blockview($item) {
+        $form = $item['form'];
+        $ypg = new yongerPage($this->dom);
+        $res = $ypg->blockview($form);
         if ($item['container'] == 'on') {
             $res->children()->addClass('container');
         }
-        $item = $item['lang'][$this->app->vars('_sess.lang')];
-        return $res->fetch($item)->inner();
+        isset($item['lang']) ? $data = $item['lang'][$this->app->vars('_sess.lang')] : $data = &$item;
+        $result = (object)$res->attributes();
+        $result->result = $res->fetch($data)->inner();
+        return $result;
+    }
+
+    private function render() {
+        $dom = &$this->dom;
+        $blocks = (array)$dom->item['blocks'];
+        $html = &$dom->parents(':root');
+        $html->find('head')->length ? null : $html->prepend('<head></head>');
+        $html->find('body')->length ? null : $html->prepend('<body></body>');
+        $head = &$html->find('head');
+        $body = &$html->find('body');
+        foreach($blocks as $item) {
+            if ($item['active'] == 'on') {
+                $res = $this->blockview($item);
+                if (isset($res->head)) {
+                    $head->append($res->result);
+                } else {
+                    $body->append($res->result);
+                }
+            }
+        
+        }
+        $head->fetch();
+        $body->fetch();
     }
 
     private function logo() {

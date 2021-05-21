@@ -67,40 +67,8 @@
                                 </select>
                             </div>
                         </div-->
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <h5>Настройки страницы</h5>
+                            <wb-module wb="module=yonger&mode=structure" />
 
-                                    <a href="#" class="btn btn-outline-secondary">SEO</a>
-                                    <a href="#" class="btn btn-outline-secondary">Вставки кода</a>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row">
-
-                                <nav class="nav navbar navbar-expand-md col">
-                                    <h5 class="order-1">Структура</h5>
-                                    <div class="dropdown  dropright ml-auto order-2 float-right">
-                                        <a href="#" id="pageBlockAdd" class="btn btn-sm btn-primary dropdown-toggle"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <img src="/module/myicons/item-select-plus-add.svg?size=18&stroke=FFFFFF">
-                                            Добавить блок
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="pageBlockAdd">
-                                            <wb-foreach wb="ajax=/module/yonger/blocklist&render=client">
-                                                <a class="dropdown-item" href="#"
-                                                    onclick="yonger.pageBlockAdd('{{file}}','{{name}}')">
-                                                    {{name}}
-                                                </a>
-                                            </wb-foreach>
-                                        </div>
-                                    </div>
-                                </nav>
-                                <div class="col-12">
-                                    <wb-module wb="module=yonger&mode=structure" />
-                                </div>
-                            </div>
                         </form>
                     </div>
 
@@ -141,21 +109,6 @@ yonger.pageEditor = function() {
         let target = md5(url);
         window.open(url, target).focus();
     })
-}
-
-yonger.pageBlockAdd = function(form, name) {
-    let id = wbapp.newId();
-    let data = {
-        'id': id,
-        'header': name,
-        'name': name,
-        'form': form
-    }
-    wbapp.storage('cms.page.blocks.' + id, data);
-    setTimeout(() => {
-        $('#yongerBlocksForm [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
-        $('#yongerPageBlocks').find('li.dd-item:last .dd-edit').trigger('click');
-    }, timeout);
 }
 
 yonger.pageEditor();

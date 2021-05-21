@@ -101,7 +101,6 @@ yonger.workspace = function() {
 };
 
 yonger.plugins = function(){
-    $('[data-toggle="tooltip"]').tooltip()
     $('.modal-body').addClass('scroll-y');
     
     $('.scroll-x').each(function(){

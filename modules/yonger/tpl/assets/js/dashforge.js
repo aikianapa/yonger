@@ -2,6 +2,8 @@
 $(function(){
   'use strict'
 
+  $('[data-toggle="tooltip"]').tooltip();
+
   // Showing sub-menu of active menu on navbar when mobile
   function showNavbarActiveSub() {
     if(window.matchMedia('(max-width: 991px)').matches) {
