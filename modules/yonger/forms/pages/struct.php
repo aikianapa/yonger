@@ -101,8 +101,8 @@ yonger.pageBlocks = function() {
     });
 
 
-    $blockform.delegate(':input', 'change', function() {
-        blockSave();
+    $blockform.delegate(':input[name]:not(wb-unsaved)', 'change', function() {
+        if ($('#yongerPageBlocks').data('current') !== undefined) blockSave();
     })
 
     $('#yongerPageBlocks').delegate('.dd-remove', 'tap click touchStart', function() {
@@ -126,7 +126,7 @@ yonger.pageBlocks = function() {
     var blockSave = function() {
         if ($current !== undefined) {
             let data = $blockform.serializeJson();
-            let id = $current.attr('data-id');
+             let id = $current.attr('data-id');
             data.id = id;
             data.name = $current.attr('data-name');
             data.form = $current.attr('data-form');
@@ -138,13 +138,13 @@ yonger.pageBlocks = function() {
     }
 
     var blockEdit = function(form, id) {
+        $('#yongerPageBlocks').data('current', undefined);
         let $blockform = $('#yongerBlocksForm > form');
         let $modal = $blockform.parents('.modal');
         let item = wbapp.storage('cms.page.blocks.' + id);
         if ($('#yongerPageBlocks .dd-item[data-id="' + id + '"]').length == 0) {
             
         }
-        $('#yongerPageBlocks').data('current', id);
         let $editor = $(wbapp.postSync('/module/yonger/blockform', {
             'form': form,
             'item': item
@@ -152,13 +152,14 @@ yonger.pageBlocks = function() {
         $modal.find('.modal-header .header').text($editor.attr("header"));
         $blockform.html($editor.html());
         wbapp.wbappScripts();
+        $('#yongerPageBlocks').data('current', id);
     }
 
     $('#yongerPageBlocks').delegate('.dd-edit', 'tap click touchStart', function() {
         let $line = $(this).parents('.dd-item');
         let id = $line.attr('data-id');
         let form = $line.attr('data-form');
-        if ($current && $current.attr('data-form') == $line.attr('data-form')) return false;
+        if ($current && $current.attr('data-id') == $line.attr('data-id')) return false;
         $line.parents('.dd-list').find('.dd-item').removeClass('active');
         $current = $line;
         $current.addClass('active');

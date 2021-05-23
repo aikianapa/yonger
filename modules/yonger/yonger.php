@@ -117,7 +117,6 @@ class modYonger
                     $head->append($res->result);
                 } else {
                     $body->append($res->result);
-                    $body->find(':last-child')->attr('data-type',$item['name']);
                 }
             }
         }

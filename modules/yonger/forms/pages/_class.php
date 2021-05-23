@@ -43,15 +43,15 @@ function listNested($path = '') {
     $count = $level['count'];
     $level = $level['list'];
     $out = $this->tpl->clone();
+    if (!count($level)) return $this->app->fromString("");
     $out->fetch(['list'=>$level]);
     foreach($level as $item) {
             $path = $item['path'].'/'.$item['name'];
             $res = $this->listNested($path);
-            if ($res->find('li.dd-item')->length > 0) {
-               if ($path == '/home' && $item['name'] == 'home') $path = '/';
-                $li = $out->find('[data-path="'.$path.'"]')->parent()->parent()->parent();
-                $li->append($res);
-            }
+            if ($path == '/home' && $item['name'] == 'home') $path = '/';
+            $li = $out->find('[data-path="'.$path.'"]')->parent()->parent()->parent();
+            $li->append($res);
+
     }
     return $out;
 }

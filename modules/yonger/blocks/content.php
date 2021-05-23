@@ -1,5 +1,5 @@
 <view>
-<section>
+<section class="block-{{name}}">
     <h3 wb-if="header > ''">{{header}}</h3>
     <div>
         {{text}}
