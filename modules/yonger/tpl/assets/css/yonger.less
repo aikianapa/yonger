@@ -14,10 +14,16 @@ body {
     font-family: 'Roboto';
     font-weight: 400;    
 
-    svg.mi [stroke] {
-        stroke: #92929D;
+    svg.mi {
+        &[class*="size-"] {
+            width: auto;
+            height: auto;
+        }
+        [stroke] {
+            stroke: #92929D;
+        }
     }
-
+    
     .rounded {
         border-radius: @radius;
     }
@@ -678,4 +684,18 @@ button {
 
 .ui-draggable-handle {
     cursor: move;
+}
+
+.flip-x {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled) {
+    &.active svg [stroke] {
+        stroke: #ffffff!important;
+    }
+    &:hover svg [stroke] {
+        stroke: #ffffff!important;
+    }
 }
