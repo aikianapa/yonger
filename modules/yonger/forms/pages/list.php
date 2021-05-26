@@ -85,7 +85,7 @@
 
         $(document).on('bind-cms.list.pages',function(){
             $('#yongerPagesTree').nestable({
-                maxDepth: 100,
+                maxDepth: 3,
                 beforeDragStop: function(l,e, p){
                     datapath = {};
                     changePath(e,p).then(function(){

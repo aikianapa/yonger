@@ -4,7 +4,7 @@
         <div>
             <wb-var mrg="mr-{{imgmrg}}" wb-if=" '{{imgpos}}' == 'left'" />
             <wb-var mrg="ml-{{imgmrg}}" wb-if=" '{{imgpos}}' == 'right'" />
-            <img src="{{image.0.img}}" class="img-fluid w-{{imgwidth}} float-{{imgpos}} mb-{{imgmrg}} {{_var.mrg}}" />
+            <img src="{{image.0.img}}" class="img-fluid w-{{imgwidth}} float-{{imgpos}} mb-{{imgmrg}} {{_var.mrg}}" wb-if="'{{image.0.img}}' > ''" />
             {{text}}
         </div>
     </section>
@@ -32,6 +32,7 @@
                     <label class="col-md-6 form-control-label">Картинка</label>
                     <div class="col-md-6">
                         <select class="form-control" name="imgpos">
+                            <option value="none">{{_lang.block}}</option>
                             <option value="left">{{_lang.left}}</option>
                             <option value="right">{{_lang.right}}</option>
                         </select>
@@ -71,6 +72,7 @@
         name = "Заголовок блока"
         active = "Отображать блок"
         template = Шаблон
+        block = Блок
         left = Слева
         right = Справа
     </wb-lang>

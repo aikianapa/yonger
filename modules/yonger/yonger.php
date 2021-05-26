@@ -1,6 +1,5 @@
 <?php
 // Author: oleg_frolov@mail.ru
-
 require_once __DIR__ . '/yonger_page.php';
 
 class modYonger
@@ -230,17 +229,20 @@ class modYonger
                 symlink(__DIR__ , $path.'/modules/yonger' );
                 symlink($dirmod.'/phonecheck', $path.'/modules/phonecheck');
                 symlink(__DIR__ .'/forms' , $path.'/forms' );
+                symlink(__DIR__ .'/scripts/functions.php' , $path.'/functions.php' );
                 
                 copy ($app->vars('_env.path_engine').'/index.php' , $path. '/index.php' );
                 $domain = $app->route->domain;
                 $this->createSiteUser($path);
                 file_put_contents($hosts.'/.domainname',$domain);
                 $tmp = $app->itemSave('users',['id'=>$uid,'sitenum'=>$sitenum]);
-                $settings = json_encode((object)[
+                $settings = json_encode([
                     'settings' => [
                         'id'       => 'settings'
                         ,'header'   =>  $site['name']
                         ,'email'    =>  $user['email']
+                        ,'login'    =>  $site['login']
+                        ,'site'     =>  $site['id']
                     ]
                 ]);
                 file_put_contents($path.'/database/_settings.json',$settings);
