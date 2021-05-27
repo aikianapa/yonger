@@ -101,7 +101,7 @@ yonger.pageBlocks = function() {
     });
 
 
-    $blockform.delegate(':input:not(.wb-unsaved)', 'change', function() {
+    $blockform.delegate(':input[name]:not(.wb-unsaved)', 'change', function() {
         if ($('#yongerPageBlocks').data('current') !== undefined) blockSave();
     })
 
