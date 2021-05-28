@@ -20,7 +20,7 @@ class yongerPage {
             }
         }
         if ($this->dom == null) return $list;
-        $res = $this->app->fromFile(__DIR__.'/forms/pages/struct.php');
+        $res = $this->app->fromFile(__DIR__.'/common/forms/pages/struct.php');
         $res->fetch(['blocks'=>$this->dom->item['blocks']]);
         return $res->outer();
     }

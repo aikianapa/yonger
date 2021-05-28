@@ -24,8 +24,7 @@ function list() {
     $this->tpl = $out->find('#pagesList');
     $res = $this->listNested();
     $out->find('#pagesList')->replaceWith($res);
-    echo $out;
-    echo wbUsageStat();
+    echo $out->fetch();
 }
 
 function listNested($path = '') {
@@ -33,8 +32,8 @@ function listNested($path = '') {
     $level = $this->app->itemList('pages',['filter'=>['path'=>$path]]);
     $count = $level['count'];
     $level = $level['list'];
-    $out = $this->tpl->clone();
     if (!count($level)) return $this->app->fromString("");
+    $out = $this->tpl->clone();
     $out->fetch(['list'=>$level]);
     foreach($level as $item) {
             $path = $item['path'].'/'.$item['name'];

@@ -13,6 +13,7 @@
                 $app->route->table = 'pages';
                 $app->route->item = $page['_id'];
                 $app->route->tpl = "page.php";
+                $app->vars('_route',$app->objToArray($app->route));
                 break;
             }
         }

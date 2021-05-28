@@ -222,14 +222,14 @@ class modYonger
                 $hosts = $app->vars('_env.path_app').'/sites/hosts';
                 is_dir($path) ? null : mkdir($path, 0777, true);
                 is_dir($hosts) ? null : mkdir($hosts, 0777, true);
-                foreach(['database','uploads','tpl','modules'] as $dir) {
+                foreach(['database','uploads','modules'] as $dir) {
                     is_dir($path.'/'.$dir) ? null : mkdir($path.'/'.$dir, 0777, true);
                 }
                 symlink($app->vars('_env.path_engine'), $path.'/engine' );
                 symlink(__DIR__ , $path.'/modules/yonger' );
                 symlink($dirmod.'/phonecheck', $path.'/modules/phonecheck');
-                symlink(__DIR__ .'/forms' , $path.'/forms' );
                 symlink(__DIR__ .'/common/tpl' , $path.'/tpl' );
+                symlink(__DIR__ .'/common/forms' , $path.'/forms' );
                 symlink(__DIR__ .'/common/scripts/functions.php' , $path.'/functions.php' );
                 
                 copy ($app->vars('_env.path_engine').'/index.php' , $path. '/index.php' );
@@ -244,6 +244,8 @@ class modYonger
                         ,'email'    =>  $user['email']
                         ,'login'    =>  $site['login']
                         ,'site'     =>  $site['id']
+                        ,'locales'  =>  'ru,en'
+                        ,'devmode'  => 'on'
                     ]
                 ]);
                 file_put_contents($path.'/database/_settings.json',$settings);

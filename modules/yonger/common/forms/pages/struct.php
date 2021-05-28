@@ -108,6 +108,8 @@ yonger.pageBlocks = function() {
     $('#yongerPageBlocks').delegate('.dd-remove', 'tap click touchStart', function() {
         let id = $(this).parents('.dd-item').attr('data-id');
         if (id > '') {
+            $modal.find('.modal-header .header').text('');
+            $blockform.html('');
             wbapp.storage('cms.page.blocks.' + id, null);
             setTimeout(() => {
                 $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
@@ -126,7 +128,7 @@ yonger.pageBlocks = function() {
     var blockSave = function() {
         if ($current !== undefined) {
             let data = $blockform.serializeJson();
-             let id = $current.attr('data-id');
+            let id = $current.attr('data-id');
             data.id = id;
             data.name = $current.attr('data-name');
             data.form = $current.attr('data-form');
