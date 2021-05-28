@@ -9,17 +9,10 @@
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="#" id="yongerPageBlockSeo" class="btn btn-sm btn-outline-secondary nobr">{{_lang.seo}}</a>
                 <a href="#" id="yongerPageBlockCode" class="btn btn-sm btn-outline-secondary nobr">{{_lang.code}}</a>
-                <a href="#" id="yongerPageBlockAdd" class="btn btn-sm btn-outline-secondary nobr dropdown-toggle"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="#" id="yongerPageBlockAdd" class="btn btn-sm btn-outline-secondary nobr"
+                    onclick="$('#modalPagesEditBlocks').modal('show');">
                     Добавить блок
                 </a>
-                <div class="dropdown-menu" aria-labelledby="yongerPageBlockAdd">
-                    <wb-foreach wb="ajax=/module/yonger/blocklist&render=client">
-                        <a class="dropdown-item" href="#" data-name="{{name}}" onclick="yonger.yongerPageBlockAdd('{{file}}','{{name}}')">
-                            {{name}}
-                        </a>
-                    </wb-foreach>
-                </div>
             </div>
         </div>
 
@@ -195,6 +188,7 @@ yonger.pageBlocks = function() {
 
 yonger.yongerPageBlockAdd = function(form, name) {
     let id = wbapp.newId();
+    $('#modalPagesEditBlocks').modal('hide');
     if (form == 'seo.php') id = name = 'seo';
     if (form == 'code.php') id = name = 'code';
     if ($('#yongerPageBlocks').find('li.dd-item[data-id="'+id+'"]').length) {

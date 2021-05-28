@@ -9,7 +9,7 @@
         </div>
     </section>
 </view>
-<edit header="Контент">
+<edit header="{{_lang.header}}">
     <div>
         <wb-include wb-src="common.inc.php" />
     </div>
@@ -69,11 +69,20 @@
     </wb-multilang>
     <wb-lang>
         [ru]
+        header = Блок контента
         name = "Заголовок блока"
         active = "Отображать блок"
         template = Шаблон
         block = Блок
         left = Слева
         right = Справа
+        [ут]
+        header = Content block
+        name = "Block name"
+        active = "Show block"
+        template = Template
+        block = Block
+        left = Left
+        right = Right
     </wb-lang>
 </edit>

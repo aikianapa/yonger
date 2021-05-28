@@ -32,7 +32,7 @@
         </div>
     </section>
 </view>
-<edit header="Карусель BS4">
+<edit header="{{_lang.carousel}} BS4">
     <div>
         <wb-include wb-src="common.inc.php" />
     </div>
@@ -67,11 +67,13 @@
     </div>
     <wb-lang>
         [ru]
+        carousel = "Карусель"
         header = Заголовок
         text = Текст
         link = Ссылка
         button = Кнопка
         [en]
+        carousel = Carousel
         header = Header
         text = Text
         link = Link

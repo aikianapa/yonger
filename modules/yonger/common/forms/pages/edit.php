@@ -1,5 +1,5 @@
 <html>
-<div class="modal fade effect-scale show removable" id="modalPagesEdit" data-backdrop="static" tabindex="-1"
+<div class="modal effect-scale show removable" id="modalPagesEdit" data-backdrop="static" tabindex="-1"
     role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
@@ -27,25 +27,25 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                             <div class="form-group row">
                                 <div class="col-lg-6">
                                     <label class="form-control-label">Путь к странице</label>
-                                        <select class="form-control" placeholder="/" name="path">
-                                            <wb-foreach wb='table=pages&sort=url' wb-filter="{'id':{'$ne':'{{id}}'}}">
-                                                <wb-var wb-if='"{{url}}" == "/"' url="/home" else="{{url}}" />
-                                                <option value="{{path}}/{{name}}">{{_var.url}}</option>
-                                            </wb-foreach>
-                                        </select>
+                                    <select class="form-control" placeholder="/" name="path">
+                                        <wb-foreach wb='table=pages&sort=url' wb-filter="{'id':{'$ne':'{{id}}'}}">
+                                            <wb-var wb-if='"{{url}}" == "/"' url="/home" else="{{url}}" />
+                                            <option value="{{path}}/{{name}}">{{_var.url}}</option>
+                                        </wb-foreach>
+                                    </select>
                                 </div>
                                 <div class="col-lg-6">
                                     <label class="form-control-label">Имя страницы</label>
                                     <input type="text" name="name" class="form-control" wb="module=smartid" required>
                                 </div>
                                 <div class="col-12 mt-1">
-                                    <div class="alert alert-info p-2 mb-0 cursor-pointer pagelink" >
-                                    {{_route.scheme}}://{{_route.hostname}}<span class="path"></span>
+                                    <div class="alert alert-info p-2 mb-0 cursor-pointer pagelink">
+                                        {{_route.scheme}}://{{_route.hostname}}<span class="path"></span>
                                     </div>
                                 </div>
                             </div>
@@ -87,6 +87,25 @@
         </div>
     </div>
 </div>
+
+<div class="modal effect-slide-in-right left" id="modalPagesEditBlocks" data-backdrop="true" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-20">
+            <div class="list-group">
+                <wb-foreach wb="ajax=/module/yonger/blocklist&render=client">
+                    <a class="list-group-item list-group-item-action" href="#" data-name="{{name}}"
+                        onclick="yonger.yongerPageBlockAdd('{{file}}','{{name}}')">
+                        {{name}}
+                        <span class="d-block tx-11 text-muted">{{header}}</span>
+                    </a>
+                </wb-foreach>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script wb-app>
 let timeout = 50;
 yonger.pageEditor = function() {
@@ -104,7 +123,7 @@ yonger.pageEditor = function() {
     });
     $form.find('[name=path]').trigger('change');
 
-    $form.find('.pagelink').on(wbapp.evClick,function(){
+    $form.find('.pagelink').on(wbapp.evClick, function() {
         let url = $(this).text();
         let target = md5(url);
         window.open(url, target).focus();

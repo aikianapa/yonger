@@ -8,7 +8,7 @@
         </div>
     </header>
 </view>
-<edit header="Шапка">
+<edit header="{{_lang.header}}">
     <div>
         <wb-include wb-src="common.inc.php" />
     </div>
@@ -36,10 +36,12 @@
         </div>
         <wb-lang>
         [ru]
+        header = "Шапка сайта"
         name = "Заголовок"
         button = Кнопка
         link = Ссылка
         [en]
+        header = "Site header"
         name = "Header"
         button = Button
         link = Link

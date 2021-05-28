@@ -23,7 +23,7 @@
         </div>
     </footer>
 </view>
-<edit header="Подвал">
+<edit header="{{_lang.header}}">
     <div>
         <wb-include wb-src="common.inc.php" />
     </div>
@@ -40,8 +40,15 @@
     </wb-multilang>
     <wb-lang>
         [ru]
+        header = Подвал сайта
         name = "Наименование блока"
         active = "Отображать блок"
         template = Шаблон
+        [en]
+        header = Site footer
+        name = "Block name"
+        active = "Show block"
+        template = Template
+
     </wb-lang>
 </edit>

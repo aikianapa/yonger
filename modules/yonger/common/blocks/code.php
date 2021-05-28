@@ -7,12 +7,11 @@
         <wb-include wb-src="common.inc.php" />
     </div>
     <wb-module wb="module=codemirror&oconv=html_entity_decode" name="code"></wb-module>
-</edit>
-<wb-lang>
+    <wb-lang>
     [ru]
-    header = "Вставки кода"
+    header = "Вставка кода"
     [en]
     header = "Append code"
 </wb-lang>
-
+</edit>
 </html>

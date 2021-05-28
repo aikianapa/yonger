@@ -14,6 +14,7 @@ class yongerPage {
             $name = basename($file,'.php');
             if ($name !== 'common.inc') {
                 $form = $this->app->fromFile(__DIR__.'/common/blocks/'.$file);
+                $form->find('edit')->fetch();
                 $header = $form->find('edit')->attr('header');
                 $id = $this->app->newId();
                 $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file];
