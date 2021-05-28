@@ -117,14 +117,6 @@ yonger.pageBlocks = function() {
         }
     });
 
-    $('#yongerPageBlocks').delegate('.dd-active', 'tap click touchStart', function() {
-        let id = $(this).parents('.dd-item').attr('data-id');
-        let active = 'on';
-        if ($(this).hasClass('on')) active = '';
-        wbapp.storage('cms.page.blocks.' + id + '.active', active);
-        $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
-    });
-
     var blockSave = function() {
         if ($current !== undefined) {
             let data = $blockform.serializeJson();
@@ -156,6 +148,20 @@ yonger.pageBlocks = function() {
         wbapp.wbappScripts();
         $('#yongerPageBlocks').data('current', id);
     }
+
+    $('#yongerPageBlocks').delegate('.dd-active', 'tap click touchStart', function() {
+        let $line = $(this).parents('.dd-item');
+        let id = $(this).parents('.dd-item').attr('data-id');
+        if ($current.attr('data-id') == id) {
+            $blockform.find('.yonger-block-common [name=active]').trigger('click');
+        } else {
+            let active = 'on';
+            if ($(this).hasClass('on')) active = '';
+            wbapp.storage('cms.page.blocks.' + id + '.active', active);
+            $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+        }
+    });
+
 
     $('#yongerPageBlocks').delegate('.dd-edit', 'tap click touchStart', function() {
         let $line = $(this).parents('.dd-item');

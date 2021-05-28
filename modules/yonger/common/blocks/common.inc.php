@@ -1,4 +1,4 @@
-<div class="pr-4">
+<div class="pr-4 yonger-block-common">
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group row">
