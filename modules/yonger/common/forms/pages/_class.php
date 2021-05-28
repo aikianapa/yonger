@@ -16,15 +16,6 @@ function afterItemRead(&$item) {
     $item['blocks'] = $item['blocks'];
 }
 
-function beforeItemSave(&$item) {
-    $item['login'] = $this->app->vars('_sess.user.login');
-}
-
-function afterItemSave(&$item) {
-    
-}
-
-
 function list() {
     $app = &$this->app;
     $this->jq = new Jsonq();

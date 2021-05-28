@@ -8,12 +8,12 @@ class yongerPage {
     }
 
     function list() {
-        $files = $this->app->listFiles(__DIR__.'/blocks');
+        $files = $this->app->listFiles(__DIR__.'/common/blocks');
         $list = [];
         foreach($files as $file) {
             $name = basename($file,'.php');
             if ($name !== 'common.inc') {
-                $form = $this->app->fromFile(__DIR__.'/blocks/'.$file);
+                $form = $this->app->fromFile(__DIR__.'/common/blocks/'.$file);
                 $header = $form->find('edit')->attr('header');
                 $id = $this->app->newId();
                 $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file];
@@ -27,7 +27,7 @@ class yongerPage {
 
     function blockform($form = null, $item = []) {
         if ($form == null) return;
-        $out = $this->app->fromFile(__DIR__.'/blocks/'.$form);
+        $out = $this->app->fromFile(__DIR__.'/common/blocks/'.$form);
         $out->fetch($item);
         $out = $out->find('edit');
         $out->path = $path;
@@ -37,7 +37,7 @@ class yongerPage {
 
     function blockview($form = null) {
         if ($form == null) return;
-        $out = $this->app->fromFile(__DIR__.'/blocks/'.$form);
+        $out = $this->app->fromFile(__DIR__.'/common/blocks/'.$form);
         $out = $out->find('view');
         return $out;
 

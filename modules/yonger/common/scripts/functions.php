@@ -1,7 +1,11 @@
 <?php
     function customRoute($route = []) {
         $app = &$_ENV['app'];
-        $pages = $app->itemList('pages',['filter'=>["_site"=>$app->vars('_sett.site'),"_login"=>$app->vars('_sett.login')]]);
+        $pages = $app->itemList('pages',['filter'=>[
+            "_site"=>$app->vars('_sett.site'),
+            "_login"=>$app->vars('_sett.login'),
+            "url" => $app->route->uri
+        ]]);
         foreach($pages['list'] as $page) {
             if ($page['url'] == $app->route->uri) {
                 $app->route->controller = 'form';

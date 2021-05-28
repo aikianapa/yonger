@@ -228,8 +228,9 @@ class modYonger
                 symlink($app->vars('_env.path_engine'), $path.'/engine' );
                 symlink(__DIR__ , $path.'/modules/yonger' );
                 symlink($dirmod.'/phonecheck', $path.'/modules/phonecheck');
-                symlink(__DIR__ .'/forms' , $path.'/forms' );
-                symlink(__DIR__ .'/scripts/functions.php' , $path.'/functions.php' );
+                symlink(__DIR__ .'/common/forms' , $path.'/forms' );
+                symlink(__DIR__ .'/common/tpl' , $path.'/tpl' );
+                symlink(__DIR__ .'/common/scripts/functions.php' , $path.'/functions.php' );
                 
                 copy ($app->vars('_env.path_engine').'/index.php' , $path. '/index.php' );
                 $domain = $app->route->domain;
