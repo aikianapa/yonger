@@ -125,9 +125,7 @@ yonger.pageBlocks = function() {
             data.name = $current.attr('data-name');
             data.form = $current.attr('data-form');
             wbapp.storage('cms.page.blocks.' + id, data);
-            setTimeout(() => {
                 $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
-            }, timeout);
         }
     }
 
@@ -185,6 +183,14 @@ yonger.pageBlocks = function() {
         $current = null;
         $(this).parents('.dropdown').find('.dropdown-item[data-name=code]').trigger('click');
     })
+/*
+    $(document).on('bind',function(ev,data) {
+        if (strpos(' '+data.key, 'cms.page.blocks')) {
+            $('#yongerPageBlocks [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
+            console.log(json_encode(wbapp.storage('cms.page.blocks')));
+        }
+    });
+    */
 }
 
 yonger.yongerPageBlockAdd = function(form, name) {
@@ -200,11 +206,13 @@ yonger.yongerPageBlockAdd = function(form, name) {
         'id': id,
         'header': name,
         'name': name,
-        'form': form
+        'form': form,
+        'active': 'on'
     }
     wbapp.storage('cms.page.blocks.' + id, data);
     setTimeout(() => {
-        $('#yongerBlocksForm [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
+        $(document).find('#yongerPageBlocks [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
+        $(document).find('#yongerPageBlocks [name=blocks]').trigger('change');
         $('#yongerPageBlocks').find('li.dd-item:last .dd-edit').trigger('click');
     }, 100);
 }

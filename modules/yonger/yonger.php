@@ -102,15 +102,17 @@ class modYonger
 
     private function render() {
         $dom = &$this->dom;
+        $app = &$dom->app;
         $blocks = (array)$dom->item['blocks'];
+        $blocks = wbItemToArray($blocks);
         $html = &$dom->parents(':root');
         $html->find('head')->length ? null : $html->prepend('<head></head>');
         $html->find('body')->length ? null : $html->prepend('<body></body>');
         $head = &$html->find('head');
         $body = &$html->find('body');
-        foreach($blocks as $item) {
+        foreach($blocks as $id => $item) {
             if ($item['active'] == 'on') {
-                $item['_parent'] = $dom->item;
+                $item['_parent'] = $app->objToArray($dom->item);
                 $res = $this->blockview($item);
                 if (isset($res->head)) {
                     $head->append($res->result);
