@@ -81,9 +81,7 @@ class modYonger
 
     private function blockform() {
         $ypg = new yongerPage($this->dom);
-        $form = $this->app->vars('_post.form');
-        $item = $this->app->vars('_post.item');
-        return $ypg->blockform($form, $item);
+        return $ypg->blockform($this->app->vars('_post.item'));
         
     }
 

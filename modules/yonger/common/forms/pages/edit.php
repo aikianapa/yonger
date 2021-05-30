@@ -88,14 +88,19 @@
     </div>
 </div>
 
-<div class="modal effect-slide-in-right left" id="modalPagesEditBlocks" data-backdrop="true" tabindex="-1">
+<div class="modal effect-slide-in-right left w-50" id="modalPagesEditBlocks" data-backdrop="true" tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-body p-20">
+        <div class="modal-header">
+                <i></i>
+                <i class="fa fa-close cursor-pointer" data-dismiss="modal"
+                    aria-label="Close"></i>
+            </div>
+            <div class="modal-body p-0 scroll-y">
             <div class="list-group">
-                <wb-foreach wb="ajax=/module/yonger/blocklist&render=client">
+                <wb-foreach wb="ajax=/module/yonger/blocklist&render=client&bind=yonger.blocks">
                     <a class="list-group-item list-group-item-action" href="#" data-name="{{name}}"
-                        onclick="yonger.yongerPageBlockAdd('{{file}}','{{name}}')">
+                        onclick="yonger.yongerPageBlockAdd('{{id}}')">
                         {{name}}
                         <span class="d-block tx-11 text-muted">{{header}}</span>
                     </a>

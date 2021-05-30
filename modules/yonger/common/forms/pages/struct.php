@@ -21,7 +21,7 @@
     <div class="col-12">
         <div id="yongerPageBlocks" class="dd yonger-nested pl-3">
             <ul class="dd-list" id="yonblocks">
-                <wb-foreach wb="bind=cms.page.blocks&render=client">
+                <wb-foreach wb="bind=yonger.page.blocks&render=client">
                     <li class="dd-item row" data-id="{{id}}" data-form="{{form}}" data-name="{{name}}">
                         <span class="dd-handle"><img src="/module/myicons/dots-2.svg?size=20px&stroke=000000" /></span>
                         <span class="dd-text col-sm-6 ellipsis">
@@ -68,7 +68,7 @@ yonger.pageBlocks = function() {
     $.each(data, function(i, item) {
         if (item.id == undefined) delete data[i];
     });
-    wbapp.storage('cms.page.blocks', data);
+    wbapp.storage('yonger.page.blocks', data);
 
     $(document).delegate('#yonblocks', 'wb-render-done', function(ev, data) {
         if (!$current) $('#yongerPageBlocks').find('li.dd-item:first .dd-edit').trigger('click');
@@ -84,10 +84,10 @@ yonger.pageBlocks = function() {
             setTimeout(() => {
                 $('#yongerPageBlocks .dd-item').each(function() {
                     let id = $(this).attr('data-id');
-                    data[id] = wbapp.storage('cms.page.blocks.' + id);
+                    data[id] = wbapp.storage('yonger.page.blocks.' + id);
                 });
-                wbapp.storage('cms.page.blocks', data);
-                $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+                wbapp.storage('yonger.page.blocks', data);
+                $blocks.text(json_encode(wbapp.storage('yonger.page.blocks')));
             }, timeout);
 
         }
@@ -103,9 +103,9 @@ yonger.pageBlocks = function() {
         if (id > '') {
             $modal.find('.modal-header .header').text('');
             $blockform.html('');
-            wbapp.storage('cms.page.blocks.' + id, null);
+            wbapp.storage('yonger.page.blocks.' + id, null);
             setTimeout(() => {
-                $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+                $blocks.text(json_encode(wbapp.storage('yonger.page.blocks')));
             }, timeout);
         }
     });
@@ -117,21 +117,20 @@ yonger.pageBlocks = function() {
             data.id = id;
             data.name = $current.attr('data-name');
             data.form = $current.attr('data-form');
-            wbapp.storage('cms.page.blocks.' + id, data);
-                $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+            wbapp.storage('yonger.page.blocks.' + id, data);
+                $blocks.text(json_encode(wbapp.storage('yonger.page.blocks')));
         }
     }
 
-    var blockEdit = function(form, id) {
+    var blockEdit = function(id) {
         $('#yongerPageBlocks').data('current', undefined);
         let $blockform = $('#yongerBlocksForm > form');
         let $modal = $blockform.parents('.modal');
-        let item = wbapp.storage('cms.page.blocks.' + id);
+        let item = wbapp.storage('yonger.page.blocks.' + id);
         if ($('#yongerPageBlocks .dd-item[data-id="' + id + '"]').length == 0) {
             
         }
         let $editor = $(wbapp.postSync('/module/yonger/blockform', {
-            'form': form,
             'item': item
         }));
         $modal.find('.modal-header .header').text($editor.attr("header"));
@@ -148,49 +147,51 @@ yonger.pageBlocks = function() {
         } else {
             let active = 'on';
             if ($(this).hasClass('on')) active = '';
-            wbapp.storage('cms.page.blocks.' + id + '.active', active);
-            $blocks.text(json_encode(wbapp.storage('cms.page.blocks')));
+            wbapp.storage('yonger.page.blocks.' + id + '.active', active);
+            $blocks.text(json_encode(wbapp.storage('yonger.page.blocks')));
         }
     });
 
 
-    $('#yongerPageBlocks').delegate('.dd-edit', 'tap click touchStart', function() {
+    $('#yongerPageBlocks').delegate('.dd-edit', 'tap click touchStart', function(ev) {
         let $line = $(this).parents('.dd-item');
         let id = $line.attr('data-id');
-        let form = $line.attr('data-form');
+        let item = wbapp.storage('yonger.page.blocks.' + id);
         if ($current && $current.attr('data-id') == $line.attr('data-id')) return false;
         $line.parents('.dd-list').find('.dd-item').removeClass('active');
         $current = $line;
         $current.addClass('active');
-        blockEdit(form, id);
+        blockEdit(id);
+        ev.stopPropagation();
     })
 
     $(document).delegate('#yongerPageBlockSeo', 'tap click touchStart', function() {
         if ($current) $current.removeClass('active');
         $current = null;
-        $(this).parents('.dropdown').find('.dropdown-item[data-name=seo]').trigger('click');
+        $('#modalPagesEditBlocks').find('.list-group-item[data-name=seo]').trigger('click');
     })
 
     $(document).delegate('#yongerPageBlockCode', 'tap click touchStart', function() {
         if ($current) $current.removeClass('active');
         $current = null;
-        $(this).parents('.dropdown').find('.dropdown-item[data-name=code]').trigger('click');
+        $('#modalPagesEditBlocks').find('.list-group-item[data-name=code]').trigger('click');
     })
 /*
     $(document).on('bind',function(ev,data) {
-        if (strpos(' '+data.key, 'cms.page.blocks')) {
-            $('#yongerPageBlocks [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
-            console.log(json_encode(wbapp.storage('cms.page.blocks')));
+        if (strpos(' '+data.key, 'yonger.page.blocks')) {
+            $('#yongerPageBlocks [name=blocks]').text(json_encode(wbapp.storage('yonger.page.blocks')));
+            console.log(json_encode(wbapp.storage('yonger.page.blocks')));
         }
     });
     */
 }
 
-yonger.yongerPageBlockAdd = function(form, name) {
+yonger.yongerPageBlockAdd = function(bid) {
     let id = wbapp.newId();
+    let block = wbapp.storage('yonger.blocks.' + bid);
     $('#modalPagesEditBlocks').modal('hide');
-    if (form == 'seo.php') id = name = 'seo';
-    if (form == 'code.php') id = name = 'code';
+    if (block.file == 'seo.php' && substr(block.path,0,10) == '/_yonger_/') id = name = 'seo';
+    if (block.file == 'code.php' && substr(block.path,0,10) == '/_yonger_/') id = name = 'code';
     if ($('#yongerPageBlocks').find('li.dd-item[data-id="'+id+'"]').length) {
         $('#yongerPageBlocks').find('li.dd-item[data-id="'+id+'"] .dd-edit').trigger('click');
         return;
@@ -198,14 +199,14 @@ yonger.yongerPageBlockAdd = function(form, name) {
 
     let data = {
         'id': id,
-        'header': name,
-        'name': name,
-        'form': form,
+        'header': block.name,
+        'name': block.name,
+        'form': block.path,
         'active': 'on'
     }
-    wbapp.storage('cms.page.blocks.' + id, data);
+    wbapp.storage('yonger.page.blocks.' + id, data);
     setTimeout(() => {
-        $(document).find('#yongerPageBlocks [name=blocks]').text(json_encode(wbapp.storage('cms.page.blocks')));
+        $(document).find('#yongerPageBlocks [name=blocks]').text(json_encode(wbapp.storage('yonger.page.blocks')));
         $(document).find('#yongerPageBlocks [name=blocks]').trigger('change');
         $('#yongerPageBlocks').find('li.dd-item:last .dd-edit').trigger('click');
     }, 100);
