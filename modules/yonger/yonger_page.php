@@ -42,10 +42,11 @@ class yongerPage {
         $file = $item['form'];
         strpos(' '.$file,'_yonger_') ? $file = str_replace('/_yonger_',$this->app->route->path_app.'/modules/yonger',$file) : null;
         strpos(' '.$file, '_app_') ? $file = str_replace('/_app_',$this->app->route->path_app, $file) : null;
+        is_file($file) ? null : $file = $this->app->route->path_app.'/modules/yonger/common/blocks/'.$file;
         $out = $this->app->fromFile($file);
         $out->fetch($item);
         $out = $out->find('edit');
-        $out->path = $this->app->route->path_app.'/modules/yonger/common/blocks/';
+        $out->path = dirname($file);
         return $out->outer();
 
     }
