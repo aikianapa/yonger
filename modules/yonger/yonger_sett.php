@@ -1,13 +1,14 @@
 <html wb-allow="user admin">
     <div class="formgroup row">
-        <label class="form-control-label col-sm-4">Что-то 1</label>
+        <label class="form-control-label col-sm-4">Workspace roles</label>
         <div class="col-sm-8">
-            <input type="number" class="form-control" placeholder="Что-то 1" min="10"max="10000" />
-            <small>Какая-то настройка</small>
+            <wb-module wb="module=tagsinput" name="allow" />
+            <small>Разрешённые роли пользователей</small>
         </div>
-        <label class="form-control-label col-sm-4">Что-то 2</label>
+        <label class="form-control-label col-sm-4">Standalone</label>
         <div class="col-sm-8">
-            <input type="number" class="form-control" placeholder="Что-то 2" min="1" max="100" />
+            <wb-module wb="module=switch" name="standalone" />
+            <small>Режим "одного сайта"</small>
         </div>
     </div>
 </html>

@@ -29,6 +29,20 @@
             </div>
         </div>
 
+        <div class="col-lg-6">
+            <div class="form-group row">
+                <label class="form-control-label col-md-5">#id</label>
+                <input type="text" class="form-control col-md-7" name="block_id" placeholder="id#">
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group row">
+                <label class="form-control-label col-md-5">.class</label>
+                <input type="text" class="form-control col-md-7" name="block_class" placeholder=".class">
+            </div>
+        </div>
+
         <!--div class="col-12">
             <div class="row">
                 <div class="col-md-6">

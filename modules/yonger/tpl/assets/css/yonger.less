@@ -8,12 +8,19 @@
 @color-gray: #E2E2EA;
 @color-light: #D8D8D8;
 @color-link: #323232;
-
+@color-thead: #FAFAFB;
 body {
     overflow: hidden;
     font-family: 'Roboto';
     font-weight: 400;    
-
+    .table {
+        thead {
+            tr {
+                background-color: @color-thead;
+                font-weight: 500;
+            }
+        }
+    }
     svg.mi {
         &[class*="size-"] {
             width: auto;
@@ -663,16 +670,16 @@ button {
     overflow: hidden!important;
 }
 
-.loading:before {
+.loading:after {
     content: ' ';
     position: absolute;
     display: inline-block;
     width:100%;
     height: 100%;
     overflow: hidden;
-    background-color: #ffffffa6;
-    z-index: 999999;
-    transition-duration: 2s;
+    background-color: transparent;
+    z-index: auto;
+    top:0;
     cursor: wait;
 }
 

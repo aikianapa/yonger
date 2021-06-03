@@ -1,10 +1,18 @@
 <html>
-<div class="m-3" id="yongerSupport">
+<div class="m-3" id="yongerSpace">
         <nav class="nav navbar navbar-expand-md col">
         <h3 class="tx-bold tx-spacing--2 order-1">Страницы</h3>
-        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/edit/_new','html':'#yongerSupport modals'}" class="ml-auto order-2 float-right btn btn-primary">
-            <img src="/module/myicons/item-select-plus-add.svg?size=24&stroke=FFFFFF" /> Добавить страницу
+        <div class="ml-auto order-2 float-right">
+        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/edit/_header','html':'#yongerSpace modals'}" class="btn btn-secondary">
+            <img src="/module/myicons/24/FFFFFF/menubar-arrow-up.svg" width="24" height="24" /> Шапка
         </a>
+        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/edit/_footer','html':'#yongerSpace modals'}" class="btn btn-secondary">
+            <img src="/module/myicons/24/FFFFFF/menubar-arrow-down.svg" width="24" height="24" /> Подвал
+        </a>
+        <a href="#" data-ajax="{'url':'/cms/ajax/form/pages/edit/_new','html':'#yongerSpace modals'}" class="btn btn-primary">
+            <img src="/module/myicons/24/FFFFFF/item-select-plus-add.svg" width="24" height="24" /> Добавить страницу
+        </a>
+        </div>
     </nav>
     
     <div id="yongerPagesTree" class="dd yonger-nested">
@@ -19,9 +27,9 @@
             
         </span>
         <ol id="pagesList" class="dd-list">
-            <wb-foreach wb="from=list&form=pages&bind=cms.list.pages" wb-filter="{'login':'{{_sess.user.login}}' }">
+            <wb-foreach wb="from=list&form=pages&bind=cms.list.pages&render=server" wb-filter="{'_site':'{{_sett.site}}'}">
                 <li class="dd-item row" data-item="{{id}}" data-name="{{name}}">
-                    <span class="dd-handle"><img src="/module/myicons/dots-2.svg?size=20px&stroke=000000" /></span>
+                    <span class="dd-handle"><img src="/module/myicons/20/000000/dots-2.svg"  width="20" height="20"/></span>
                     <span class="dd-text col-3">
                     <span>{{header}}</span>
                     </span>
@@ -31,10 +39,9 @@
                             <form method="post" class="col-6 text-right m-0">
                                 <wb-var wb-if='"{{active}}" == ""' stroke="FC5A5A" else="82C43C" />
                                 <input type="checkbox" name="active" class="d-none">
-                                <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke={{_var.stroke}}" class="dd-active cursor-pointer">
-                                <img src="/module/myicons/content-edit-pen.svg?size=24&stroke=323232" class="dd-edit">
-                                <img src="/module/myicons/trash-delete-bin.2.svg?size=24&stroke=323232" class="dd-remove">
-                                <img src="/module/myicons/copy-windows-square.svg?size=24&stroke=323232" class="dd-clone">
+                                <img src="/module/myicons/24/{{_var.stroke}}/power-turn-on-square.1.svg" class="dd-active cursor-pointer">
+                                <img src="/module/myicons/24/323232/content-edit-pen.svg" width="24" height="24" class="dd-edit">
+                                <img src="/module/myicons/24/323232/trash-delete-bin.2.svg" width="24" height="24" class="dd-remove">
                             </form>
                         </span>
                     </span>
@@ -56,11 +63,19 @@
         });
 
         $('#yongerPagesTree').delegate('li','mouseout',function(e) {
+            e.stopPropagation();
             $(this).removeClass('hover');
         });
             
         $('#yongerPagesTree').delegate('.dd-active','mouseout',function(e) {
+            e.stopPropagation();
             $(this).removeClass('hover');
+        });
+
+        $('#yongerPagesTree').delegate('.dd-remove',wbapp.evClick,function(e) {
+            let item = $(this).parents('[data-item]').attr('data-item')
+            wbapp.ajax({'url':'/ajax/rmitem/{{_form}}/'+item,'update':'cms.list.pages','html':'#yongerSpace modals'});
+            e.stopPropagation();
         });
 
         $('#yongerPagesTree').delegate('.dd-path',wbapp.evClick,function(e){
@@ -72,6 +87,7 @@
         });
 
         $('#yongerPagesTree').delegate('.dd-active',wbapp.evClick,function(e){
+            e.stopPropagation();
             let id = $(e.currentTarget).parents('[data-item]').attr('data-item');
             $(e.currentTarget).parent('form').find('[name=active]').trigger('click');
             wbapp.save($(e.currentTarget),{'table':'pages','id':id,'update':'cms.list.pages','silent':'true'})
@@ -80,7 +96,7 @@
         $('#yongerPagesTree').delegate('li[data-item] .dd-edit',wbapp.evClick,function(e){
             e.stopPropagation();
             let item = $(this).parents('[data-item]').attr('data-item')
-            wbapp.ajax({'url':'/cms/ajax/form/pages/edit/'+item,'html':'#yongerSupport modals'});
+            wbapp.ajax({'url':'/cms/ajax/form/pages/edit/'+item,'html':'#yongerSpace modals'});
         });
 
         $(document).on('bind-cms.list.pages',function(){

@@ -7,8 +7,10 @@
 
         <div class="dropdown dropright order-2 d-block">
             <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="#" id="yongerPageBlockSeo" class="btn btn-sm btn-outline-secondary nobr">{{_lang.seo}}</a>
-                <a href="#" id="yongerPageBlockCode" class="btn btn-sm btn-outline-secondary nobr">{{_lang.code}}</a>
+                <a href="#" id="yongerPageBlockSeo" class="btn btn-sm btn-outline-secondary nobr"
+                wb-if="'{{_route.id}}' !== '_header' && '{{_route.id}}' !== '_footer'">{{_lang.seo}}</a>
+                <a href="#" id="yongerPageBlockCode" class="btn btn-sm btn-outline-secondary nobr"
+                wb-if="'{{_route.id}}' !== '_header' && '{{_route.id}}' !== '_footer'">{{_lang.code}}</a>
                 <a href="#" id="yongerPageBlockAdd" class="btn btn-sm btn-outline-secondary nobr"
                     onclick="$('#modalPagesEditBlocks').modal('show');">
                     Добавить блок
@@ -23,7 +25,7 @@
             <ul class="dd-list" id="yonblocks">
                 <wb-foreach wb="bind=yonger.page.blocks&render=client">
                     <li class="dd-item row" data-id="{{id}}" data-form="{{form}}" data-name="{{name}}">
-                        <span class="dd-handle"><img src="/module/myicons/dots-2.svg?size=20px&stroke=000000" /></span>
+                        <span class="dd-handle"><img src="/module/myicons/20/000000/dots-2.svg" /></span>
                         <span class="dd-text col-sm-6 ellipsis">
                             <b>{{header}}&nbsp;</b>
                             <small class="tx-gray lh--5"><br>{{name}}</small>
@@ -32,15 +34,15 @@
                             <span class="row">
                                 <div method="post" class="col-12 text-right m-0 nobr">
                                     {{#if active=='on'}}
-                                    <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke=82C43C"
+                                    <img src="/module/myicons/24/82C43C/power-turn-on-square.1.svg"
                                         class="dd-active on cursor-pointer">
                                     {{else}}
-                                    <img src="/module/myicons/power-turn-on-square.1.svg?size=24&stroke=FC5A5A"
+                                    <img src="/module/myicons/24/FC5A5A/power-turn-on-square.1.svg"
                                         class="dd-active cursor-pointer" />
                                     {{/if}}
-                                    <img src="/module/myicons/content-edit-pen.svg?size=24&stroke=323232"
+                                    <img src="/module/myicons/24/323232/content-edit-pen.svg"
                                         class="dd-edit cursor-pointer">
-                                    <img src="/module/myicons/trash-delete-bin.2.svg?size=24&stroke=323232"
+                                    <img src="/module/myicons/24/323232/trash-delete-bin.2.svg"
                                         class="dd-remove cursor-pointer">
                                 </div>
                             </span>

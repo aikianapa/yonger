@@ -5,9 +5,7 @@
         <div class="modal-content">
             <div class="modal-header row">
                 <div class="col-5">
-                    <h5 wb-if="'{{_route.id}}' !== '_header' && '{{_route.id}}' !== '_footer'">Редактирование страницы</h5>
-                    <h5 wb-if="'{{_route.id}}' == '_header'">Шапка сайта</h5>
-                    <h5 wb-if="'{{_route.id}}' == '_footer'">Подвал сайта</h5>
+                    <h5>Редактирование новости</h5>
                 </div>
                 <div class="col-7">
                     <h5 class='header'></h5>
@@ -19,31 +17,31 @@
                 <div class="row">
                     <div class="col-5">
                         <form id="{{_form}}EditForm">
-                            <div wb-if="'{{_route.id}}' !== '_header' && '{{_route.id}}' !== '_footer'">
                             <div class="form-group row">
                                 <div class="col-12">
                                     <div class="custom-control custom-switch">
                                         <input type="checkbox" class="custom-control-input" name="active"
                                             id="{{_form}}SwitchItemActive">
                                         <label class="custom-control-label" for="{{_form}}SwitchItemActive">Отображать
-                                            страницу</label>
+                                            новость</label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <div class="col-lg-6">
-                                    <label class="form-control-label">Путь к странице</label>
-                                    <select class="form-control" placeholder="/" name="path">
-                                        <wb-foreach wb='table=pages&sort=url' wb-filter="{'id':{'$ne':'{{id}}'}}">
-                                            <wb-var wb-if='"{{url}}" == "/"' url="/home" else="{{url}}" />
-                                            <option value="{{path}}/{{name}}">{{_var.url}}</option>
-                                        </wb-foreach>
-                                    </select>
+                                <div class="col-12">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" name="home"
+                                            id="{{_form}}SwitchItemHome">
+                                        <label class="custom-control-label" for="{{_form}}SwitchItemHome">На главной</label>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <label class="form-control-label">Имя страницы</label>
-                                    <input type="text" name="name" class="form-control" wb="module=smartid" required>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label class="form-control-label">Дата</label>
+                                    <input type="datetimepicker" name="date" class="form-control" wb="module=datetimepicker" required>
                                 </div>
                                 <div class="col-12 mt-1">
                                     <div class="alert alert-info p-2 mb-0 cursor-pointer pagelink">
@@ -51,25 +49,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-lg-4 form-control-label">Заголовок</label>
-                                <div class="col-lg-8">
+                            <div class="form-group">
+                                <label class="form-control-label">Заголовок</label>
                                     <input type="text" name="header" class="form-control" placeholder="Заголовок"
                                         wb="module=langinp" required>
-                                </div>
                             </div>
-                            </div>
-                            <!--div class="form-group row">
-                            <label class="col-12 form-control-label">Шаблон</label>
-                            <div class="col-12">
-                                <select class="form-control" name="template" placeholder="Шаблон">
-                                    <wb-foreach wb='call=wbListTpl()'>
-                                        <option value="{{_val}}">{{_val}}</option>
-                                    </wb-foreach>
-                                </select>
-                            </div>
-                        </div-->
+
                             <wb-module wb="module=yonger&mode=structure" />
+
                         </form>
                     </div>
 

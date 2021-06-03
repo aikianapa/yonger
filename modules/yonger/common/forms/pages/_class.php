@@ -4,16 +4,18 @@ use Nahid\JsonQ\Jsonq;
 class pagesClass extends cmsFormsClass {
 
 function beforeItemShow(&$item) {
-    $lang = $item['lang'][$this->app->vars('_sess.lang')];
+    isset($item['lang']) ? $lang = $item['lang'][$this->app->vars('_sess.lang')] : $lang = [];
     $item = (array)$lang + (array)$item;
-    $item['header'] = $item['header'][$_SESSION['lang']];
+    isset($item['header']) ? $item['header'] = $item['header'][$_SESSION['lang']] : null;
 }
 
 function afterItemRead(&$item) {
+    isset($item['blocks']) ? null : $item['blocks'] = [];
+    isset($item['container']) ? null : $item['container'] = '';
+    if (in_array($item['id'],['_header','_footer'])) return;
     if ($item['path'] == '/') $item['path'] = '';
     $item['url'] = $item['path'] . '/' .$item['name'];
     $item['url'] == '/home' ? $item['url'] = '/' : null;
-    $item['blocks'] = $item['blocks'];
 }
 
 function list() {
@@ -33,6 +35,10 @@ function listNested($path = '') {
     $count = $level['count'];
     $level = $level['list'];
     if (!count($level)) return $this->app->fromString("");
+    if ($path == '')     {
+        unset($level['_header']);
+        unset($level['_footer']);
+    }
     $out = $this->tpl->clone();
     $out->fetch(['list'=>$level]);
     foreach($level as $item) {

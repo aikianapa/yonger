@@ -1,7 +1,7 @@
 <html>
 <view>
     <section>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="{{id}}">
+        <nav class="navbar navbar-expand-lg navbar-light" id="{{id}}">
             <a class="navbar-brand" href="/">
                 <img data-src="/thumb/100x50/src/{{_sett.logo.0.img}}" class="img-fluid"
                     wb-if="'{{_sett.logo.0.img}}'>''">

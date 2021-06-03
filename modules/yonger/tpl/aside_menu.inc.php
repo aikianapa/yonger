@@ -1,6 +1,6 @@
-<div class="divider-text" wb-if='"{{_route.subdomain}}" > ""'>{{_route.subdomain}}</div>
-<hr wb-if='"{{_route.subdomain}}" == ""'>
-<ul class="nav nav-aside" wb-if='"{{_route.subdomain}}" > ""'>
+<div class="divider-text" wb-if='"{{_route.subdomain}}" > ""  AND "{{_sett.modules.yonger.standalone}}" !== "on"'>{{_route.subdomain}}</div>
+<hr wb-if='"{{_route.subdomain}}" == "" AND "{{_sett.modules.yonger.standalone}}" !== "on"'>
+<ul class="nav nav-aside" wb-if='"{{_route.subdomain}}" > "" OR "{{_sett.modules.yonger.standalone}}" == "on"'>
     <li>
         <div class="mg-y-20">Навигация</div>
     </li>
@@ -11,6 +11,14 @@
             <span>Страницы</span>
         </a>
     </li>
+
+    <li class="nav-item with-sub">
+        <a href="#" data-ajax="{'url':'/cms/ajax/form/news/list/','html':'.content-body'}" class="nav-link">
+            <svg class="mi mi-news-2-paper" wb-module="myicons"></svg>
+            <span>Новости</span>
+        </a>
+    </li>
+
     <li class="nav-item">
         <a href="#" data-ajax="{'url':'/cms/ajax/form/users/list/','html':'.content-body'}" class="nav-link">
             <svg class="mi mi-group-user.1" wb-module="myicons"></svg>
@@ -55,7 +63,7 @@
     </li>
 </ul>
 
-<div wb-if='"{{_route.subdomain}}" == ""'>
+<div wb-if='"{{_route.subdomain}}" == "" AND  OR "{{_sett.modules.yonger.standalone}}" !== "on"'>
     <ul class="nav nav-aside">
         <li>
             <div class="mg-y-20">Система</div>

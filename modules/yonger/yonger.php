@@ -53,13 +53,20 @@ class modYonger
         $login = $app->vars('_sess.user.login');
         $role = $app->vars('_sess.user.role');
 
-        if ($subdom == '' AND ($login == '' OR $role !== 'user')) {
-            $form = $app->controller('form');
-            return $form->get404();
-        } else if ($login == '_new') {
-            $master = $ws = $app->fromFile(__DIR__."/tpl/master.php", true);
-            $master->fetch();
-            return $master;
+        if ($app->vars('_sett.modules.yonger.standalone') !== 'on') {
+            if ($subdom == '' AND ($login == '' OR $role !== 'user')) {
+                $form = $app->controller('form');
+                return $form->get404();
+            } else if ($login == '_new') {
+                $master = $ws = $app->fromFile(__DIR__."/tpl/master.php", true);
+                $master->fetch();
+                return $master;
+            }
+        } else {
+            symlink(__DIR__ .'/common/forms/pages' , $app->vars('_env.path_app').'/forms/pages' );
+            symlink(__DIR__ .'/common/forms/news' , $app->vars('_env.path_app').'/forms/news' );
+            symlink(__DIR__ .'/common/scripts/functions.php' , $app->vars('_env.path_app').'/functions.php' );
+            symlink(__DIR__ .'/common/tpl/page.php' , $app->vars('_env.path_app').'/tpl/page.php' );
         }
         $ws = $app->fromFile(__DIR__."/tpl/workspace.php", true);
         $ws->fetch();
@@ -89,38 +96,48 @@ class modYonger
         $form = $item['form'];
         $ypg = new yongerPage($this->dom);
         $res = $ypg->blockview($form);
-        if ($item['container'] == 'on') {
+        if (isset($item['container']) && $item['container'] == 'on') {
             $res->children()->addClass('container');
         }
         isset($item['lang']) ? $data = array_merge($item,$item['lang'][$this->app->vars('_sess.lang')]) : $data = &$item;
         $result = (object)$res->attributes();
-        $result->result = $res->fetch($data)->inner();
+        $section = $this->dom->app->fromString($res->fetch($data)->inner());
+        isset($item['block_id']) && $item['block_id'] ? $section->attr('id',$item['block_id']) : null;
+        isset($item['block_class']) && $item['block_class'] ? $section->addClass($item['block_class']) : null;
+        $result->result = $section;
         return $result;
     }
 
     private function render() {
         $dom = &$this->dom;
         $app = &$dom->app;
-        $blocks = (array)$dom->item['blocks'];
+
+        $item = $dom->item;
+        $dom->params('view') == 'header' ? $item = $app->itemRead('pages','_header') : null;
+        $dom->params('view') == 'footer' ? $item = $app->itemRead('pages','_footer') : null;
+
+
+        isset($item['blocks']) ? $blocks = (array)$item['blocks'] : $item['blocks'] = []; 
+        $blocks = (array)$item['blocks'];
         $blocks = wbItemToArray($blocks);
-        $html = &$dom->parents(':root');
+        $html = $dom->parents(':root');
         $html->find('head')->length ? null : $html->prepend('<head></head>');
         $html->find('body')->length ? null : $html->prepend('<body></body>');
-        $head = &$html->find('head');
-        $body = &$html->find('body');
-        foreach($blocks as $id => $item) {
-            if ($item['active'] == 'on') {
-                $item['_parent'] = $app->objToArray($dom->item);
-                $res = $this->blockview($item);
+        $head = $html->find('head');
+        $body = $html->find('body');
+        foreach($blocks as $id => $block) {
+            if ($block['active'] == 'on') {
+                $block['_parent'] = $app->objToArray($item);
+                $res = $this->blockview($block);
                 if (isset($res->head)) {
                     $head->append($res->result);
                 } else {
-                    $body->append($res->result);
+
+                    $dom->parent()->append($res->result);
                 }
             }
         }
-        $head->fetch();
-        $body->fetch();
+
     }
 
     private function logo() {
@@ -129,22 +146,46 @@ class modYonger
     }
 
     private function signin() {
-        $form = $this->app->fromFile(__DIR__ . '/tpl/signin.php');
+        $form = $this->app->route->path_app . '/tpl/signin.php';
+        if (is_file($form)) {
+            $form = $this->app->fromFile($form);
+            $form->path = __DIR__ . '/tpl/';
+        } else {
+            $form = $this->app->fromFile(__DIR__ . '/tpl/signin.php');
+        }
         return $form->fetch();
     }
 
     private function signup() {
-        $form = $this->app->fromFile(__DIR__ . '/tpl/signup.php');
+        $form = $this->app->route->path_app . '/tpl/signup.php';
+        if (is_file($form)) {
+            $form = $this->app->fromFile($form);
+            $form->path = __DIR__ . '/tpl/';
+        } else {
+            $form = $this->app->fromFile(__DIR__ . '/tpl/signup.php');
+        }
         return $form->fetch();
     }
 
     private function signrc() {
-        $form = $this->app->fromFile(__DIR__ . '/tpl/signrc.php');
+        $form = $this->app->route->path_app . '/tpl/signrc.php';
+        if (is_file($form)) {
+            $form = $this->app->fromFile($form);
+            $form->path = __DIR__ . '/tpl/';
+        } else {
+            $form = $this->app->fromFile(__DIR__ . '/tpl/signrc.php');
+        }
         return $form->fetch();
     }
 
     private function support() {
-        $form = $this->app->fromFile(__DIR__ . '/tpl/support.php');
+        $form = $this->app->route->path_app . '/tpl/support.php';
+        if (is_file($form)) {
+            $form = $this->app->fromFile($form);
+            $form->path = __DIR__ . '/tpl/';
+        } else {
+            $form = $this->app->fromFile(__DIR__ . '/tpl/support.php');
+        }
         return $form->fetch();
     }
 

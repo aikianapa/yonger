@@ -1,15 +1,17 @@
 <html lang="en">
-<meta http-equiv="refresh" content="2; url=/signin/" wb-disallow="user">
+<wb-var wb-if="'{{_sett.modules.yonger.allow}}' == '' " role="user" else="{{_sett.modules.yonger.allow}}" />
+
+<meta http-equiv="refresh" content="2; url=/signin/" wb-disallow="{{_var.role}}">
 <wb-include wb="{'src':'/modules/yonger/tpl/head.inc.php'}" />
 <body class="app-chat">
-    <div class="app-chat" wb-allow="admin">
+    <div class="app-chat" wb-if="'{{_sess.user.role}}' !== {{_var.role}}">
         <div class="container">
             <div class="alert alert-outline alert-danger d-flex align-items-center t-100" role="alert">
                 <i class="fa fa-info-circle"></i> &nbsp; Ошибка входа в систему!
             </div>
         </div>
     </div>
-    <div wb-allow="user">
+    <div wb-allow="{{_var.role}}">
         <aside class="aside aside-fixed">
             <div class="aside-header">
                 <wb-include wb="{'src':'/modules/yonger/tpl/aside_header.inc.php'}" />
