@@ -102,8 +102,8 @@ class modYonger
         isset($item['lang']) ? $data = array_merge($item,$item['lang'][$this->app->vars('_sess.lang')]) : $data = &$item;
         $result = (object)$res->attributes();
         $section = $this->dom->app->fromString($res->fetch($data)->inner());
-        isset($item['block_id']) && $item['block_id'] ? $section->attr('id',$item['block_id']) : null;
-        isset($item['block_class']) && $item['block_class'] ? $section->addClass($item['block_class']) : null;
+        isset($item['block_id']) && $item['block_id'] ? $section->children(':first-child')->attr('id',$item['block_id']) : null;
+        isset($item['block_class']) && $item['block_class'] ? $section->children(':first-child')->addClass($item['block_class']) : null;
         $result->result = $section;
         return $result;
     }
