@@ -138,6 +138,7 @@ yonger.pageBlocks = function() {
         $modal.find('.modal-header .header').text($editor.attr("header"));
         $blockform.html($editor.html());
         wbapp.wbappScripts();
+        wbapp.tplInit();
         $('#yongerPageBlocks').data('current', id);
     }
 

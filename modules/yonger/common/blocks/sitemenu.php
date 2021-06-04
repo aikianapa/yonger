@@ -1,6 +1,6 @@
 <html>
 <view>
-    <section>
+    <section class="block-{{name}}">
         <nav class="navbar navbar-expand-lg navbar-light" id="{{id}}">
             <a class="navbar-brand" href="/">
                 <img data-src="/thumb/100x50/src/{{_sett.logo.0.img}}" class="img-fluid"
