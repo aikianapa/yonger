@@ -62,6 +62,11 @@ $(document).on("wb-save-done", function (e, params) {
     }
 })
 
+
+$(document).on("data-ajax",function(e,params) {
+    if (topbar) topbar.show();
+});
+
 $(document).on("wb-ajax-done",function(e,params) {
     $(document).find(".content-body [type=search][data-ajax].search-header").each(function() {
         $(".content-header .content-search [type=search]").attr("data-ajax",$(this).attr("data-ajax")).prop("disabled",false);
@@ -69,6 +74,7 @@ $(document).on("wb-ajax-done",function(e,params) {
     });
     if ($(document).find(".chat-sidebar").length == 0) $("body").removeClass("chat-content-show");
     yonger.plugins();
+    if (topbar) topbar.hide();
 });
 
 yonger.workspace = function() {

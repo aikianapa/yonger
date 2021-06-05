@@ -1,6 +1,6 @@
 		<script type="wbapp">
 			wbapp.loadStyles([
-        "{{_var.base}}/assets/css/dashforge.css"
+        		"{{_var.base}}/assets/css/dashforge.css"
 				,"{{_var.base}}/assets/css/dashforge.chat.css"
 				,"{{_var.base}}/assets/css/skin.cool.css"
         ,"{{_var.base}}/assets/css/yonger.less"
@@ -10,6 +10,7 @@
 
 			wbapp.loadScripts([
 				 "/engine/lib/bootstrap/js/bootstrap.bundle.min.js"
+				,"/engine/js/topbar.min.js"
 				,"{{_var.base}}/assets/lib/perfect-scrollbar/perfect-scrollbar.min.js"
 				,"{{_var.base}}/assets/js/dashforge.js"
 				,"{{_var.base}}/assets/js/dashforge.aside.js"

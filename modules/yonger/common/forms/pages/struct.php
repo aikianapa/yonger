@@ -73,10 +73,10 @@ yonger.pageBlocks = function() {
     wbapp.storage('yonger.page.blocks', data);
 
     $(document).delegate('#yonblocks', 'wb-render-done', function(ev, data) {
+        ev.stopPropagation();
         if (!$current) $('#yongerPageBlocks').find('li.dd-item:first .dd-edit').trigger('click');
         let id = $('#yongerPageBlocks').data('current');
         $('#yongerPageBlocks').find('li.dd-item[data-id="' + id + '"]').addClass('active');
-        ev.stopPropagation();
     })
 
     $('#yongerPageBlocks').nestable({
@@ -96,6 +96,7 @@ yonger.pageBlocks = function() {
     });
 
 
+    $blockform.undelegate(':input[name]:not(.wb-unsaved)', 'change');
     $blockform.delegate(':input[name]:not(.wb-unsaved)', 'change', function() {
         if ($('#yongerPageBlocks').data('current') !== undefined) blockSave();
     })
@@ -119,8 +120,8 @@ yonger.pageBlocks = function() {
             data.id = id;
             data.name = $current.attr('data-name');
             data.form = $current.attr('data-form');
-            wbapp.storage('yonger.page.blocks.' + id, data);
-                $blocks.text(json_encode(wbapp.storage('yonger.page.blocks')));
+            wbapp.storage('yonger.page.blocks.' + id, data, false);
+            $blocks.text(json_encode(wbapp.storage('yonger.page.blocks')));
         }
     }
 
@@ -139,7 +140,10 @@ yonger.pageBlocks = function() {
         $blockform.html($editor.html());
         wbapp.wbappScripts();
         wbapp.tplInit();
-        $('#yongerPageBlocks').data('current', id);
+        setTimeout(function(){
+            $('#yongerPageBlocks').data('current', id);
+        },1000);
+        
     }
 
     $('#yongerPageBlocks').delegate('.dd-active', 'tap click touchStart', function() {
@@ -161,7 +165,7 @@ yonger.pageBlocks = function() {
         let id = $line.attr('data-id');
         let item = wbapp.storage('yonger.page.blocks.' + id);
         if ($current && $current.attr('data-id') == $line.attr('data-id')) return false;
-        $line.parents('.dd-list').find('.dd-item').removeClass('active');
+        $(this).parents('.dd-list').find('.dd-item').removeClass('active');
         $current = $line;
         $current.addClass('active');
         blockEdit(id);
