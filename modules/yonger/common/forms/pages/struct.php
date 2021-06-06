@@ -133,20 +133,17 @@ yonger.pageBlocks = function() {
         if ($('#yongerPageBlocks .dd-item[data-id="' + id + '"]').length == 0) {
             
         }
-        let $editor = $(wbapp.postSync('/module/yonger/blockform', {
-            'item': item
-        }));
-        $modal.find('.modal-header .header').text($editor.attr("header"));
-        $blockform.html($editor.html());
-        wbapp.wbappScripts();
-        wbapp.tplInit();
-        setTimeout(function(){
-            $('#yongerPageBlocks').data('current', id);
-        },1000);
-        
+        wbapp.post('/module/yonger/blockform',{'item':item},function(editor){
+            $modal.find('.modal-header .header').text($(editor).attr("header"));
+            $blockform.html($(editor).html());
+            wbapp.wbappScripts();
+            wbapp.tplInit();
+        });
+
+        $('#yongerPageBlocks').data('current', id);
     }
 
-    $('#yongerPageBlocks').delegate('.dd-active', 'tap click touchStart', function() {
+    $('#yongerPageBlocks').delegate('.dd-active', wbapp.evClick, function() {
         let $line = $(this).parents('.dd-item');
         let id = $(this).parents('.dd-item').attr('data-id');
         if ($current.attr('data-id') == id) {
@@ -160,7 +157,8 @@ yonger.pageBlocks = function() {
     });
 
 
-    $('#yongerPageBlocks').delegate('.dd-edit', 'tap click touchStart', function(ev) {
+    $('#yongerPageBlocks').delegate('.dd-edit', wbapp.evClick, function(ev) {
+        ev.stopPropagation();
         let $line = $(this).parents('.dd-item');
         let id = $line.attr('data-id');
         let item = wbapp.storage('yonger.page.blocks.' + id);
@@ -169,16 +167,15 @@ yonger.pageBlocks = function() {
         $current = $line;
         $current.addClass('active');
         blockEdit(id);
-        ev.stopPropagation();
     })
 
-    $(document).delegate('#yongerPageBlockSeo', 'tap click touchStart', function() {
+    $(document).delegate('#yongerPageBlockSeo', wbapp.evClick, function() {
         if ($current) $current.removeClass('active');
         $current = null;
         $('#modalPagesEditBlocks').find('.list-group-item[data-name=seo]').trigger('click');
     })
 
-    $(document).delegate('#yongerPageBlockCode', 'tap click touchStart', function() {
+    $(document).delegate('#yongerPageBlockCode', wbapp.evClick, function() {
         if ($current) $current.removeClass('active');
         $current = null;
         $('#modalPagesEditBlocks').find('.list-group-item[data-name=code]').trigger('click');

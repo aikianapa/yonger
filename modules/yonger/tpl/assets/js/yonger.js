@@ -64,7 +64,7 @@ $(document).on("wb-save-done", function (e, params) {
 
 
 $(document).on("data-ajax",function(e,params) {
-    if (topbar) topbar.show();
+
 });
 
 $(document).on("wb-ajax-done",function(e,params) {
@@ -74,7 +74,6 @@ $(document).on("wb-ajax-done",function(e,params) {
     });
     if ($(document).find(".chat-sidebar").length == 0) $("body").removeClass("chat-content-show");
     yonger.plugins();
-    if (topbar) topbar.hide();
 });
 
 yonger.workspace = function() {
