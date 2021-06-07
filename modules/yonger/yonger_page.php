@@ -8,18 +8,9 @@ class yongerPage {
     }
 
     function list() {
-        $files = $this->app->listFiles(__DIR__.'/common/blocks');
+        
         $list = [];
-        foreach($files as $file) {
-            $name = basename($file,'.php');
-            if ($name !== 'common.inc') {
-                $form = $this->app->fromFile(__DIR__.'/common/blocks/'.$file);
-                $form->find('edit')->fetch();
-                $header = $form->find('edit')->attr('header');
-                $id = $this->app->newId();
-                $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file,'path'=>'/_yonger_/common/blocks/'.$file];
-            }
-        }
+        $ready = [];
         $files = $this->app->listFiles($this->app->route->path_app.'/blocks');
         foreach($files as $file) {
             $name = basename($file,'.php');
@@ -29,8 +20,24 @@ class yongerPage {
                 $header = $form->find('edit')->attr('header');
                 $id = $this->app->newId();
                 $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file,'path'=>'/_app_/blocks/'.$file];
+                $ready[] = $name;
             }
         };
+
+        $files = $this->app->listFiles(__DIR__.'/common/blocks');
+        foreach($files as $file) {
+            $name = basename($file,'.php');
+            if ($name !== 'common.inc' && !in_array($name,$ready)) {
+                $form = $this->app->fromFile(__DIR__.'/common/blocks/'.$file);
+                $form->find('edit')->fetch();
+                $header = $form->find('edit')->attr('header');
+                $id = $this->app->newId();
+                $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file,'path'=>'/_yonger_/common/blocks/'.$file];
+                $ready[] = $name;
+            }
+        }
+        $list = $this->app->arraySort($list,'name');
+
         if ($this->dom == null) return $list;
         $res = $this->app->fromFile(__DIR__.'/common/forms/pages/struct.php');
         $res->fetch(['blocks'=>$this->dom->item['blocks']]);

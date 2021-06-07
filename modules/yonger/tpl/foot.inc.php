@@ -1,4 +1,4 @@
-		<script type="wbapp">
+		<script type="wbapp" remove>
 			wbapp.loadStyles([
         		"{{_var.base}}/assets/css/dashforge.css"
 				,"{{_var.base}}/assets/css/dashforge.chat.css"
