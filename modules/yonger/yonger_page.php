@@ -8,7 +8,6 @@ class yongerPage {
     }
 
     function list() {
-        
         $list = [];
         $ready = [];
         $files = $this->app->listFiles($this->app->route->path_app.'/blocks');
@@ -16,8 +15,10 @@ class yongerPage {
             $name = basename($file,'.php');
             if ($name !== 'common.inc') {
                 $form = $this->app->fromFile($this->app->route->path_app.'/blocks/'.$file);
-                $form->find('edit')->fetch();
-                $header = $form->find('edit')->attr('header');
+                $form = $form->find('edit');
+                $form->find('*:not(wb-lang)')->remove();
+                $form->fetch();
+                $header = $form->attr('header');
                 $id = $this->app->newId();
                 $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file,'path'=>'/_app_/blocks/'.$file];
                 $ready[] = $name;
@@ -29,15 +30,17 @@ class yongerPage {
             $name = basename($file,'.php');
             if ($name !== 'common.inc' && !in_array($name,$ready)) {
                 $form = $this->app->fromFile(__DIR__.'/common/blocks/'.$file);
-                $form->find('edit')->fetch();
-                $header = $form->find('edit')->attr('header');
+                $form = $form->find('edit');
+                $form->find('*:not(wb-lang)')->remove();
+                $form->fetch();
+                $header = $form->attr('header');
                 $id = $this->app->newId();
                 $list[$id] = ['id'=>$id,'header'=>$header,'name'=>$name,'file'=>$file,'path'=>'/_yonger_/common/blocks/'.$file];
                 $ready[] = $name;
             }
         }
         $list = $this->app->arraySort($list,'name');
-
+        
         if ($this->dom == null) return $list;
         $res = $this->app->fromFile(__DIR__.'/common/forms/pages/struct.php');
         $res->fetch(['blocks'=>$this->dom->item['blocks']]);
