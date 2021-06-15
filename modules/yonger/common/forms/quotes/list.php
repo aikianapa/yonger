@@ -19,12 +19,12 @@
             </tr>
         </thead>
         <tbody id="quotesList">
-            <wb-foreach wb="table=quotes&sort=_created:d&bind=cms.list.quotes"
+            <wb-foreach wb="table=quotes&sort=_created:d&bind=cms.list.quotes&size={{_sett.page_size}}"
                 wb-filter="{'login':'{{_sess.user.login}}' }">
                 <tr>
                     <td>{{_created}}</td>
                     <td>{{subject}}</td>
-                    <td>{{msg}}</td>
+                    <td>{{message}}</td>
                     <td>{{status}}</td>
                     <td>
                         <a href="javascript:"
