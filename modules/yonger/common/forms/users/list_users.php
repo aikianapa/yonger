@@ -26,7 +26,9 @@
         <table class="table table-striped table-hover tx-15">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Имя</th>
+                    <th>Контакт</th>
                     <th>Роли</th>
                     <th>Создан</th>
                     <th class="text-right">Действия</th>
@@ -36,7 +38,13 @@
                 <wb-foreach wb="table=users&sort=_created:d&bind=cms.list.users"
                     wb-filter="{'isgroup':'' }">
                     <tr>
+                        <td>
+                            <div class="avatar">
+                                <img data-src="/thumbc/50x50/src{{avatar.0.img}}" class="rounded">
+                            </div>
+                        </td>
                         <td>{{first_name}} {{last_name}}</td>
+                        <td class="tx-11">{{wbPhoneFormat({{phone}})}}<br>{{email}}</td>
                         <td>{{role}}</td>
                         <td>{{_created}}</td>
                         <td class="text-right">

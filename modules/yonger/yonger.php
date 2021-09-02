@@ -27,7 +27,7 @@ class modYonger
             $form = $app->controller('form');
             echo $form->get404();
         }
-        if (!$this->dom) die;
+        if (!isset($this->dom)) die;
     }
 
     public function workspace()
@@ -87,7 +87,11 @@ class modYonger
     }
 
     private function blockform() {
-        $ypg = new yongerPage($this->dom);
+        if (!isset($this->dom)) {
+            $ypg = new yongerPage("");    
+        } else {
+            $ypg = new yongerPage($this->dom);
+        }
         return $ypg->blockform($this->app->vars('_post.item'));
         
     }
@@ -111,11 +115,20 @@ class modYonger
     private function render() {
         $dom = &$this->dom;
         $app = &$dom->app;
+        $item = null;
 
-        $item = $dom->item;
         $dom->params('view') == 'header' ? $item = $app->itemRead('pages','_header') : null;
         $dom->params('view') == 'footer' ? $item = $app->itemRead('pages','_footer') : null;
-
+        if ($item === null && $dom->params('view') > '') {
+            $ypg = new yongerPage($this->dom);
+            $form = $ypg->blockfind($dom->params('view'));
+            $id = wbNewId();
+            $item = $dom->item;
+            $item['blocks'] = [];
+            $item['blocks'][$id] = ['id'=>$id,'form'=>$form,'active'=>'on'];
+        } else if ($item === null) {
+            $item = $dom->item;
+        }
 
         isset($item['blocks']) ? $blocks = (array)$item['blocks'] : $item['blocks'] = []; 
         $blocks = (array)$item['blocks'];
@@ -125,6 +138,8 @@ class modYonger
         $html->find('body')->length ? null : $html->prepend('<body></body>');
         $head = $html->find('head');
         $body = $html->find('body');
+
+
         foreach($blocks as $id => $block) {
             if ($block['active'] == 'on') {
                 $block['_parent'] = $app->objToArray($item);
